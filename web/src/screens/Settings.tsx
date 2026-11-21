@@ -142,6 +142,26 @@ export default function SettingsScreen({ app }: { app: AppCtx }) {
           <span>Max reviews per day</span>
           <input type="number" value={s.reviewCap} onChange={num("reviewCap")} />
         </label>
+        <label className="field">
+          <span>Card directions</span>
+          <select value={s.cardDirections} onChange={(e) => set({ cardDirections: e.target.value as Settings["cardDirections"] })}>
+            <option value="production">English → Italian only (fastest path to speaking)</option>
+            <option value="both">Both directions (adds Italian → English; about 2× the reviews)</option>
+          </select>
+        </label>
+        <label className="field">
+          <span>Grading buttons</span>
+          <select value={s.grading} onChange={(e) => set({ grading: e.target.value as Settings["grading"] })}>
+            <option value="two">2 buttons: Forgot / Knew it (fastest)</option>
+            <option value="four">4 buttons: Again / Hard / Good / Easy</option>
+          </select>
+        </label>
+        <label className="check-inline">
+          <input type="checkbox" checked={s.autoAdvance} onChange={(e) => set({ autoAdvance: e.target.checked })} /> Auto-advance when I say the answer correctly
+        </label>
+        <label className="check-inline">
+          <input type="checkbox" checked={s.autoCards} onChange={(e) => set({ autoCards: e.target.checked })} /> Turn conversation corrections into flashcards automatically
+        </label>
         <label className="check-inline">
           <input type="checkbox" checked={s.speakAnswers} onChange={(e) => set({ speakAnswers: e.target.checked })} /> Speak the answer on English → Italian cards
         </label>
@@ -150,6 +170,9 @@ export default function SettingsScreen({ app }: { app: AppCtx }) {
         </label>
         <label className="check-inline">
           <input type="checkbox" checked={s.sounds} onChange={(e) => set({ sounds: e.target.checked })} /> Sound effects
+        </label>
+        <label className="check-inline">
+          <input type="checkbox" checked={s.celebrations} onChange={(e) => set({ celebrations: e.target.checked })} /> Confetti and cheers
         </label>
       </section>
       <section className="card">

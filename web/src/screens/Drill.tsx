@@ -7,7 +7,7 @@ import { checkAnswer } from "../srs";
 import { sfx, unlockSfx } from "../sfx";
 import { resolveEngine, speak, startListening, unlockAudio, type Listening } from "../speech";
 import { autoLog, go, type AppCtx } from "../state";
-import type { CardData, SrsData } from "../types";
+import type { CardData, ReviewData, SrsData } from "../types";
 import { Empty, SpeakBtn } from "../ui";
 
 type Submit = (correct: boolean, solution?: string, english?: boolean) => void;
@@ -15,14 +15,16 @@ type Submit = (correct: boolean, solution?: string, english?: boolean) => void;
 export default function Drill({ app }: { app: AppCtx }) {
   const cards = useCollection<CardData>("cards");
   const srsRows = useCollection<SrsData>("srs");
+  const reviews = useCollection<ReviewData>("reviews");
   const [seed, setSeed] = useState(0);
-  const ready = !!cards && !!srsRows;
+  const ready = !!cards && !!srsRows && !!reviews;
   const initial = useMemo(
     () =>
       ready
         ? buildDrill({
             cards: cards!,
             srs: new Map(srsRows!.map((r) => [r.id, r.data])),
+            recentAgain: new Set(reviews!.filter((r) => r.data.rating === 1 && r.data.ts > Date.now() - 7 * 86_400_000).map((r) => r.data.cardId)),
             topics: unlockedTopics(app.cur, app.n),
             maxLevel: app.week.level,
             canSpeak: resolveEngine(app.settings.sttMode) !== "none",
@@ -50,7 +52,7 @@ function DrillRun({ app, initial, onAgain }: { app: AppCtx; initial: Exercise[];
     if (!done) return;
     sfx.complete();
     if (right / Math.max(1, right + wrong) >= 0.6) celebrate(true);
-    void autoLog("flashcards", startedAt.current, "Quick drill").then(setLoggedMin);
+    void autoLog("flashcards", startedAt.current, "Weak-spot drill").then(setLoggedMin);
   }, [done]);
 
   const submit: Submit = (correct, solution, english) => {
@@ -83,7 +85,7 @@ function DrillRun({ app, initial, onAgain }: { app: AppCtx; initial: Exercise[];
         <div className="summary-hero">
           <div className="empty-emoji">{acc >= 90 ? "🏆" : acc >= 70 ? "🌟" : "💪"}</div>
           <h1>{acc >= 70 ? cheer() : "Keep going!"}</h1>
-          <p className="muted">Drill complete</p>
+          <p className="muted">Weak-spot drill complete</p>
           <div className="stat-bubbles">
             <div className="stat-bubble c-green">
               <b>{acc}%</b>

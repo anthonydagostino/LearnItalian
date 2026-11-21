@@ -3,6 +3,7 @@ import { patch, put, useDoc } from "./db";
 import { effectiveSettings, emptyPlan, weekInfo, type Curriculum } from "./plan";
 import { setTtsPrefs } from "./speech";
 import { setSoundsEnabled } from "./sfx";
+import { setCelebrations } from "./look";
 import { localDate, uid } from "./time";
 import type { BlockKind, DayplanData, MistakeData, Settings, TimelogData } from "./types";
 
@@ -24,6 +25,7 @@ export function useApp() {
   const wk = weekInfo(settings, cur, today);
   setTtsPrefs({ voiceURI: settings.voiceURI, rate: settings.ttsRate || wk.level.ttsRate });
   setSoundsEnabled(settings.sounds);
+  setCelebrations(settings.celebrations);
   return { cur, settings, today, ...wk, ttsRate: settings.ttsRate || wk.level.ttsRate };
 }
 export type AppCtx = NonNullable<ReturnType<typeof useApp>>;

@@ -33,21 +33,37 @@ export function sameSentence(a: string, b: string) {
 }
 
 /**
- * Build a ~12-exercise drill from cards you've already started (so it reinforces, not overwhelms),
- * topped up with this week's topics.
+ * Build a ~12-exercise drill aimed at your weak spots: cards you keep forgetting (lapses, recent "Forgot"),
+ * cards made from your mistakes, and the least stable cards. Mostly production (build / speak).
  */
 export function buildDrill(opts: {
   cards: Row<CardData>[];
   srs: Map<string, SrsData>;
+  recentAgain: Set<string>; // card ids rated "Forgot" in the last 7 days
   topics: string[];
   maxLevel: number;
   canSpeak: boolean;
 }): Exercise[] {
   const notes = opts.cards.filter((c) => c.data.dir === "it2en" && !c.data.suspended);
-  const started = notes.filter((c) => opts.srs.has(c.id));
-  const week = notes.filter((c) => opts.topics.slice(0, 4).includes(c.data.topic) && c.data.level <= opts.maxLevel);
-  let pool = shuffle(started).slice(0, 40);
-  if (pool.length < 20) pool = [...pool, ...shuffle(week).filter((c) => !opts.srs.has(c.id)).slice(0, 20 - pool.length)];
+  const byNote = new Map(notes.map((c) => [c.data.noteId, c]));
+  // Weakness score per note, from any of its cards' scheduling state.
+  const score = new Map<string, number>();
+  for (const c of opts.cards) {
+    const s = opts.srs.get(c.id);
+    const fromMistake = c.data.source === "mistake" || c.data.source === "tutor";
+    if (!s && !fromMistake) continue;
+    let w = 0;
+    if (s) w += s.lapses * 2 + 1 / (s.stability + 0.5);
+    if (opts.recentAgain.has(c.id)) w += 3;
+    if (fromMistake) w += 2;
+    score.set(c.data.noteId, Math.max(score.get(c.data.noteId) ?? 0, w));
+  }
+  const ranked = [...score.entries()].sort((a, b) => b[1] - a[1]).map(([n]) => byNote.get(n)).filter((x): x is Row<CardData> => !!x);
+  let pool = shuffle(ranked.slice(0, 24));
+  if (pool.length < 12) {
+    const week = notes.filter((c) => opts.topics.slice(0, 4).includes(c.data.topic) && c.data.level <= opts.maxLevel && !score.has(c.data.noteId));
+    pool = [...pool, ...shuffle(week).slice(0, 16 - pool.length)];
+  }
   if (pool.length < 6) pool = [...pool, ...shuffle(notes).slice(0, 12)];
   const enOf = (c: Row<CardData>) => strip(c.data.en.split(/[;(]/)[0]);
   const distract = (c: Row<CardData>, field: "en" | "it", n = 3) => {
@@ -70,22 +86,14 @@ export function buildDrill(opts: {
     if (c) used.add(c.id);
     return c;
   };
-
-  // 1 match round
-  const pairSrc = shuffle(pool.filter((c) => strip(c.data.it).length <= 18)).slice(0, 5);
-  const seenEn = new Set<string>();
-  const pairs = pairSrc
-    .map((c) => ({ it: strip(c.data.it), en: enOf(c) }))
-    .filter((p) => !seenEn.has(p.en) && seenEn.add(p.en));
-  if (pairs.length >= 4) ex.push({ type: "match", pairs });
-
   const sentenceOk = (c: Row<CardData>) => {
     if (!c.data.ex || c.data.ex.includes(" — ")) return false;
     const n = tokenize(c.data.ex).length;
     return n >= 3 && n <= 9;
   };
 
-  const plan: Exercise["type"][] = ["meaning", "build", "listen", "speak", "meaning", "build", "listen", "speak", "build", "meaning", "speak"];
+  // Production-heavy mix: building and saying sentences are what transfer to speaking.
+  const plan: Exercise["type"][] = ["build", "speak", "listen", "build", "speak", "meaning", "build", "speak", "listen", "build", "speak", "build"];
   for (const t of plan) {
     if (t === "speak" && !opts.canSpeak) continue;
     if (t === "meaning" || t === "listen") {

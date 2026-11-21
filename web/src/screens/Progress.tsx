@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useCollection } from "../db";
 import { minutesByDate, streak } from "../plan";
 import type { AppCtx } from "../state";
-import { addDays, fmtMinutes } from "../time";
+import { addDays, daysBetween, fmtMinutes } from "../time";
 import { Header } from "../ui";
 import { computeSkills, Stars } from "../skills";
-import type { ConversationData } from "../types";
+import type { CardData, ConversationData, ReviewData } from "../types";
 import { MISTAKE_LABELS, type MistakeData, type MistakeType, type SrsData, type TimelogData } from "../types";
 
 /** Hours per curriculum week vs. the weekly target. Single series: one hue, target as a dashed reference line. */
@@ -98,6 +98,28 @@ export default function Progress({ app }: { app: AppCtx }) {
   });
   const thisWeek = weeks[Math.max(app.n, 1) - 1]?.hours ?? 0;
   const learned = srs.filter((s) => s.data.state === 2).length;
+  const reviews = useCollection<ReviewData>("reviews") ?? [];
+  const cards = useCollection<CardData>("cards") ?? [];
+
+  // ---- Efficiency metrics ----
+  const prodIds = new Set(cards.filter((c) => c.data.dir === "en2it").map((c) => c.id));
+  const canSay = srs.filter((s) => prodIds.has(s.id) && s.data.state === 2).length;
+  const wordsPerHour = total > 30 ? canSay / (total / 60) : 0;
+  const weekAgoTs = Date.now() - 7 * 86_400_000;
+  const recent = reviews.filter((r) => r.data.ts > weekAgoTs && r.data.rating > 0);
+  const recall = recent.length >= 30 ? Math.round((recent.filter((r) => r.data.rating >= 2).length / recent.length) * 100) : null;
+  const times = recent.map((r) => r.data.ms ?? 0).filter((x) => x > 0).sort((a, b) => a - b);
+  const secPerCard = times.length >= 20 ? Math.round(times[Math.floor(times.length / 2)] / 1000) : null;
+  const lastConvs = [...convs].filter((c) => c.data.talkShare !== undefined).sort((a, b) => b.data.startedAt - a.data.startedAt).slice(0, 5);
+  const talkShare = lastConvs.length ? Math.round(lastConvs.reduce((a, c) => a + (c.data.talkShare ?? 0), 0) / lastConvs.length) : null;
+  const repeatCounts = new Map<string, number>();
+  for (const m of mistakes) repeatCounts.set(m.data.corrected, (repeatCounts.get(m.data.corrected) ?? 0) + 1);
+  const repeats = [...repeatCounts.entries()].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1]).slice(0, 6);
+  const leeches = srs
+    .filter((s) => s.data.lapses >= 3)
+    .sort((a, b) => b.data.lapses - a.data.lapses)
+    .slice(0, 6)
+    .map((s) => ({ it: cards.find((c) => c.id === s.id)?.data.it ?? s.id, lapses: s.data.lapses }));
 
   // Mistake trend: last 4 weeks vs the 4 weeks before, by type.
   const types = Object.keys(MISTAKE_LABELS) as MistakeType[];
@@ -113,8 +135,37 @@ export default function Progress({ app }: { app: AppCtx }) {
 
   return (
     <div className="screen">
-      <Header title="Your progress" sub="Piano piano si va lontano — slowly, you go far." />
+      <Header title="Progress" sub="Are you learning efficiently? These numbers tell you." />
       <div className="tiles">
+        <div className="tile">
+          <b>{canSay}</b>
+          <span>words you can say (EN→IT learned)</span>
+        </div>
+        <div className="tile">
+          <b>{wordsPerHour ? wordsPerHour.toFixed(0) : "–"}</b>
+          <span>words per study hour</span>
+        </div>
+        <div className="tile">
+          <b>
+            {thisWeek.toFixed(1)}
+            <small>/{app.settings.weeklyTargetHours}h</small>
+          </b>
+          <span>this week</span>
+        </div>
+        <div className={`tile ${recall !== null && (recall < 80 || recall > 95) ? "warn" : ""}`}>
+          <b>{recall ?? "–"}{recall !== null && <small>%</small>}</b>
+          <span>recall, last 7 days</span>
+        </div>
+        <div className={`tile ${secPerCard !== null && secPerCard > 15 ? "warn" : ""}`}>
+          <b>{secPerCard ?? "–"}{secPerCard !== null && <small>s</small>}</b>
+          <span>per card (median)</span>
+        </div>
+        <div className={`tile ${talkShare !== null && talkShare < 50 ? "warn" : ""}`}>
+          <b>{talkShare ?? "–"}{talkShare !== null && <small>%</small>}</b>
+          <span>you talked (last 5 chats)</span>
+        </div>
+      </div>
+      <div className="tiles small-tiles">
         <div className="tile">
           <b>🔥 {streak(byDate, app.today)}</b>
           <span>day streak</span>
@@ -124,25 +175,46 @@ export default function Progress({ app }: { app: AppCtx }) {
           <span>total</span>
         </div>
         <div className="tile">
-          <b>
-            {thisWeek.toFixed(1)}
-            <small>/{app.settings.weeklyTargetHours}h</small>
-          </b>
-          <span>this week</span>
-        </div>
-        <div className="tile">
           <b>{fmtMinutes(speaking)}</b>
           <span>speaking</span>
         </div>
-        <div className="tile">
-          <b>{learned}</b>
-          <span>cards learned</span>
-        </div>
-        <div className="tile">
-          <b>{last7}</b>
-          <span>mistakes, last 7 days{prev7 ? ` (prev ${prev7})` : ""}</span>
-        </div>
       </div>
+
+      <section className="card">
+        <b>What to do about it</b>
+        <ul className="advice">
+          {recall !== null && recall < 80 && <li>Recall is under 80%: lower new cards per day (Settings) until it recovers.</li>}
+          {recall !== null && recall > 95 && recent.length > 50 && <li>Recall is over 95%: you can raise new cards per day.</li>}
+          {secPerCard !== null && secPerCard > 15 && <li>Cards are taking over 15s: if you don't know it in ~8s, tap Forgot and move on.</li>}
+          {talkShare !== null && talkShare < 50 && <li>You're talking less than half the time: answer in full sentences, and ask your partner questions back.</li>}
+          {app.n > 0 && thisWeek < (app.settings.weeklyTargetHours * ((daysBetween(app.settings.startDate, app.today) % 7) + 1)) / 7 - 1 && (
+            <li>You're behind this week's {app.settings.weeklyTargetHours}h pace.</li>
+          )}
+          {repeats.length > 0 && <li>Repeated mistakes below are your highest-value fixes: run the weak-spot drill.</li>}
+          <li className="muted">Healthy targets: recall 85–92%, under 10s per card, you talking 60%+ of the time.</li>
+        </ul>
+      </section>
+
+      {(repeats.length > 0 || leeches.length > 0) && (
+        <section className="card">
+          <b>Your repeat offenders</b>
+          {repeats.map(([form, n]) => (
+            <div key={form} className="skill-row">
+              <span className="grow it">{form}</span>
+              <span className="pill">{n}× mistake</span>
+            </div>
+          ))}
+          {leeches.map((l) => (
+            <div key={l.it} className="skill-row">
+              <span className="grow it">{l.it}</span>
+              <span className="pill">forgot {l.lapses}×</span>
+            </div>
+          ))}
+          <a className="chip-btn" href="#/drill">
+            🎯 Drill these now
+          </a>
+        </section>
+      )}
 
       <section className="card skills-card">
         <div className="row between">

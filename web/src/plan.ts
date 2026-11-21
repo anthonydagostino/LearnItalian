@@ -42,7 +42,12 @@ export const DEFAULT_SETTINGS: Settings = {
   lessonCourse: "Language Transfer — Complete Italian",
   lessonNext: 1,
   speakAnswers: true,
-  sounds: true,
+  sounds: false,
+  cardDirections: "production",
+  grading: "two",
+  autoAdvance: true,
+  autoCards: true,
+  celebrations: false,
   autoplay: true,
 };
 

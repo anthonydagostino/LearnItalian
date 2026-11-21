@@ -92,7 +92,9 @@ export function buildQueue(opts: {
   week: number;
   newPerDay: number;
   reviewCap: number;
+  directions?: "production" | "both";
 }): QueueInfo {
+  const production = (opts.directions ?? "production") === "production";
   const { cards, srs, today, now, cur, week } = opts;
   const newToday = [...srs.values()].filter((s) => s.introducedOn === today).length;
   let learned = 0;
@@ -107,11 +109,14 @@ export function buildQueue(opts: {
     if (s) {
       if (s.state === 2) learned++;
       if (s.due <= now) due.push(c);
-    } else {
+    } else if (!production || c.data.dir === "en2it") {
       candidates.push(c);
     }
   }
-  due.sort((a, b) => srs.get(a.id)!.due - srs.get(b.id)!.due);
+  // Most-forgotten first (lowest predicted recall), so stopping early still covers what matters most.
+  const nowD = new Date(now);
+  const recall = new Map(due.map((c) => [c.id, scheduler.get_retrievability(toCard(srs.get(c.id)!), nowD, false)]));
+  due.sort((a, b) => recall.get(a.id)! - recall.get(b.id)!);
 
   const topics = unlockedTopics(cur, week);
   const maxLevel = cur.weeks[Math.max(week, 1) - 1]?.level ?? 1;
@@ -120,7 +125,7 @@ export function buildQueue(opts: {
     return i === -1 ? 99 : i;
   };
   const eligible = candidates.filter((c) => {
-    if (c.data.dir === "en2it" && c.data.source === "seed") {
+    if (!production && c.data.dir === "en2it" && c.data.source === "seed") {
       const sibling = c.id.replace(/:en2it$/, ":it2en");
       // Only show production once recognition was introduced on an earlier day (or there is no sibling).
       return introducedBeforeToday.has(sibling) || !cards.some((x) => x.id === sibling);

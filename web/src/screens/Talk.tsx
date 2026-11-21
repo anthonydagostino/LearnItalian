@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { api, lastServerConfig } from "../api";
 import { createNote } from "../cards";
-import { all, patch, useCollection, useDoc } from "../db";
+import { all, patch, put, useCollection, useDoc } from "../db";
 import { speak, startListening, stopSpeaking, unlockAudio, type Listening } from "../speech";
 import { logTime, setActiveBlock, type AppCtx } from "../state";
 import { sync } from "../sync";
@@ -10,6 +10,7 @@ import { MISTAKE_LABELS } from "../types";
 import { activeFor, Header, Modal, SpeakBtn } from "../ui";
 import { celebrate, cheer, Icon, SCENARIO_EMOJI, toast } from "../look";
 import { computeSkills, Stars } from "../skills";
+import { buildFocus } from "../focus";
 
 const KEY = "parla.activeConversation";
 
@@ -42,7 +43,8 @@ function Picker({ app, onStart }: { app: AppCtx; onStart: (id: string) => void }
     setBusy(scenario);
     setErr("");
     try {
-      const r = await api<{ id: string; conversation: ConversationData }>("/api/chat/start", { scenario, week: Math.max(app.n, 1) });
+      const focus = await buildFocus();
+      const r = await api<{ id: string; conversation: ConversationData }>("/api/chat/start", { scenario, week: Math.max(app.n, 1), focus });
       await sync();
       onStart(r.id);
       if (app.settings.autoplay) void speak(r.conversation.messages[0].text, { rate: app.ttsRate });
@@ -120,7 +122,15 @@ function Chat({ app, id, conv, onClose }: { app: AppCtx; id: string; conv: Conve
     const optimistic: ChatMessage = { role: "user", text: msg, ts: Date.now() };
     setMessages((m) => [...m, optimistic]);
     try {
-      const r = await api<{ user: ChatMessage; assistant: ChatMessage }>(`/api/chat/${id}/message`, { text: msg });
+      const r = await api<{ user: ChatMessage; assistant: ChatMessage; mistakes: (MistakeData & { id: string })[] }>(`/api/chat/${id}/message`, { text: msg });
+      if (app.settings.autoCards) {
+        // Every correction becomes a flashcard right away: your own mistakes are the highest-value material.
+        for (const m of r.mistakes ?? []) {
+          const { id: mid, ...data } = m;
+          const cardId = await createNote({ it: m.corrected, en: m.meaningEn || m.explanation || m.corrected, notes: m.explanation, source: "mistake" });
+          await put<MistakeData>("mistakes", mid, { ...data, cardId });
+        }
+      }
       setMessages((m) => [...m.slice(0, -1), r.user, r.assistant]);
       setTyping(false);
       if (app.settings.autoplay) void speak(r.assistant.text, { rate: app.ttsRate });
@@ -234,7 +244,7 @@ function Chat({ app, id, conv, onClose }: { app: AppCtx; id: string; conv: Conve
               {m.role === "assistant" && showEn[i] && <div className="en">{m.en}</div>}
               {m.role === "assistant" && m.help && <div className="help-note">💡 {m.help}</div>}
             </div>
-            {m.corrections?.map((c, j) => <CorrectionNote key={j} c={c} convId={id} />)}
+            {m.corrections?.map((c, j) => <CorrectionNote key={j} c={c} convId={id} auto={app.settings.autoCards} />)}
           </div>
         ))}
         {sending && (
@@ -349,11 +359,11 @@ function Chat({ app, id, conv, onClose }: { app: AppCtx; id: string; conv: Conve
   );
 }
 
-function CorrectionNote({ c, convId }: { c: Correction; convId: string }) {
-  const [state, setState] = useState<"idle" | "added">("idle");
+function CorrectionNote({ c, convId, auto }: { c: Correction; convId: string; auto: boolean }) {
+  const [state, setState] = useState<"idle" | "added">(auto ? "added" : "idle");
   return (
     <div className="correction pop-in">
-      <div className="correction-label">💡 More natural</div>
+      <div className="correction-label">{c.recurring ? "🔁 Repeated mistake" : "💡 More natural"}</div>
       <div className="correction-line">
         <s>{c.original}</s>
       </div>
@@ -399,8 +409,8 @@ function Summary({ app, conv, onClose }: { app: AppCtx; conv: ConversationData; 
             <span>replies</span>
           </div>
           <div className="stat-bubble c-amber">
-            <b>{s?.top_mistakes.length ?? 0}</b>
-            <span>to work on</span>
+            <b>{conv.talkShare ?? 0}%</b>
+            <span>you talked</span>
           </div>
         </div>
       </div>

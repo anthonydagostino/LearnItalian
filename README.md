@@ -7,7 +7,15 @@ A self-hosted PWA that runs a daily Italian study session and makes you speak ou
 - **Today:** the day's checklist, built from your curriculum week. A Full day is about 2 hours; a **Short day** is 30 minutes and still keeps your streak. Shows a countdown to your target date, your streak, and total hours. Tapping a block starts a timer, and **Finish** logs the time.
 - **Flashcards:** the FSRS scheduler with a seed deck of about 1,340 notes (roughly 940 words and 400 phrases) in 18 topics. Every note has Italian↔English cards, an example sentence, and it-IT text-to-speech. English→Italian cards use **speak the answer**: you say it, the app transcribes and grades it, and you can override the grade.
 - **Talk:** a voice conversation with Claude in 10 role-play scenarios. Difficulty follows your curriculum week. Corrections appear inline under your messages. There's a **Help** button, and an end-of-session summary of your top 3 to 5 mistakes. Each correction is one tap away from becoming a flashcard.
-- **Quick drills:** 5-minute Duolingo-style rounds built from your own deck: match pairs, what does it mean, build the sentence from word tiles, tap what you hear, and **say it out loud**. Instant feedback with sounds, and missed items come back at the end of the round. The time is logged automatically.
+- **Built for learning speed, not fun:**
+  - Cards are English→Italian only by default (production first). That halves the review load, and production practice also builds recognition. Italian→English is optional.
+  - The most-forgotten cards come first, so stopping early still covers what matters most.
+  - Two buttons (Forgot / Knew it). The app moves on automatically when you say the answer right.
+  - Every conversation correction becomes a flashcard automatically.
+  - The AI partner keeps its own turns short so you do most of the talking. It deliberately steers toward your weak words and recent mistakes, and flags a mistake you've made before.
+  - Progress shows efficiency numbers (production words learned, words per study hour, 7-day recall, seconds per card, your share of the talking) with advice on what to change.
+  - Confetti and sounds are off by default.
+- **Weak-spot drills (formerly Quick drills):** 5-minute rounds aimed at the cards you keep forgetting and your mistakes, mostly production: build the sentence from word tiles, **say it out loud**, tap what you hear, and what does it mean. Instant feedback with sounds, and missed items come back at the end of the round. The time is logged automatically.
 - **Your path:** a 9-week map from "ciao" to the goal (a 20 to 30 minute conversation), showing where you are and what each week covers.
 - **What you can say:** a skill tracker for each real-world situation (introducing yourself, your job, restaurant, hotel, trains, directions, shopping, pharmacy, small talk, long conversations). You earn stars only by holding real conversations (6+ replies per session), not by tapping tiles. The stars also appear on the Talk tiles.
 - **Shadowing:** hear a sentence, repeat it, then hear the model and your recording back to back. If server speech-to-text is set up, words it couldn't match are highlighted.

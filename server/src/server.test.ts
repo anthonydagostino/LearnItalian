@@ -66,10 +66,20 @@ test("stats: streak counts consecutive days with >= 30 min", async () => {
 });
 
 test("mock conversation records corrections as mistakes", async () => {
-  const start = (await app.inject({ method: "POST", url: "/api/chat/start", payload: { scenario: "introductions", week: 1 } })).json();
+  const start = (
+    await app.inject({
+      method: "POST",
+      url: "/api/chat/start",
+      payload: { scenario: "introductions", week: 1, focus: { words: ["il conto", 42, "x".repeat(200)], mistakes: ["ho 35 anni"] } },
+    })
+  ).json();
   assert.ok(start.id);
+  assert.deepEqual(start.conversation.focus.mistakes, ["ho 35 anni"]);
+  assert.equal(start.conversation.focus.words.length, 2, "non-strings dropped");
+  assert.equal(start.conversation.focus.words[1].length, 80, "long entries truncated");
   const msg = (await app.inject({ method: "POST", url: `/api/chat/${start.id}/message`, payload: { text: "io sono 35 anni" } })).json();
   assert.equal(msg.mistakes.length, 1);
   const end = (await app.inject({ method: "POST", url: `/api/chat/${start.id}/end`, payload: {} })).json();
   assert.ok(end.conversation.summary);
+  assert.ok(end.conversation.talkShare > 0 && end.conversation.talkShare <= 100);
 });

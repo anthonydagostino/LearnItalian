@@ -39,6 +39,7 @@ export interface ReviewData {
   ts: number;
   mode: "flip" | "speak";
   heard?: string;
+  ms?: number; // time spent on the card
 }
 
 export type BlockKind = "lesson" | "flashcards" | "speaking" | "shadowing" | "listening" | "review" | "tutor" | "other";
@@ -79,6 +80,7 @@ export interface MistakeData {
   cardId?: string;
   reviewedAt?: number;
   conversationId?: string;
+  recurring?: boolean;
 }
 
 export interface TutorData {
@@ -104,6 +106,15 @@ export interface Settings {
   lessonNext: number;
   speakAnswers: boolean;
   sounds: boolean;
+  /** "production" = English→Italian only (fastest path to speaking); "both" adds Italian→English cards. */
+  cardDirections: "production" | "both";
+  /** "two" = Forgot / Got it (fastest); "four" = Again / Hard / Good / Easy. */
+  grading: "two" | "four";
+  /** Move on automatically when you say the answer correctly. */
+  autoAdvance: boolean;
+  /** Turn every conversation correction into a flashcard automatically. */
+  autoCards: boolean;
+  celebrations: boolean;
   autoplay: boolean;
 }
 
@@ -121,6 +132,7 @@ export interface Correction {
   meaning_en: string;
   explanation_en: string;
   type: MistakeType;
+  recurring?: boolean;
 }
 
 export interface ChatMessage {
@@ -146,6 +158,8 @@ export interface ConversationData {
     focus_next: string;
   };
   speakingSeconds?: number;
+  talkShare?: number;
+  focus?: { words: string[]; mistakes: string[] };
   date: string;
 }
 

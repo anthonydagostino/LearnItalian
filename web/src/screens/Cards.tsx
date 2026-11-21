@@ -39,8 +39,9 @@ export default function Cards({ app, params }: { app: AppCtx; params: URLSearchP
       week: app.n,
       newPerDay: app.settings.newPerDay,
       reviewCap: app.settings.reviewCap,
+      directions: app.settings.cardDirections,
     });
-  }, [cards, srsRows, reviews, app.today, app.n, app.settings.newPerDay, app.settings.reviewCap, app.cur]);
+  }, [cards, srsRows, reviews, app.today, app.n, app.settings.newPerDay, app.settings.reviewCap, app.settings.cardDirections, app.cur]);
 
   if (browse) return <Browse cards={cards ?? []} onClose={() => (location.hash = "#/cards")} />;
   if (!info) return <div className="screen">Loading…</div>;
@@ -110,13 +111,14 @@ export default function Cards({ app, params }: { app: AppCtx; params: URLSearchP
       <button className="drill-entry" onClick={() => (location.hash = "#/drill")}>
         <span className="tile-emoji">🎯</span>
         <span className="grow">
-          <b>Quick drill</b>
-          <small>Match, build sentences, listen & speak — 5 min</small>
+          <b>Weak-spot drill</b>
+          <small>Your most-missed words and mistakes: build, listen & speak — 5 min</small>
         </span>
         <Icon name="play" size={18} />
       </button>
       <p className="muted small center">
-        {app.settings.newPerDay} new words a day · English→Italian cards {app.settings.speakAnswers ? "ask you to say the answer out loud 🎤" : "are flip cards"}
+        {app.settings.newPerDay} new words a day · {app.settings.cardDirections === "production" ? "English→Italian only (production first)" : "both directions"}
+        {app.settings.speakAnswers ? " · say answers out loud" : ""}
       </p>
       <a className="btn ghost full" href="#/cards?browse=1">
         🔎 Browse & add your own cards
@@ -139,6 +141,8 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   const shownAt = useRef(Date.now());
   const sessionStart = useRef(Date.now());
   const logged = useRef(false);
+  const grading = useRef(false);
+  const gradeRef = useRef<(g: Grade) => void>(() => {});
   const finish = async () => {
     if (!logged.current && count > 0) {
       logged.current = true;
@@ -161,6 +165,7 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
 
   useEffect(() => {
     if (!item) return;
+    grading.current = false;
     setRevealed(false);
     setHeard(null);
     setInterim("");
@@ -171,6 +176,13 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
     if (c && c.dir === "it2en" && app.settings.autoplay) void speak(c.it, { rate: app.ttsRate });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item?.id, idx]);
+
+  useEffect(() => {
+    if (!heard || heard.verdict !== "correct" || !app.settings.autoAdvance) return;
+    const t = setTimeout(() => gradeRef.current(Rating.Good), 1600);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [heard]);
 
   if (!item || !card) {
     return (
@@ -217,7 +229,8 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   }
 
   async function grade(g: Grade) {
-    if (!srs || !card) return;
+    if (!srs || !card || grading.current) return;
+    grading.current = true;
     if (g >= Rating.Good) sfx.correct();
     else if (g === Rating.Again) sfx.wrong();
     else sfx.tap();
@@ -231,6 +244,7 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
       ts: now.getTime(),
       mode: heard ? "speak" : "flip",
       heard: heard?.text,
+      ms: Math.min(Date.now() - shownAt.current, 120_000),
     });
     if (g === Rating.Again && card.dir === "en2it") {
       const existing = (await all<MistakeData>("mistakes")).some((m) => m.data.cardId === item.id && m.data.date === app.today);
@@ -252,6 +266,9 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
     setQueue(q);
     setIdx(idx + 1);
   }
+
+  gradeRef.current = (g: Grade) => void grade(g);
+  const autoNext = !!heard && heard.verdict === "correct" && app.settings.autoAdvance;
 
   const intervals = srs ? previewIntervals(srs) : null;
   const isProd = card.dir === "en2it";
@@ -344,10 +361,11 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
           </button>
         )
       ) : (
-        <div className="grades">
-          {([Rating.Again, Rating.Hard, Rating.Good, Rating.Easy] as Grade[]).map((g) => (
+        <div className={`grades ${app.settings.grading === "two" ? "two" : ""}`}>
+          {autoNext && <div className="auto-next">Correct — next card in a moment. Tap a button to override.</div>}
+          {((app.settings.grading === "two" ? [Rating.Again, Rating.Good] : [Rating.Again, Rating.Hard, Rating.Good, Rating.Easy]) as Grade[]).map((g) => (
             <button key={g} className={`grade g${g} ${suggested === g ? "suggested" : ""}`} onClick={() => grade(g)}>
-              <b>{labels[g]}</b>
+              <b>{app.settings.grading === "two" ? (g === Rating.Again ? "Forgot" : "Knew it") : labels[g]}</b>
               <span>{intervals?.[g]}</span>
             </button>
           ))}

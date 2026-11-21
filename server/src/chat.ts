@@ -24,6 +24,7 @@ const Correction = z.object({
   meaning_en: z.string().describe("Short English meaning of the corrected phrase"),
   explanation_en: z.string().describe("One short sentence in English explaining the fix"),
   type: z.enum(MISTAKE_TYPES),
+  recurring: z.boolean().describe("True if this repeats one of the learner's recent mistakes listed in the system prompt"),
 });
 
 const TurnSchema = z.object({
@@ -79,7 +80,25 @@ export interface Conversation {
   messages: DisplayMessage[];
   summary?: z.infer<typeof SummarySchema>;
   speakingSeconds?: number;
+  talkShare?: number;
+  focus?: Focus;
   date: string;
+}
+
+export interface Focus {
+  words: string[];
+  mistakes: string[];
+}
+
+function cleanFocus(f: unknown): Focus {
+  const list = (x: unknown) =>
+    (Array.isArray(x) ? x : [])
+      .filter((s): s is string => typeof s === "string")
+      .map((s) => s.replace(/[\n\r]+/g, " ").trim().slice(0, 80))
+      .filter(Boolean)
+      .slice(0, 12);
+  const o = (f ?? {}) as Record<string, unknown>;
+  return { words: list(o.words), mistakes: list(o.mistakes) };
 }
 
 let client: Anthropic | null = null;
@@ -96,7 +115,7 @@ function weekInfo(weekNum: number) {
   return { week, level };
 }
 
-function systemPrompt(scenarioKey: string, weekNum: number) {
+function systemPrompt(scenarioKey: string, weekNum: number, focus?: Focus) {
   const cur = curriculum();
   const scenario = cur.scenarios[scenarioKey] ?? cur.scenarios.free;
   const { week, level } = weekInfo(weekNum);
@@ -127,6 +146,20 @@ Stay in character for the whole conversation. Never break role to lecture; corre
 - Use standard, contemporary Italian. Use the register that fits the role (a waiter or clerk uses Lei; a peer at a meetup uses tu).
 - Keep the conversation flowing. Do not ask more than one question at a time.
 
+## Maximize the learner's speaking time (this is the whole point)
+- The learner should do most of the talking. Keep your own turns short.
+- Ask open questions that need a full-sentence answer, not yes/no questions. Follow up on what they actually said.
+- If the learner answers with a single word, nudge them to say a full sentence.
+${
+  focus && (focus.words.length || focus.mistakes.length)
+    ? `
+## Recycle what they're learning
+Over the conversation, naturally create situations where the learner needs to use these. Don't list them and don't quiz; just steer the conversation.
+${focus.words.length ? `- Words and phrases they're learning: ${focus.words.join("; ")}` : ""}
+${focus.mistakes.length ? `- Correct forms of their recent mistakes (set "recurring": true if they make one of these mistakes again): ${focus.mistakes.join("; ")}` : ""}
+`
+    : ""
+}
 ## Corrections
 - Look only at the learner's latest message. Report at most the 2 most useful corrections, focusing on grammar, word choice, gender/articles, prepositions and word order.
 - The learner's message usually comes from speech recognition. Ignore capitalization, punctuation and missing accents, and do not correct something that is plausibly a transcription error.
@@ -216,9 +249,9 @@ function mockTurn(userText: string | null, n: number): Turn {
   const [it, en] = lines[n % lines.length];
   const corrections =
     userText && /\bio sono (\d+) anni\b/i.test(userText)
-      ? [{ original: userText, corrected: userText.replace(/io sono (\d+) anni/i, "ho $1 anni"), meaning_en: "I am N years old", explanation_en: "Italian uses avere (to have) for age.", type: "verb_conjugation" as const }]
+      ? [{ original: userText, corrected: userText.replace(/io sono (\d+) anni/i, "ho $1 anni"), meaning_en: "I am N years old", explanation_en: "Italian uses avere (to have) for age.", type: "verb_conjugation" as const, recurring: false }]
       : userText && /\bil acqua\b/i.test(userText)
-        ? [{ original: "il acqua", corrected: "l'acqua", meaning_en: "the water", explanation_en: "Use l' before a vowel.", type: "gender_articles" as const }]
+        ? [{ original: "il acqua", corrected: "l'acqua", meaning_en: "the water", explanation_en: "Use l' before a vowel.", type: "gender_articles" as const, recurring: false }]
         : [];
   return { corrections, reply_it: it, reply_en: en, help_en: n === 0 ? "come ti chiami = what's your name" : "" };
 }
@@ -237,6 +270,7 @@ function saveMistakes(convId: string, corrections: Turn["corrections"], source =
       corrected: c.corrected,
       meaningEn: c.meaning_en,
       explanation: c.explanation_en,
+      recurring: c.recurring,
       date: localDate(),
       ts: now,
     };
@@ -262,7 +296,8 @@ function sendError(reply: FastifyReply, e: unknown) {
 export function registerChat(app: FastifyInstance) {
   app.post("/api/chat/start", async (req, reply) => {
     if (!aiEnabled()) return reply.code(503).send({ error: "AI is not configured. Set ANTHROPIC_API_KEY in .env." });
-    const { scenario = "free", week = 1 } = (req.body ?? {}) as { scenario?: string; week?: number };
+    const { scenario = "free", week = 1, focus: rawFocus } = (req.body ?? {}) as { scenario?: string; week?: number; focus?: unknown };
+    const focus = cleanFocus(rawFocus);
     const cur = curriculum();
     const scenarioKey = cur.scenarios[scenario] ? scenario : "free";
     const { week: w } = weekInfo(Number(week));
@@ -275,7 +310,7 @@ export function registerChat(app: FastifyInstance) {
         turn = mockTurn(null, 0);
         apiMessages.push({ role: "assistant", content: JSON.stringify(turn) });
       } else {
-        const r = await callClaude({ system: systemPrompt(scenarioKey, w.week), messages: apiMessages, schema: TurnSchema, effort: config.claudeEffort });
+        const r = await callClaude({ system: systemPrompt(scenarioKey, w.week, focus), messages: apiMessages, schema: TurnSchema, effort: config.claudeEffort });
         turn = r.parsed;
         apiMessages.push({ role: "assistant", content: r.content });
       }
@@ -286,6 +321,7 @@ export function registerChat(app: FastifyInstance) {
         level: w.level,
         startedAt: now,
         date: localDate(),
+        focus,
         messages: [{ role: "assistant", text: turn.reply_it, en: turn.reply_en, help: turn.help_en, ts: Date.now() }],
       };
       saveApi(id, apiMessages);
@@ -312,7 +348,7 @@ export function registerChat(app: FastifyInstance) {
         turn = mockTurn(userMsg.text, conv.messages.length);
         apiMessages.push({ role: "assistant", content: JSON.stringify(turn) });
       } else {
-        const r = await callClaude({ system: systemPrompt(conv.scenario, conv.week), messages: apiMessages, schema: TurnSchema, effort: config.claudeEffort });
+        const r = await callClaude({ system: systemPrompt(conv.scenario, conv.week, conv.focus), messages: apiMessages, schema: TurnSchema, effort: config.claudeEffort });
         turn = r.parsed;
         apiMessages.push({ role: "assistant", content: r.content });
       }
@@ -371,6 +407,9 @@ export function registerChat(app: FastifyInstance) {
     const end = Date.now();
     conv.endedAt = end;
     conv.speakingSeconds = speakingSeconds(conv, end);
+    const words = (role: string) => conv.messages.filter((m) => m.role === role).reduce((n, m) => n + m.text.split(/\s+/).filter(Boolean).length, 0);
+    const mine = words("user");
+    conv.talkShare = mine ? Math.round((mine / (mine + words("assistant"))) * 100) : 0;
     const corrections = conv.messages.flatMap((m) => m.corrections ?? []);
     const userTurns = conv.messages.filter((m) => m.role === "user").length;
     try {

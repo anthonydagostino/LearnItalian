@@ -2564,3 +2564,47 @@ main {
 .path-row.is-current {
   margin-top: 40px;
 }
+
+/* ================= Efficiency ================= */
+.tile.warn {
+  box-shadow: 0 0 0 2px var(--warn), var(--shadow);
+}
+.tile.warn b {
+  color: var(--warn);
+}
+.small-tiles {
+  margin-top: 10px;
+}
+.small-tiles .tile b {
+  font-size: 1.1rem;
+}
+.advice {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+.advice li {
+  margin: 6px 0;
+}
+.auto-next {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-weight: 800;
+  color: var(--ok);
+  font-size: 0.85rem;
+}
+.grades.two {
+  grid-template-columns: 1fr 1fr;
+}
+.grades.two .grade {
+  min-height: 72px;
+  font-size: 1.1rem;
+}
+/* No idle animations: they don't help you learn. */
+.next-emoji,
+.hero-stat.lit .flame,
+.login-logo,
+.you-are-here,
+.spin-slow,
+.path-node.current {
+  animation: none !important;
+}

@@ -162,7 +162,12 @@ export function Ring({ value, size = 112, stroke = 11, children }: { value: numb
 
 // ---------- Celebrations ----------
 const COLORS = ["#ff5a47", "#ffc43d", "#2bb673", "#4f8cff", "#a66cff", "#ff7eb6"];
+let celebrationsOn = false;
+export function setCelebrations(on: boolean) {
+  celebrationsOn = on;
+}
 export function celebrate(big = false) {
+  if (!celebrationsOn) return;
   void confetti({
     particleCount: big ? 160 : 60,
     spread: big ? 100 : 70,
@@ -224,4 +229,4 @@ export function greeting(d = new Date()) {
 }
 
 const CHEERS = ["Bravo!", "Perfetto!", "Ottimo!", "Fantastico!", "Grande!", "Bellissimo!", "Così si fa!"];
-export const cheer = () => CHEERS[Math.floor(Math.random() * CHEERS.length)];
+export const cheer = () => (celebrationsOn ? CHEERS[Math.floor(Math.random() * CHEERS.length)] : "✓");
