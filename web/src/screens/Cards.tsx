@@ -6,7 +6,8 @@ import { speak, startListening, unlockAudio, type Listening } from "../speech";
 import { addMistake, type AppCtx } from "../state";
 import { uid } from "../time";
 import type { CardData, MistakeData, ReviewData, SrsData } from "../types";
-import { Empty, SpeakBtn } from "../ui";
+import { Empty, Header, SpeakBtn } from "../ui";
+import { celebrate, cheer, Icon, toast } from "../look";
 
 interface QItem {
   id: string;
@@ -65,42 +66,50 @@ export default function Cards({ app, params }: { app: AppCtx; params: URLSearchP
     setSession(q);
   };
 
+  const total = info.due.length + info.fresh.length;
   return (
     <div className="screen">
-      <h2>Flashcards</h2>
-      <div className="stats-row">
-        <div className="stat">
+      <Header title="Flashcards" sub="A few minutes a day, every day." />
+      <div className="stat-bubbles">
+        <div className="stat-bubble c-purple">
           <b>{info.due.length}</b>
-          <span>due</span>
+          <span>to review</span>
         </div>
-        <div className="stat">
+        <div className="stat-bubble c-blue">
           <b>{info.fresh.length}</b>
-          <span>new today</span>
+          <span>new words</span>
         </div>
-        <div className="stat">
+        <div className="stat-bubble c-green">
           <b>{info.learned}</b>
           <span>learned</span>
         </div>
       </div>
-      {info.due.length + info.fresh.length > 0 ? (
-        <button className="btn primary big" onClick={start}>
-          ▶ Study {info.due.length + info.fresh.length} cards
+      {total > 0 ? (
+        <button className="next-card c-purple" onClick={start}>
+          <div className="next-top">
+            <span className="next-label">Ready</span>
+            <span className="next-time">~{Math.max(1, Math.round(total * 0.25))} min</span>
+          </div>
+          <div className="next-emoji">🃏</div>
+          <h2>Study {total} cards</h2>
+          <p>
+            {info.due.length ? `${info.due.length} reviews` : "No reviews"}
+            {info.fresh.length ? ` + ${info.fresh.length} new from this week's topics` : ""}
+          </p>
+          <span className="next-cta">
+            Start <Icon name="play" size={16} />
+          </span>
         </button>
       ) : (
-        <Empty>
-          All done for today. 🎉
-          <br />
-          <span className="muted small">
-            {info.reviewsToday} reviews and {info.newToday} new cards today.
-          </span>
+        <Empty emoji="🌟" title="All caught up!">
+          {info.reviewsToday} reviews and {info.newToday} new words today. Come back tomorrow.
         </Empty>
       )}
-      <p className="muted small">
-        New cards come from this week's topics first. Limits: {app.settings.newPerDay} new/day, {app.settings.reviewCap} reviews/day
-        (change in Settings). English→Italian cards {app.settings.speakAnswers ? "use speak-the-answer" : "are flip cards"}.
+      <p className="muted small center">
+        {app.settings.newPerDay} new words a day · English→Italian cards {app.settings.speakAnswers ? "ask you to say the answer out loud 🎤" : "are flip cards"}
       </p>
-      <a className="btn ghost" href="#/cards?browse=1">
-        🔎 Browse & add cards
+      <a className="btn ghost full" href="#/cards?browse=1">
+        🔎 Browse & add your own cards
       </a>
     </div>
   );
@@ -123,6 +132,11 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   const card = item ? cards.get(item.id) : undefined;
 
   useEffect(() => {
+    if (!item && count > 0) celebrate(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [!item]);
+
+  useEffect(() => {
     if (!item) return;
     setRevealed(false);
     setHeard(null);
@@ -138,13 +152,12 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   if (!item || !card) {
     return (
       <div className="screen">
-        <Empty>
-          Session complete: {count} cards reviewed. 🎉
-          <br />
-          <button className="btn primary" onClick={onDone}>
-            Back
-          </button>
+        <Empty emoji="🏆" title={`${cheer()} Session complete`}>
+          You reviewed {count} cards.
         </Empty>
+        <button className="btn primary big full" onClick={onDone}>
+          Back to flashcards
+        </button>
       </div>
     );
   }
@@ -220,18 +233,29 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   const suggested: Grade | null = heard ? (heard.verdict === "correct" ? Rating.Good : heard.verdict === "close" ? Rating.Hard : Rating.Again) : null;
   const canSpeak = isProd && app.settings.speakAnswers;
 
+  const labels = ["", "Forgot", "Hard", "Got it", "Easy"];
   return (
     <div className="screen study">
-      <div className="row between">
-        <button className="btn ghost small" onClick={onDone}>
-          ← End
+      <div className="study-top">
+        <button className="icon-btn round" onClick={onDone} aria-label="End session">
+          <Icon name="close" size={20} />
         </button>
-        <span className="muted small">
-          {remaining} left{item.isNew ? " · new" : ""} · {isProd ? "English → Italian" : "Italian → English"}
-        </span>
+        <div className="study-progress">
+          <div style={{ width: `${(idx / Math.max(queue.length, 1)) * 100}%` }} />
+        </div>
+        <span className="muted small">{remaining}</span>
       </div>
 
-      <div className={`flashcard ${revealed ? "revealed" : ""}`} onClick={() => !revealed && !canSpeak && reveal()}>
+      <div className="study-tags">
+        <span className={`tag ${isProd ? "c-tomato" : "c-blue"}`}>{isProd ? "🇺🇸 → 🇮🇹 Say it in Italian" : "🇮🇹 → 🇺🇸 What does it mean?"}</span>
+        {item.isNew && <span className="tag c-amber">✨ New</span>}
+      </div>
+
+      <div
+        key={`${item.id}-${idx}-${revealed}`}
+        className={`flashcard ${revealed ? "revealed flip-in" : "pop-in"}`}
+        onClick={() => !revealed && reveal()}
+      >
         <div className="front">
           {isProd ? (
             <div className="prompt">{card.en}</div>
@@ -240,7 +264,7 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
               {card.it} <SpeakBtn text={card.it} rate={app.ttsRate} />
             </div>
           )}
-          {isProd && !revealed && <div className="muted small">Say it in Italian{canSpeak ? " — tap the mic" : ""}</div>}
+          {!revealed && <div className="tap-hint">Tap to flip</div>}
         </div>
         {revealed && (
           <div className="back">
@@ -253,11 +277,13 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
             )}
             {card.ex && (
               <div className="example">
-                <span className="it">{card.ex}</span> <SpeakBtn text={card.ex} rate={app.ttsRate} />
+                <div>
+                  <span className="it">{card.ex}</span> <SpeakBtn text={card.ex} rate={app.ttsRate} />
+                </div>
                 <div className="muted small">{card.exEn}</div>
               </div>
             )}
-            {card.notes && <div className="notes small">{card.notes}</div>}
+            {card.notes && <div className="notes small">💡 {card.notes}</div>}
             {card.flag && <div className="flag small">⚠️ Unverified: {card.flag}</div>}
           </div>
         )}
@@ -265,30 +291,37 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
 
       {heard && (
         <div className={`heard ${heard.verdict}`}>
-          You said: <b>{heard.text || "(nothing heard)"}</b> —{" "}
-          {heard.verdict === "correct" ? "✓ correct" : heard.verdict === "close" ? "≈ close" : "✗ not quite"}
-          <div className="muted small">If transcription got it wrong, just pick the right grade below.</div>
+          <span className="heard-emoji">{heard.verdict === "correct" ? "🎯" : heard.verdict === "close" ? "👌" : "🤔"}</span>
+          <div>
+            <b>{heard.verdict === "correct" ? "Correct!" : heard.verdict === "close" ? "Almost!" : "Not quite"}</b> I heard “{heard.text || "…"}”
+            <div className="small muted">Misheard? Just pick the right button below.</div>
+          </div>
         </div>
       )}
-      {listening && <div className="interim">{interim || "Listening…"}</div>}
+      {listening && <div className="interim">{interim || "Listening… tap stop when you're done"}</div>}
       {err && <div className="error">{err}</div>}
 
       {!revealed ? (
-        <div className="row center">
-          {canSpeak && (
-            <button className={`mic ${listening ? "on" : ""}`} onClick={micToggle} disabled={busy}>
-              {busy ? "…" : listening ? "■" : "🎤"}
+        canSpeak ? (
+          <div className="speak-zone">
+            <button className={`mic big-mic ${listening ? "on" : ""}`} onClick={micToggle} disabled={busy} aria-label={listening ? "Stop" : "Speak the answer"}>
+              {busy ? <span className="spinner" /> : <Icon name={listening ? "stop" : "mic"} size={34} />}
             </button>
-          )}
-          <button className="btn big" onClick={reveal}>
+            <span className="muted small">{listening ? "Tap to stop" : "Tap & say it in Italian"}</span>
+            <button className="linkish" onClick={reveal}>
+              or just show me
+            </button>
+          </div>
+        ) : (
+          <button className="btn primary big full" onClick={reveal}>
             Show answer
           </button>
-        </div>
+        )
       ) : (
         <div className="grades">
           {([Rating.Again, Rating.Hard, Rating.Good, Rating.Easy] as Grade[]).map((g) => (
             <button key={g} className={`grade g${g} ${suggested === g ? "suggested" : ""}`} onClick={() => grade(g)}>
-              <b>{["", "Again", "Hard", "Good", "Easy"][g]}</b>
+              <b>{labels[g]}</b>
               <span>{intervals?.[g]}</span>
             </button>
           ))}
@@ -319,12 +352,15 @@ function Browse({ cards, onClose }: { cards: { id: string; data: CardData }[]; o
 
   return (
     <div className="screen">
-      <div className="row between">
-        <h2>Browse cards</h2>
-        <button className="btn ghost small" onClick={onClose}>
-          Done
-        </button>
-      </div>
+      <Header
+        title="Your deck"
+        sub={`${notes.length} words & phrases`}
+        right={
+          <button className="btn small" onClick={onClose}>
+            Done
+          </button>
+        }
+      />
       <input className="search" placeholder={`Search ${notes.length} notes…`} value={q} onChange={(e) => setQ(e.target.value)} />
       <div className="row">
         <label className="check-inline">
@@ -347,6 +383,7 @@ function Browse({ cards, onClose }: { cards: { id: string; data: CardData }[]; o
             disabled={!form.it || !form.en}
             onClick={async () => {
               await createNote({ ...form, source: "manual" });
+              toast("Card added ✓");
               setForm({ it: "", en: "", ex: "", exEn: "" });
               setAdding(false);
             }}

@@ -4,6 +4,8 @@ import { useApp, useRoute } from "./state";
 import { startSyncLoop, sync, useSyncState } from "./sync";
 import { unlockAudio } from "./speech";
 import { TimerBar } from "./ui";
+import { Icon, Toasts } from "./look";
+import Welcome from "./screens/Welcome";
 import Today from "./screens/Today";
 import Cards from "./screens/Cards";
 import Talk from "./screens/Talk";
@@ -19,8 +21,9 @@ function Login({ onDone }: { onDone: () => void }) {
   const [err, setErr] = useState("");
   return (
     <div className="login">
+      <div className="login-logo">💬</div>
       <h1>Parla</h1>
-      <p className="muted">Your daily Italian speaking trainer</p>
+      <p className="muted">Speak Italian every day.</p>
       <form
         onSubmit={async (e) => {
           e.preventDefault();
@@ -34,7 +37,7 @@ function Login({ onDone }: { onDone: () => void }) {
         }}
       >
         <input type="password" autoFocus placeholder="Password" value={pw} onChange={(e) => setPw(e.target.value)} />
-        <button className="btn primary">Sign in</button>
+        <button className="btn primary big">Entra</button>
         {err && <p className="error">{err}</p>}
       </form>
     </div>
@@ -42,15 +45,16 @@ function Login({ onDone }: { onDone: () => void }) {
 }
 
 const TABS = [
-  { path: "/today", label: "Today", icon: "☀️" },
-  { path: "/cards", label: "Cards", icon: "🃏" },
-  { path: "/talk", label: "Talk", icon: "💬" },
-  { path: "/shadow", label: "Shadow", icon: "🎧" },
-  { path: "/more", label: "More", icon: "☰" },
+  { path: "/today", label: "Today", icon: "home" },
+  { path: "/cards", label: "Cards", icon: "cards" },
+  { path: "/talk", label: "Talk", icon: "chat" },
+  { path: "/shadow", label: "Shadow", icon: "headphones" },
+  { path: "/more", label: "More", icon: "grid" },
 ];
 
 export default function App() {
   const [needLogin, setNeedLogin] = useState(false);
+  const [welcomed, setWelcomed] = useState(() => localStorage.getItem("parla.welcomed") === "1");
   const route = useRoute();
   const app = useApp();
   const syncState = useSyncState();
@@ -81,21 +85,24 @@ export default function App() {
   if (!app)
     return (
       <div className="login">
+        <div className="login-logo spin-slow">🇮🇹</div>
         <h1>Parla</h1>
         <p className="muted">
           {syncState.status === "offline"
             ? "You're offline. Connect once to download your deck and plan."
             : syncState.status === "error"
               ? `Couldn't load data: ${syncState.error}`
-              : "Downloading your deck and plan…"}
+              : "Getting your words and plan ready…"}
         </p>
         {syncState.status !== "syncing" && (
           <button className="btn" onClick={() => void sync()}>
-            Retry
+            Try again
           </button>
         )}
       </div>
     );
+
+  if (!welcomed) return <Welcome app={app} onDone={() => setWelcomed(true)} />;
 
   const p = route.path;
   const screen =
@@ -113,13 +120,18 @@ export default function App() {
 
   return (
     <div className="app">
-      {syncState.status === "offline" && <div className="banner">Offline — changes will sync when you're back online</div>}
-      <main>{screen}</main>
+      {syncState.status === "offline" && <div className="banner">📴 Offline — your progress will sync when you're back</div>}
+      <main key={p.split("?")[0]} className="page-enter">
+        {screen}
+      </main>
       <TimerBar />
+      <Toasts />
       <nav className="tabs">
         {TABS.map((t) => (
           <a key={t.path} href={`#${t.path}`} className={activeTab === t.path ? "active" : ""}>
-            <span className="tab-icon">{t.icon}</span>
+            <span className="tab-icon">
+              <Icon name={t.icon} size={24} />
+            </span>
             <span>{t.label}</span>
           </a>
         ))}

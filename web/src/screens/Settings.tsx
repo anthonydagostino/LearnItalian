@@ -102,7 +102,21 @@ export default function SettingsScreen({ app }: { app: AppCtx }) {
 
   return (
     <div className="screen settings">
-      <h2>Settings</h2>
+      <header className="page-head">
+        <div>
+          <h1>Settings</h1>
+        </div>
+      </header>
+      <section className="card">
+        <b>You</b>
+        <label className="field">
+          <span>Your name</span>
+          <input value={s.name} onChange={(e) => set({ name: e.target.value })} />
+        </label>
+        <button className="btn small ghost" onClick={() => (localStorage.removeItem("parla.welcomed"), location.reload())}>
+          Show the welcome tour again
+        </button>
+      </section>
       <section className="card">
         <b>Schedule</b>
         <label className="field">

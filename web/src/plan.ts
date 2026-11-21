@@ -30,6 +30,7 @@ export interface Curriculum {
 }
 
 export const DEFAULT_SETTINGS: Settings = {
+  name: "Anthony",
   startDate: "",
   targetDate: "",
   newPerDay: 25,

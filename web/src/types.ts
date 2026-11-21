@@ -91,6 +91,7 @@ export interface TutorData {
 }
 
 export interface Settings {
+  name: string;
   startDate: string;
   targetDate: string;
   newPerDay: number;

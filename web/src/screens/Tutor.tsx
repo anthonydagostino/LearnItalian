@@ -4,7 +4,8 @@ import { put, useCollection } from "../db";
 import { logTime, type AppCtx } from "../state";
 import { prettyDate, uid } from "../time";
 import type { TutorData } from "../types";
-import { Stepper } from "../ui";
+import { Header, Stepper } from "../ui";
+import { celebrate, toast } from "../look";
 
 /** Parse lines like "la scadenza = deadline" or "la scadenza - deadline". */
 function parseWords(text: string) {
@@ -35,14 +36,15 @@ export default function Tutor({ app }: { app: AppCtx }) {
     await put<TutorData>("tutor", uid(), { date, minutes, platform, notes, newWords: parsed, timelogId });
     for (const w of parsed) await createNote({ it: w.it, en: w.en, source: "tutor" });
     setSaved(`Saved. ${parsed.length} new word${parsed.length === 1 ? "" : "s"} added to flashcards.`);
+    celebrate();
+    toast("Tutor session logged 🎉");
     setNotes("");
     setWords("");
   }
 
   return (
     <div className="screen">
-      <h2>Tutor sessions</h2>
-      <p className="muted small">Log iTalki/Preply sessions. Time counts toward your hours and speaking minutes; new words become flashcards.</p>
+      <Header title="Tutor sessions 👩‍🏫" sub="Log your iTalki/Preply lessons. New words become flashcards." />
       <div className="card">
         <label className="field">
           <span>Date</span>
@@ -65,7 +67,7 @@ export default function Tutor({ app }: { app: AppCtx }) {
           <textarea rows={4} value={words} placeholder={"la scadenza = deadline\nfare una pausa = to take a break"} onChange={(e) => setWords(e.target.value)} />
         </label>
         {words && <div className="muted small">{parsed.length} word(s) recognized</div>}
-        <button className="btn primary" onClick={save} disabled={minutes <= 0}>
+        <button className="btn primary big full" onClick={save} disabled={minutes <= 0}>
           Save session
         </button>
         {saved && <p className="ok">{saved}</p>}

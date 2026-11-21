@@ -4,7 +4,8 @@ import { patch, useCollection } from "../db";
 import type { AppCtx } from "../state";
 import { prettyDate } from "../time";
 import { MISTAKE_LABELS, type MistakeData, type MistakeType } from "../types";
-import { Empty, SpeakBtn } from "../ui";
+import { Empty, Header, SpeakBtn } from "../ui";
+import { toast } from "../look";
 
 export default function Mistakes({ app }: { app: AppCtx; params: URLSearchParams }) {
   const rows = useCollection<MistakeData>("mistakes");
@@ -23,6 +24,7 @@ export default function Mistakes({ app }: { app: AppCtx; params: URLSearchParams
   async function addCard(id: string, m: MistakeData) {
     const cardId = await createNote({ it: m.corrected, en: m.meaningEn || m.explanation || m.corrected, notes: m.explanation, source: "mistake" });
     await patch<MistakeData>("mistakes", id, (old) => ({ ...(old as MistakeData), cardId }));
+    toast("Added to your flashcards 🃏");
   }
   async function markReviewed(id: string) {
     await patch<MistakeData>("mistakes", id, (old) => ({ ...(old as MistakeData), reviewedAt: Date.now() }));
@@ -30,11 +32,11 @@ export default function Mistakes({ app }: { app: AppCtx; params: URLSearchParams
 
   return (
     <div className="screen">
-      <h2>Mistakes journal</h2>
-      <div className="mode-toggle">
+      <Header title="Mistakes" sub="Every mistake is a word you're about to learn." />
+      <div className="segmented small-seg">
         {(["review", "today", "all"] as const).map((f) => (
           <button key={f} className={filter === f ? "on" : ""} onClick={() => setFilter(f)}>
-            {f === "review" ? "To review" : f === "today" ? "Today" : "All"}
+            <b>{f === "review" ? "To review" : f === "today" ? "Today" : "All"}</b>
           </button>
         ))}
       </div>
@@ -48,29 +50,37 @@ export default function Mistakes({ app }: { app: AppCtx; params: URLSearchParams
           </button>
         ))}
       </div>
-      {!list.length && <Empty>{filter === "review" ? "Nothing to review. 🎉" : "No mistakes here yet."}</Empty>}
+      {!list.length && (
+        <Empty emoji={filter === "review" ? "✨" : "🌱"} title={filter === "review" ? "Nothing to review" : "No mistakes yet"}>
+          {filter === "review" ? "Nice! Talk with your partner to find new things to learn." : "They'll show up here as you practice."}
+        </Empty>
+      )}
       <div className="list">
         {list.map((m) => (
-          <div key={m.id} className={`list-item mistake ${m.data.reviewedAt ? "reviewed" : ""}`}>
+          <div key={m.id} className={`mistake-card t-${m.data.type} ${m.data.reviewedAt ? "reviewed" : ""}`}>
             <div className="grow">
-              <div>
-                <s>{m.data.original}</s> → <b className="it">{m.data.corrected}</b> <SpeakBtn text={m.data.corrected} rate={app.ttsRate} />
+              <span className="type-tag">{MISTAKE_LABELS[m.data.type] ?? m.data.type}</span>
+              <div className="correction-line">
+                <s>{m.data.original}</s>
+              </div>
+              <div className="correction-line">
+                <b className="it">{m.data.corrected}</b> <SpeakBtn text={m.data.corrected} rate={app.ttsRate} />
               </div>
               {m.data.explanation && <div className="small">{m.data.explanation}</div>}
               <div className="muted small">
-                {MISTAKE_LABELS[m.data.type] ?? m.data.type} · {m.data.source} · {prettyDate(m.data.date)}
+                From {m.data.source} · {prettyDate(m.data.date)}
               </div>
               <div className="row">
                 {m.data.cardId ? (
-                  <span className="muted small">✓ in flashcards</span>
+                  <span className="tool-chip on">✓ In flashcards</span>
                 ) : (
-                  <button className="btn tiny" onClick={() => addCard(m.id, m.data)}>
+                  <button className="tool-chip" onClick={() => addCard(m.id, m.data)}>
                     + Flashcard
                   </button>
                 )}
                 {!m.data.reviewedAt && (
-                  <button className="btn tiny ghost" onClick={() => markReviewed(m.id)}>
-                    Got it ✓
+                  <button className="tool-chip green" onClick={() => markReviewed(m.id)}>
+                    ✓ Got it
                   </button>
                 )}
               </div>

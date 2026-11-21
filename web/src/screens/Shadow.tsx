@@ -6,7 +6,8 @@ import { wordMatches } from "../srs";
 import { playBlob, speak, startRecording, transcribeOnServer, unlockAudio } from "../speech";
 import type { AppCtx } from "../state";
 import type { CardData, SrsData } from "../types";
-import { Empty } from "../ui";
+import { Empty, Header } from "../ui";
+import { Icon } from "../look";
 
 interface Sentence {
   it: string;
@@ -61,7 +62,7 @@ export default function Shadow({ app }: { app: AppCtx }) {
   const [slow, setSlow] = useState(false);
 
   if (!cards) return <div className="screen">Loading…</div>;
-  if (!sentences.length) return <Empty>No sentences yet.</Empty>;
+  if (!sentences.length) return <Empty emoji="🎧" title="No sentences yet" />;
   const s = sentences[i % sentences.length];
   const rate = slow ? Math.max(0.6, app.ttsRate - 0.2) : app.ttsRate;
   const canTranscribe = !!lastServerConfig()?.sttServer;
@@ -114,15 +115,17 @@ export default function Shadow({ app }: { app: AppCtx }) {
 
   return (
     <div className="screen shadow">
-      <div className="row between">
-        <h2>Shadowing</h2>
-        <span className="muted small">{reps} reps</span>
-      </div>
-      <p className="muted small">Listen, then repeat out loud, copying the rhythm and melody. You'll hear the model and then yourself.</p>
+      <Header title="Shadowing" sub="Listen, then say it out loud the same way." right={<span className="pill c-teal">🔁 {reps}</span>} />
 
-      <div className="flashcard">
+      <div className="steps">
+        <span className={!recording && !blob ? "on" : ""}>1 · Listen</span>
+        <span className={recording ? "on" : ""}>2 · Repeat</span>
+        <span className={blob && !recording ? "on" : ""}>3 · Compare</span>
+      </div>
+
+      <div key={i} className="flashcard shadow-card pop-in">
         {hideText ? (
-          <div className="prompt muted">🎧 Listen-only mode</div>
+          <div className="prompt muted">🎧 Just listen…</div>
         ) : heard !== null ? (
           <div className="prompt it">
             {wordMatches(heard, s.it).map((w, k) => (
@@ -135,46 +138,51 @@ export default function Shadow({ app }: { app: AppCtx }) {
           <div className="prompt it">{s.it}</div>
         )}
         {showEn && <div className="muted">{s.en}</div>}
-        {heard !== null && (
-          <div className="muted small">
-            Heard: “{heard || "…"}” — words in red weren't recognized (could be pronunciation or just transcription).
-          </div>
-        )}
+        {heard !== null && <div className="muted small">I heard “{heard || "…"}”. Red words didn't come through clearly.</div>}
       </div>
 
       {err && <div className="error">{err}</div>}
 
-      <div className="row center">
-        <button className="btn big" onClick={() => (unlockAudio(), speak(s.it, { rate }))}>
-          ▶ Listen
+      <div className="control-row">
+        <button className="ctrl c-blue" onClick={() => (unlockAudio(), speak(s.it, { rate }))}>
+          <span className="ctrl-circle">
+            <Icon name="play" size={28} />
+          </span>
+          Listen
         </button>
-        <button className={`mic ${recording ? "on" : ""}`} onClick={toggleRecord}>
-          {recording ? "■" : "🎤"}
+        <button className={`ctrl c-tomato ${recording ? "rec" : ""}`} onClick={toggleRecord}>
+          <span className="ctrl-circle big">
+            <Icon name={recording ? "stop" : "mic"} size={34} />
+          </span>
+          {recording ? "Stop" : "Repeat"}
         </button>
-        <button className="btn big" onClick={next}>
-          Next →
+        <button className="ctrl c-gray" onClick={next}>
+          <span className="ctrl-circle">
+            <Icon name="next" size={26} />
+          </span>
+          Next
         </button>
       </div>
       {blob && (
         <div className="row center">
-          <button className="btn small" onClick={async () => (await speak(s.it, { rate }), await playBlob(blob))}>
-            ↻ Compare again
+          <button className="chip-btn" onClick={async () => (await speak(s.it, { rate }), await playBlob(blob))}>
+            <Icon name="repeat" size={16} /> Compare again
           </button>
-          <button className="btn small ghost" onClick={() => playBlob(blob)}>
-            ▶ Just me
+          <button className="chip-btn" onClick={() => playBlob(blob)}>
+            <Icon name="play" size={14} /> Just me
           </button>
         </div>
       )}
-      <div className="row center">
-        <label className="check-inline">
-          <input type="checkbox" checked={slow} onChange={(e) => setSlow(e.target.checked)} /> Slower
-        </label>
-        <label className="check-inline">
-          <input type="checkbox" checked={hideText} onChange={(e) => setHideText(e.target.checked)} /> Hide text
-        </label>
-        <label className="check-inline">
-          <input type="checkbox" checked={showEn} onChange={(e) => setShowEn(e.target.checked)} /> English
-        </label>
+      <div className="toggles">
+        <button className={`toggle ${slow ? "on" : ""}`} onClick={() => setSlow(!slow)}>
+          🐢 Slower
+        </button>
+        <button className={`toggle ${hideText ? "on" : ""}`} onClick={() => setHideText(!hideText)}>
+          🙈 Hide text
+        </button>
+        <button className={`toggle ${showEn ? "on" : ""}`} onClick={() => setShowEn(!showEn)}>
+          🇺🇸 English
+        </button>
       </div>
     </div>
   );

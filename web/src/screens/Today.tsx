@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { remove, patch, useCollection, useDoc } from "../db";
+import { useEffect, useRef, useState } from "react";
+import { patch, remove, useCollection, useDoc } from "../db";
+import { ACTIVITY, Bubble, celebrate, cheer, greeting, Icon, Ring, toast } from "../look";
 import { blocksFor, emptyPlan, minutesByDate, streak, STREAK_MIN } from "../plan";
 import { go, logTime, saveSettings, setDayMode, useActiveBlock, type AppCtx } from "../state";
-import { daysBetween, fmtMinutes, prettyDate } from "../time";
+import { daysBetween, prettyDate } from "../time";
 import type { DayplanData, PlanBlock, TimelogData } from "../types";
 import { LogTimeModal, Modal, Stepper, startBlock } from "../ui";
 
@@ -11,35 +12,39 @@ function LessonModal({ app, block, onClose }: { app: AppCtx; block: PlanBlock; o
   const [lesson, setLesson] = useState(String(app.settings.lessonNext));
   const [min, setMin] = useState(block.minutes);
   return (
-    <Modal title="Log your lesson" onClose={onClose}>
+    <Modal title="Lesson done?" onClose={onClose}>
+      <div className="sheet-hero">
+        <Bubble kind="lesson" size={56} />
+      </div>
+      <div className="lesson-number">
+        <span className="muted">Lesson</span>
+        <button type="button" onClick={() => setLesson(String(Math.max(1, (parseInt(lesson, 10) || 1) - 1)))}>
+          −
+        </button>
+        <input value={lesson} inputMode="numeric" onChange={(e) => setLesson(e.target.value)} />
+        <button type="button" onClick={() => setLesson(String((parseInt(lesson, 10) || 0) + 1))}>
+          +
+        </button>
+      </div>
       <label className="field">
         <span>Course</span>
         <input value={course} onChange={(e) => setCourse(e.target.value)} />
       </label>
-      <label className="field">
-        <span>Lesson finished</span>
-        <input value={lesson} inputMode="numeric" onChange={(e) => setLesson(e.target.value)} />
-      </label>
-      <label className="field">
-        <span>Minutes</span>
-        <Stepper value={min} onChange={setMin} />
-      </label>
-      <div className="row end">
-        <button className="btn ghost" onClick={onClose}>
-          Cancel
-        </button>
-        <button
-          className="btn primary"
-          onClick={async () => {
-            await logTime({ block: "lesson", blockId: block.id, minutes: min, note: `${course} — lesson ${lesson}` });
-            const n = parseInt(lesson, 10);
-            await saveSettings({ lessonCourse: course, ...(Number.isFinite(n) ? { lessonNext: n + 1 } : {}) });
-            onClose();
-          }}
-        >
-          Log lesson {lesson}
-        </button>
-      </div>
+      <p className="center muted small">Time spent</p>
+      <Stepper value={min} onChange={setMin} />
+      <button
+        className="btn primary big full"
+        onClick={async () => {
+          await logTime({ block: "lesson", blockId: block.id, minutes: min, note: `${course} — lesson ${lesson}` });
+          const n = parseInt(lesson, 10);
+          await saveSettings({ lessonCourse: course, ...(Number.isFinite(n) ? { lessonNext: n + 1 } : {}) });
+          celebrate();
+          toast(`${cheer()} Lesson ${lesson} done`);
+          onClose();
+        }}
+      >
+        <Icon name="check" size={20} /> I finished lesson {lesson}
+      </button>
     </Modal>
   );
 }
@@ -61,12 +66,24 @@ export default function Today({ app }: { app: AppCtx }) {
   const doneCount = blocks.filter((b) => plan.done[b.id]).length;
   const plannedMin = blocks.reduce((a, b) => a + b.minutes, 0);
   const startsIn = daysBetween(today, settings.startDate);
-
+  const allDone = doneCount === blocks.length && blocks.length > 0;
+  const streakSafe = todayMin >= STREAK_MIN;
   const tutorToday = logs.some((l) => l.data.date === today && l.data.block === "tutor");
+  const g = greeting();
+
+  // Big celebration the moment the whole plan is done.
+  const wasDone = useRef<boolean | null>(null);
+  useEffect(() => {
+    if (wasDone.current === false && allDone) {
+      celebrate(true);
+      toast("Tutto fatto! Day complete 🇮🇹");
+    }
+    wasDone.current = allDone;
+  }, [allDone]);
 
   async function undo(b: PlanBlock) {
     const logId = plan.done[b.id];
-    if (!confirm(`Undo "${b.label}"? This removes the logged time.`)) return;
+    if (!confirm(`Undo "${b.label}"? This removes the time you logged.`)) return;
     if (logId) await remove("timelogs", logId);
     await patch<DayplanData>("dayplans", today, (old) => {
       const p = old ?? emptyPlan(today);
@@ -84,122 +101,185 @@ export default function Today({ app }: { app: AppCtx }) {
   }
 
   const next = blocks.find((b) => !plan.done[b.id]);
+  const runningHere = active && active.date === today ? blocks.find((b) => b.id === active.blockId) : undefined;
 
   return (
     <div className="screen today">
-      <header className="today-head">
+      <header className="hello">
         <div>
-          <div className="eyebrow">
-            {n === 0 ? `Starts in ${startsIn} day${startsIn === 1 ? "" : "s"} · preview of week 1` : `Week ${n} of ${cur.weeks.length}`}
-          </div>
-          <h2>{week.theme}</h2>
-        </div>
-        <div className="stats-row">
-          <div className="stat">
-            <b>{daysLeft}</b>
-            <span>days to {prettyDate(settings.targetDate)}</span>
-          </div>
-          <div className="stat">
-            <b>🔥 {st}</b>
-            <span>day streak</span>
-          </div>
-          <div className="stat">
-            <b>{(totalMin / 60).toFixed(1)}h</b>
-            <span>total</span>
-          </div>
+          <h1>
+            {g.it}, {settings.name || "amico"}!
+          </h1>
+          <p className="muted">
+            {g.en} ·{" "}
+            {n === 0 ? `Your course starts in ${startsIn} day${startsIn === 1 ? "" : "s"}` : `Week ${n} of ${cur.weeks.length}`}
+          </p>
         </div>
       </header>
 
-      <div className="mode-toggle">
-        <button className={plan.mode === "full" ? "on" : ""} onClick={() => setDayMode(today, "full")}>
-          Full day · {fmtMinutes(blocksFor("full", week, cur).reduce((a, b) => a + b.minutes, 0))}
-        </button>
-        <button className={plan.mode === "short" ? "on" : ""} onClick={() => setDayMode(today, "short")}>
-          Short day · 30 min
-        </button>
-      </div>
-
-      <div className="progress-line">
-        <div className="bar">
-          <div style={{ width: `${Math.min(100, (todayMin / plannedMin) * 100)}%` }} />
+      <section className={`hero ${allDone ? "hero-done" : ""}`}>
+        <Ring value={todayMin / plannedMin} size={116}>
+          <b>{Math.round(todayMin)}</b>
+          <span>of {plannedMin} min</span>
+        </Ring>
+        <div className="hero-stats">
+          <div className={`hero-stat ${st > 0 ? "lit" : ""}`}>
+            <span className="hero-emoji flame">🔥</span>
+            <div>
+              <b>{st}</b> day streak
+              <small>{streakSafe ? "Safe for today ✓" : `${Math.max(0, STREAK_MIN - Math.round(todayMin))} min to keep it`}</small>
+            </div>
+          </div>
+          <div className="hero-stat">
+            <span className="hero-emoji">🗓️</span>
+            <div>
+              <b>{daysLeft}</b> days to go
+              <small>until {prettyDate(settings.targetDate)}</small>
+            </div>
+          </div>
+          <div className="hero-stat">
+            <span className="hero-emoji">⏳</span>
+            <div>
+              <b>{(totalMin / 60).toFixed(1)}h</b> practiced
+              <small>all time</small>
+            </div>
+          </div>
         </div>
-        <span>
-          {fmtMinutes(todayMin)} / {fmtMinutes(plannedMin)} · {doneCount}/{blocks.length} done
-          {todayMin >= STREAK_MIN ? " · streak safe ✓" : ` · ${STREAK_MIN - Math.round(todayMin)} min to keep the streak`}
-        </span>
-      </div>
+      </section>
 
-      {next && !active && (
-        <button className="btn primary big next-up" onClick={() => open(next)}>
-          ▶ Next: {next.label} ({next.minutes} min)
+      {allDone ? (
+        <section className="next-card c-green done-card">
+          <div className="next-emoji">🎉</div>
+          <h2>Tutto fatto!</h2>
+          <p>You finished today's plan. See you tomorrow — a domani!</p>
+          <div className="row center">
+            <button className="btn light" onClick={() => go("/talk")}>
+              Bonus chat 💬
+            </button>
+            <button className="btn light" onClick={() => go("/cards")}>
+              Extra cards 🃏
+            </button>
+          </div>
+        </section>
+      ) : runningHere ? (
+        <button className={`next-card c-${ACTIVITY[runningHere.kind].color}`} onClick={() => open(runningHere)}>
+          <div className="next-top">
+            <span className="next-label">In progress</span>
+            <span className="next-time">⏱ {runningHere.minutes} min</span>
+          </div>
+          <div className="next-emoji">{ACTIVITY[runningHere.kind].emoji}</div>
+          <h2>{runningHere.label}</h2>
+          <span className="next-cta">
+            Continue <Icon name="play" size={16} />
+          </span>
         </button>
+      ) : (
+        next && (
+          <button className={`next-card c-${ACTIVITY[next.kind].color}`} onClick={() => open(next)}>
+            <div className="next-top">
+              <span className="next-label">{doneCount === 0 ? "Start here" : "Up next"}</span>
+              <span className="next-time">{next.minutes} min</span>
+            </div>
+            <div className="next-emoji">{ACTIVITY[next.kind].emoji}</div>
+            <h2>{next.label}</h2>
+            <p>{next.hint ?? ACTIVITY[next.kind].blurb}</p>
+            <span className="next-cta">
+              {next.kind === "lesson" || next.kind === "listening" ? "Log it" : "Let's go"} <Icon name="play" size={16} />
+            </span>
+          </button>
+        )
       )}
 
-      <ul className="checklist">
-        {blocks.map((b) => {
+      <div className="segmented">
+        <button className={plan.mode === "full" ? "on" : ""} onClick={() => setDayMode(today, "full")}>
+          <b>Full day</b>
+          <small>{Math.round(blocksFor("full", week, cur).reduce((a, b) => a + b.minutes, 0) / 60)} hours</small>
+        </button>
+        <button className={plan.mode === "short" ? "on" : ""} onClick={() => setDayMode(today, "short")}>
+          <b>Busy day</b>
+          <small>30 min, keeps the streak</small>
+        </button>
+      </div>
+
+      <div className="section-title">
+        <h3>Today's plan</h3>
+        <span className="pill">
+          {doneCount}/{blocks.length} done
+        </span>
+      </div>
+      <ul className="plan">
+        {blocks.map((b, i) => {
           const done = !!plan.done[b.id];
           const running = active?.blockId === b.id && active.date === today;
+          const log = done ? logs.find((x) => x.id === plan.done[b.id]) : undefined;
           const coveredByTutor = b.kind === "speaking" && tutorToday && !done;
           return (
-            <li key={b.id} className={`${done ? "done" : ""} ${running ? "running" : ""}`}>
-              <button className="check" onClick={() => open(b)} aria-label={done ? `Undo ${b.label}` : `Start ${b.label}`}>
-                {done ? "✓" : running ? "⏱" : ""}
+            <li key={b.id} style={{ animationDelay: `${i * 40}ms` }}>
+              <button className={`plan-row ${done ? "done" : ""} ${running ? "running" : ""}`} onClick={() => open(b)}>
+                <Bubble kind={b.kind} />
+                <span className="plan-text">
+                  <b>{b.label}</b>
+                  <small>
+                    {done
+                      ? `${log?.data.minutes ?? b.minutes} min${log?.data.note ? ` · ${log.data.note}` : ""}`
+                      : running
+                        ? "Timer running…"
+                        : coveredByTutor
+                          ? "Tutor session counts ✓"
+                          : `${b.minutes} min`}
+                  </small>
+                </span>
+                <span className={`plan-check ${done ? "on" : ""}`}>{done ? <Icon name="check" size={18} /> : running ? "⏱" : <Icon name="play" size={14} />}</span>
               </button>
-              <div className="check-body" onClick={() => open(b)}>
-                <div className="check-title">
-                  {b.label} <span className="muted">· {b.minutes} min</span>
-                </div>
-                {b.hint && !done && <div className="muted small">{b.hint}</div>}
-                {coveredByTutor && <div className="muted small">You logged a tutor session today: that counts as speaking. Tap to log it anyway.</div>}
-                {done && <DoneNote logs={logs} id={plan.done[b.id]} />}
-              </div>
             </li>
           );
         })}
       </ul>
 
-      <div className="row">
-        <button className="btn ghost small" onClick={() => setModal({ type: "other" })}>
-          + Log other time
+      <div className="quick-row">
+        <button className="chip-btn" onClick={() => setModal({ type: "other" })}>
+          <Icon name="plus" size={16} /> Log other practice
         </button>
         {n >= 4 && (
-          <button className="btn ghost small" onClick={() => go("/tutor")}>
-            + Tutor session
+          <button className="chip-btn" onClick={() => go("/tutor")}>
+            👩‍🏫 Tutor session
           </button>
         )}
       </div>
 
-      <section className="card week-card">
-        <button className="linkish" onClick={() => setDetails(!details)}>
-          This week's focus {details ? "▴" : "▾"}
-        </button>
-        <p>
-          <b>Goal:</b> {week.goal}
-        </p>
+      <section className="focus-card" onClick={() => setDetails(!details)}>
+        <div className="focus-head">
+          <span className="focus-emoji">🎯</span>
+          <div className="grow">
+            <small>This week's goal</small>
+            <b>{week.goal}</b>
+          </div>
+          <span className="muted">{details ? "▴" : "▾"}</span>
+        </div>
         {details && (
-          <>
-            <p>
-              <b>Grammar:</b>
-            </p>
+          <div className="focus-body">
+            <p className="small muted">Grammar to notice</p>
             <ul>
-              {week.grammar.map((g) => (
-                <li key={g}>{g}</li>
+              {week.grammar.map((x) => (
+                <li key={x}>{x}</li>
               ))}
             </ul>
-            <p>
-              <b>Scenarios:</b> {week.scenarios.map((s) => cur.scenarios[s]?.label ?? s).join(", ")}
-            </p>
-            <p className="muted small">
-              Level: {app.level.label}. English support from the AI: {app.level.englishSupport}.
-            </p>
-          </>
+            <p className="small muted">Practice scenarios</p>
+            <div className="tags">
+              {week.scenarios.map((s) => (
+                <span key={s} className="tag">
+                  {cur.scenarios[s]?.label ?? s}
+                </span>
+              ))}
+            </div>
+          </div>
         )}
       </section>
 
       {modal?.type === "lesson" && modal.block && <LessonModal app={app} block={modal.block} onClose={() => setModal(null)} />}
       {modal?.type === "listening" && modal.block && (
         <LogTimeModal
-          title="Log listening"
+          title="Listening"
           block="listening"
           blockId={modal.block.id}
           minutes={modal.block.minutes}
@@ -208,18 +288,8 @@ export default function Today({ app }: { app: AppCtx }) {
         />
       )}
       {modal?.type === "other" && (
-        <LogTimeModal title="Log other practice" block="other" minutes={15} notePlaceholder="What did you do?" onClose={() => setModal(null)} />
+        <LogTimeModal title="Other practice" block="other" minutes={15} notePlaceholder="What did you do?" onClose={() => setModal(null)} />
       )}
-    </div>
-  );
-}
-
-function DoneNote({ logs, id }: { logs: { id: string; data: TimelogData }[]; id: string }) {
-  const l = logs.find((x) => x.id === id);
-  if (!l) return null;
-  return (
-    <div className="muted small">
-      Logged {l.data.minutes} min{l.data.note ? ` · ${l.data.note}` : ""} · tap to undo
     </div>
   );
 }

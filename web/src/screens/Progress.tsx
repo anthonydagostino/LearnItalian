@@ -3,6 +3,7 @@ import { useCollection } from "../db";
 import { minutesByDate, streak } from "../plan";
 import type { AppCtx } from "../state";
 import { addDays, fmtMinutes } from "../time";
+import { Header } from "../ui";
 import { MISTAKE_LABELS, type MistakeData, type MistakeType, type SrsData, type TimelogData } from "../types";
 
 /** Hours per curriculum week vs. the weekly target. Single series: one hue, target as a dashed reference line. */
@@ -107,7 +108,7 @@ export default function Progress({ app }: { app: AppCtx }) {
 
   return (
     <div className="screen">
-      <h2>Progress</h2>
+      <Header title="Your progress" sub="Piano piano si va lontano — slowly, you go far." />
       <div className="tiles">
         <div className="tile">
           <b>🔥 {streak(byDate, app.today)}</b>
