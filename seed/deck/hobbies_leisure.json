@@ -1,0 +1,442 @@
+{
+  "topic": "hobbies_leisure",
+  "title": "Hobbies & Free Time",
+  "items": [
+    {
+      "it": "il tempo libero",
+      "en": "free time, spare time",
+      "ex": "Non ho molto tempo libero.",
+      "ex_en": "I don't have much free time.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "nel tempo libero…",
+      "en": "in my free time…",
+      "ex": "Nel tempo libero leggo e cucino.",
+      "ex_en": "In my free time I read and cook.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "cosa fai nel tempo libero?",
+      "en": "what do you do in your free time? (informal)",
+      "ex": "Cosa fai nel tempo libero? — Vado in palestra.",
+      "ex_en": "What do you do in your free time? — I go to the gym.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "formal: cosa fa nel tempo libero?"
+    },
+    {
+      "it": "il fine settimana",
+      "en": "the weekend; on the weekend",
+      "ex": "Il fine settimana dormo fino a tardi.",
+      "ex_en": "On weekends I sleep in.",
+      "kind": "word",
+      "level": 1,
+      "notes": "also il weekend; plural i fine settimana (invariable)"
+    },
+    {
+      "it": "l'hobby",
+      "en": "the hobby",
+      "ex": "Qual è il tuo hobby preferito?",
+      "ex_en": "What's your favorite hobby?",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; h is silent; plural gli hobby (invariable)"
+    },
+    {
+      "it": "lo sport",
+      "en": "sport, sports; exercise",
+      "ex": "Fai sport?",
+      "ex_en": "Do you play sports? / Do you work out?",
+      "kind": "word",
+      "level": 1,
+      "notes": "fare sport = to play sports, exercise; plural gli sport (invariable)"
+    },
+    {
+      "it": "il calcio",
+      "en": "soccer",
+      "ex": "In Italia il calcio è lo sport più popolare.",
+      "ex_en": "In Italy soccer is the most popular sport.",
+      "kind": "word",
+      "level": 1,
+      "notes": "also means a kick"
+    },
+    {
+      "it": "gioco a calcio",
+      "en": "I play soccer",
+      "ex": "Gioco a calcio il sabato con gli amici.",
+      "ex_en": "I play soccer on Saturdays with friends.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "giocare a + sport/game: gioco a tennis, gioco a carte"
+    },
+    {
+      "it": "la partita",
+      "en": "the (sports) game, match",
+      "ex": "Stasera c'è la partita.",
+      "ex_en": "The game is on tonight.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la palestra",
+      "en": "the gym",
+      "ex": "La palestra apre alle sei.",
+      "ex_en": "The gym opens at six.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "vado in palestra",
+      "en": "I go to the gym",
+      "ex": "Vado in palestra tre volte a settimana.",
+      "ex_en": "I go to the gym three times a week.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "no article: in palestra"
+    },
+    {
+      "it": "mi piace correre",
+      "en": "I like running",
+      "ex": "Mi piace correre la mattina presto.",
+      "ex_en": "I like running early in the morning.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "mi piace + infinitive = I like (doing)"
+    },
+    {
+      "it": "ti piace leggere?",
+      "en": "do you like reading? (informal)",
+      "ex": "Ti piace leggere? — Sì, moltissimo!",
+      "ex_en": "Do you like reading? — Yes, a lot!",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "formal: Le piace leggere?"
+    },
+    {
+      "it": "la musica",
+      "en": "music",
+      "ex": "Ascolto musica tutti i giorni.",
+      "ex_en": "I listen to music every day.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "suono la chitarra",
+      "en": "I play the guitar",
+      "ex": "Suono la chitarra da dieci anni.",
+      "ex_en": "I've played guitar for ten years.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "instruments use suonare, not giocare"
+    },
+    {
+      "it": "il libro",
+      "en": "the book",
+      "ex": "Leggo un libro al mese.",
+      "ex_en": "I read one book a month.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il film",
+      "en": "the movie, film",
+      "ex": "Guardiamo un film stasera?",
+      "ex_en": "Shall we watch a movie tonight?",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural i film (invariable)"
+    },
+    {
+      "it": "il cinema",
+      "en": "the movie theater; cinema",
+      "ex": "Il cinema è vicino a casa mia.",
+      "ex_en": "The movie theater is near my place.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m. despite -a; plural i cinema (invariable)"
+    },
+    {
+      "it": "andiamo al cinema?",
+      "en": "shall we go to the movies?",
+      "ex": "Stasera andiamo al cinema? — Volentieri!",
+      "ex_en": "Shall we go to the movies tonight? — Gladly!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "la passeggiata",
+      "en": "the walk, stroll",
+      "ex": "Facciamo una passeggiata in centro?",
+      "ex_en": "Shall we take a walk downtown?",
+      "kind": "word",
+      "level": 1,
+      "notes": "fare una passeggiata = to take a walk; the evening stroll is la passeggiata"
+    },
+    {
+      "it": "cucinare",
+      "en": "to cook",
+      "ex": "Amo cucinare per gli amici.",
+      "ex_en": "I love cooking for my friends.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "viaggiare",
+      "en": "to travel",
+      "ex": "Viaggiare è la mia passione.",
+      "ex_en": "Traveling is my passion.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "ballare",
+      "en": "to dance",
+      "ex": "Il sabato sera andiamo a ballare.",
+      "ex_en": "On Saturday nights we go dancing.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "cosa fai questo fine settimana?",
+      "en": "what are you doing this weekend? (informal)",
+      "ex": "Cosa fai questo fine settimana? — Vado al mare.",
+      "ex_en": "What are you doing this weekend? — I'm going to the beach.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "la squadra",
+      "en": "the team",
+      "ex": "Qual è la tua squadra preferita?",
+      "ex_en": "What's your favorite team?",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "per che squadra tifi?",
+      "en": "which team do you root for? (informal)",
+      "ex": "Per che squadra tifi? — Per la Roma.",
+      "ex_en": "Which team do you root for? — Roma.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "tifare per = to root for, support (a team)"
+    },
+    {
+      "it": "la canzone",
+      "en": "the song",
+      "ex": "Questa canzone è bellissima.",
+      "ex_en": "This song is beautiful.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il concerto",
+      "en": "the concert",
+      "ex": "Stasera andiamo a un concerto.",
+      "ex_en": "Tonight we're going to a concert.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la chitarra",
+      "en": "the guitar",
+      "ex": "Studio chitarra da due anni.",
+      "ex_en": "I've been studying guitar for two years.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il pianoforte",
+      "en": "the piano",
+      "ex": "Mia figlia suona il pianoforte.",
+      "ex_en": "My daughter plays the piano.",
+      "kind": "word",
+      "level": 2,
+      "notes": "often shortened to il piano"
+    },
+    {
+      "it": "la lettura",
+      "en": "reading (the activity)",
+      "ex": "La lettura è la mia passione.",
+      "ex_en": "Reading is my passion.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la serie TV",
+      "en": "the TV series, TV show",
+      "ex": "Sto guardando una nuova serie TV.",
+      "ex_en": "I'm watching a new TV show.",
+      "kind": "word",
+      "level": 2,
+      "notes": "TV is read tivù; plural le serie TV (invariable)"
+    },
+    {
+      "it": "la mostra",
+      "en": "the exhibition, (art) show",
+      "ex": "Al museo c'è una mostra su Caravaggio.",
+      "ex_en": "There's a Caravaggio exhibition at the museum.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la fotografia",
+      "en": "photography; a photograph",
+      "ex": "La fotografia è il mio hobby.",
+      "ex_en": "Photography is my hobby.",
+      "kind": "word",
+      "level": 2,
+      "notes": "a photo is usually la foto (f., plural le foto)"
+    },
+    {
+      "it": "il nuoto",
+      "en": "swimming",
+      "ex": "Il nuoto è uno sport completo.",
+      "ex_en": "Swimming is a full-body sport.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la piscina",
+      "en": "the swimming pool",
+      "ex": "La piscina è aperta fino alle nove.",
+      "ex_en": "The pool is open until nine.",
+      "kind": "word",
+      "level": 2,
+      "notes": "many Italian pools require a swim cap (la cuffia)"
+    },
+    {
+      "it": "il tennis",
+      "en": "tennis",
+      "ex": "Giochi a tennis?",
+      "ex_en": "Do you play tennis?",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la corsa",
+      "en": "running; a run, race",
+      "ex": "La corsa mi rilassa.",
+      "ex_en": "Running relaxes me.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "l'escursione",
+      "en": "the hike, excursion",
+      "ex": "Domani facciamo un'escursione in montagna.",
+      "ex_en": "Tomorrow we're going on a hike in the mountains.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f.; plural le escursioni"
+    },
+    {
+      "it": "il corso",
+      "en": "the course, class",
+      "ex": "Faccio un corso di cucina.",
+      "ex_en": "I'm taking a cooking class.",
+      "kind": "word",
+      "level": 2,
+      "notes": "also a main street: il corso"
+    },
+    {
+      "it": "faccio yoga",
+      "en": "I do yoga",
+      "ex": "Faccio yoga ogni mattina.",
+      "ex_en": "I do yoga every morning.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "no article: fare yoga"
+    },
+    {
+      "it": "il videogioco",
+      "en": "the video game",
+      "ex": "Mio figlio gioca ai videogiochi.",
+      "ex_en": "My son plays video games.",
+      "kind": "word",
+      "level": 2,
+      "notes": "plural i videogiochi"
+    },
+    {
+      "it": "lo sci",
+      "en": "skiing; a ski",
+      "ex": "Lo sci è il mio sport preferito.",
+      "ex_en": "Skiing is my favorite sport.",
+      "kind": "word",
+      "level": 3,
+      "notes": "plural gli sci (invariable); sciare = to ski"
+    },
+    {
+      "it": "gli scacchi",
+      "en": "chess",
+      "ex": "Giochi a scacchi?",
+      "ex_en": "Do you play chess?",
+      "kind": "word",
+      "level": 3,
+      "notes": "always plural"
+    },
+    {
+      "it": "le carte",
+      "en": "(playing) cards",
+      "ex": "La sera giochiamo a carte.",
+      "ex_en": "In the evening we play cards.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "la pittura",
+      "en": "painting (the art)",
+      "ex": "Mi piace la pittura moderna.",
+      "ex_en": "I like modern painting.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il romanzo",
+      "en": "the novel",
+      "ex": "Sto leggendo un romanzo giallo.",
+      "ex_en": "I'm reading a mystery novel.",
+      "kind": "word",
+      "level": 3,
+      "notes": "un giallo = a mystery/crime novel"
+    },
+    {
+      "it": "il tifoso",
+      "en": "the (sports) fan",
+      "ex": "Sono un tifoso del Napoli.",
+      "ex_en": "I'm a Napoli fan.",
+      "kind": "word",
+      "level": 3,
+      "notes": "f.: la tifosa"
+    },
+    {
+      "it": "il giardinaggio",
+      "en": "gardening",
+      "ex": "Mia madre adora il giardinaggio.",
+      "ex_en": "My mother loves gardening.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "la sagra",
+      "en": "the local food festival",
+      "ex": "Domenica andiamo alla sagra del tartufo.",
+      "ex_en": "On Sunday we're going to the truffle festival.",
+      "kind": "word",
+      "level": 3,
+      "notes": "village festivals celebrating a local food, common in summer and fall"
+    },
+    {
+      "it": "sono appassionato di…",
+      "en": "I'm really into…, I'm passionate about… (said by a man)",
+      "ex": "Sono appassionato di fotografia.",
+      "ex_en": "I'm really into photography.",
+      "kind": "phrase",
+      "level": 3,
+      "notes": "a woman says: sono appassionata di…"
+    }
+  ]
+}

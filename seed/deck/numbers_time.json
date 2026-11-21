@@ -1,0 +1,871 @@
+{
+  "topic": "numbers_time",
+  "title": "Numbers, Days & Time",
+  "items": [
+    {
+      "it": "zero",
+      "en": "zero",
+      "ex": "Oggi ci sono zero gradi.",
+      "ex_en": "It's zero degrees (Celsius) today.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "uno",
+      "en": "one",
+      "ex": "Quanti biglietti? — Uno, grazie.",
+      "ex_en": "How many tickets? — One, thanks.",
+      "kind": "word",
+      "level": 1,
+      "notes": "before a noun: un/uno/una like the article"
+    },
+    {
+      "it": "due",
+      "en": "two",
+      "ex": "Due caffè, per favore.",
+      "ex_en": "Two coffees, please.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "tre",
+      "en": "three",
+      "ex": "Siamo in tre.",
+      "ex_en": "There are three of us.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "quattro",
+      "en": "four",
+      "ex": "Abbiamo quattro giorni a Roma.",
+      "ex_en": "We have four days in Rome.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "cinque",
+      "en": "five",
+      "ex": "Il museo chiude alle cinque.",
+      "ex_en": "The museum closes at five.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "sei",
+      "en": "six",
+      "ex": "Ci sono sei persone.",
+      "ex_en": "There are six people.",
+      "kind": "word",
+      "level": 1,
+      "notes": "also 'you are' (essere)"
+    },
+    {
+      "it": "sette",
+      "en": "seven",
+      "ex": "La settimana ha sette giorni.",
+      "ex_en": "The week has seven days.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "otto",
+      "en": "eight",
+      "ex": "Mi sveglio alle otto.",
+      "ex_en": "I wake up at eight.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "nove",
+      "en": "nine",
+      "ex": "Il negozio apre alle nove.",
+      "ex_en": "The store opens at nine.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "dieci",
+      "en": "ten",
+      "ex": "Aspetto dieci minuti.",
+      "ex_en": "I'll wait ten minutes.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "undici",
+      "en": "eleven",
+      "ex": "Il treno parte alle undici.",
+      "ex_en": "The train leaves at eleven.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "dodici",
+      "en": "twelve",
+      "ex": "L'anno ha dodici mesi.",
+      "ex_en": "The year has twelve months.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "tredici",
+      "en": "thirteen",
+      "ex": "Mia figlia ha tredici anni.",
+      "ex_en": "My daughter is thirteen.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "quattordici",
+      "en": "fourteen",
+      "ex": "Il quattordici febbraio è San Valentino.",
+      "ex_en": "February 14th is Valentine's Day.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "quindici",
+      "en": "fifteen",
+      "ex": "Ci vediamo tra quindici minuti.",
+      "ex_en": "See you in fifteen minutes.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "sedici",
+      "en": "sixteen",
+      "ex": "Sono le sedici.",
+      "ex_en": "It's 4 p.m.",
+      "kind": "word",
+      "level": 1,
+      "notes": "the 24-hour clock is common for schedules"
+    },
+    {
+      "it": "diciassette",
+      "en": "seventeen",
+      "ex": "Il diciassette è un numero sfortunato in Italia.",
+      "ex_en": "Seventeen is an unlucky number in Italy.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "diciotto",
+      "en": "eighteen",
+      "ex": "Mio figlio ha diciotto anni.",
+      "ex_en": "My son is eighteen.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "diciannove",
+      "en": "nineteen",
+      "ex": "Costa diciannove euro.",
+      "ex_en": "It costs nineteen euros.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "venti",
+      "en": "twenty",
+      "ex": "Sono venti euro.",
+      "ex_en": "That's twenty euros.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "ventuno",
+      "en": "twenty-one",
+      "ex": "Abito al numero ventuno.",
+      "ex_en": "I live at number twenty-one.",
+      "kind": "word",
+      "level": 1,
+      "notes": "tens drop the final vowel before uno/otto: ventuno, ventotto; ventitré has an accent"
+    },
+    {
+      "it": "trenta",
+      "en": "thirty",
+      "ex": "Aprile ha trenta giorni.",
+      "ex_en": "April has thirty days.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "quaranta",
+      "en": "forty",
+      "ex": "Il volo dura quaranta minuti.",
+      "ex_en": "The flight takes forty minutes.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "cinquanta",
+      "en": "fifty",
+      "ex": "Il biglietto costa cinquanta euro.",
+      "ex_en": "The ticket costs fifty euros.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "sessanta",
+      "en": "sixty",
+      "ex": "Un'ora ha sessanta minuti.",
+      "ex_en": "An hour has sixty minutes.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "settanta",
+      "en": "seventy",
+      "ex": "La nonna ha settantadue anni.",
+      "ex_en": "Grandma is seventy-two.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "ottanta",
+      "en": "eighty",
+      "ex": "Il nonno ha ottantacinque anni.",
+      "ex_en": "Grandpa is eighty-five.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "novanta",
+      "en": "ninety",
+      "ex": "Il film dura novanta minuti.",
+      "ex_en": "The movie lasts ninety minutes.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "cento",
+      "en": "one hundred",
+      "ex": "Ci sono cento persone.",
+      "ex_en": "There are a hundred people.",
+      "kind": "word",
+      "level": 1,
+      "notes": "no 'un' before it; duecento, trecento…"
+    },
+    {
+      "it": "mille",
+      "en": "one thousand",
+      "ex": "Costa mille euro.",
+      "ex_en": "It costs a thousand euros.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural -mila: duemila, tremila"
+    },
+    {
+      "it": "oggi",
+      "en": "today",
+      "ex": "Oggi sono stanco.",
+      "ex_en": "I'm tired today.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "domani",
+      "en": "tomorrow",
+      "ex": "Domani parto per Roma.",
+      "ex_en": "Tomorrow I leave for Rome.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "ieri",
+      "en": "yesterday",
+      "ex": "Ieri sono andato al mare.",
+      "ex_en": "Yesterday I went to the beach.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "adesso",
+      "en": "now",
+      "ex": "Adesso non posso.",
+      "ex_en": "I can't right now.",
+      "kind": "word",
+      "level": 1,
+      "notes": "also 'ora'"
+    },
+    {
+      "it": "stasera",
+      "en": "this evening; tonight",
+      "ex": "Stasera usciamo?",
+      "ex_en": "Are we going out tonight?",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la mattina",
+      "en": "morning",
+      "ex": "La mattina bevo un cappuccino.",
+      "ex_en": "In the morning I drink a cappuccino.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il pomeriggio",
+      "en": "afternoon",
+      "ex": "Ci vediamo nel pomeriggio.",
+      "ex_en": "See you in the afternoon.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la sera",
+      "en": "evening",
+      "ex": "La sera ceniamo alle otto.",
+      "ex_en": "In the evening we have dinner at eight.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la notte",
+      "en": "night",
+      "ex": "Di notte la città è tranquilla.",
+      "ex_en": "At night the city is quiet.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il giorno",
+      "en": "day",
+      "ex": "Resto tre giorni a Roma.",
+      "ex_en": "I'm staying three days in Rome.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "l'ora",
+      "en": "hour; time (of day)",
+      "ex": "Il viaggio dura un'ora.",
+      "ex_en": "The trip takes an hour.",
+      "kind": "word",
+      "level": 1,
+      "notes": "f.; also 'ora' = now"
+    },
+    {
+      "it": "il minuto",
+      "en": "minute",
+      "ex": "Arrivo tra cinque minuti.",
+      "ex_en": "I'll be there in five minutes.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la settimana",
+      "en": "week",
+      "ex": "Resto una settimana a Firenze.",
+      "ex_en": "I'm staying a week in Florence.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il mese",
+      "en": "month",
+      "ex": "Il mese prossimo vado in Italia.",
+      "ex_en": "Next month I'm going to Italy.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "l'anno",
+      "en": "year",
+      "ex": "Quest'anno vado in Italia.",
+      "ex_en": "This year I'm going to Italy.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "il lunedì",
+      "en": "Monday",
+      "ex": "Il lunedì molti musei sono chiusi.",
+      "ex_en": "On Mondays many museums are closed.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; lunedì = (this) Monday, il lunedì = on Mondays; days are lowercase"
+    },
+    {
+      "it": "il martedì",
+      "en": "Tuesday",
+      "ex": "Martedì vado a Roma.",
+      "ex_en": "On Tuesday I'm going to Rome.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "il mercoledì",
+      "en": "Wednesday",
+      "ex": "Il mercoledì c'è il mercato.",
+      "ex_en": "On Wednesdays there's the market.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "il giovedì",
+      "en": "Thursday",
+      "ex": "Giovedì sono libero.",
+      "ex_en": "I'm free on Thursday.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "il venerdì",
+      "en": "Friday",
+      "ex": "Venerdì sera usciamo.",
+      "ex_en": "Friday night we're going out.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "il sabato",
+      "en": "Saturday",
+      "ex": "Il sabato dormo fino a tardi.",
+      "ex_en": "On Saturdays I sleep late.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "la domenica",
+      "en": "Sunday",
+      "ex": "La domenica mangiamo dalla nonna.",
+      "ex_en": "On Sundays we eat at Grandma's.",
+      "kind": "word",
+      "level": 1,
+      "notes": "f. (the only feminine day)"
+    },
+    {
+      "it": "gennaio",
+      "en": "January",
+      "ex": "A gennaio fa freddo.",
+      "ex_en": "It's cold in January.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; months are lowercase and usually take no article: a/in gennaio"
+    },
+    {
+      "it": "febbraio",
+      "en": "February",
+      "ex": "Febbraio ha ventotto giorni.",
+      "ex_en": "February has twenty-eight days.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "marzo",
+      "en": "March",
+      "ex": "Il mio compleanno è a marzo.",
+      "ex_en": "My birthday is in March.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "aprile",
+      "en": "April",
+      "ex": "Ad aprile andiamo in Italia.",
+      "ex_en": "In April we're going to Italy.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; 'ad' before a vowel"
+    },
+    {
+      "it": "maggio",
+      "en": "May",
+      "ex": "A maggio fa già caldo.",
+      "ex_en": "In May it's already warm.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "giugno",
+      "en": "June",
+      "ex": "A giugno finisce la scuola.",
+      "ex_en": "School ends in June.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "luglio",
+      "en": "July",
+      "ex": "A luglio la città è piena di turisti.",
+      "ex_en": "In July the city is full of tourists.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "agosto",
+      "en": "August",
+      "ex": "Ad agosto molti negozi chiudono.",
+      "ex_en": "In August many stores close.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; 'ad' before a vowel"
+    },
+    {
+      "it": "settembre",
+      "en": "September",
+      "ex": "Torniamo a settembre.",
+      "ex_en": "We're coming back in September.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "ottobre",
+      "en": "October",
+      "ex": "A ottobre piove spesso.",
+      "ex_en": "It often rains in October.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "novembre",
+      "en": "November",
+      "ex": "Novembre è un mese grigio.",
+      "ex_en": "November is a gray month.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "dicembre",
+      "en": "December",
+      "ex": "A dicembre c'è il Natale.",
+      "ex_en": "Christmas is in December.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "primo",
+      "en": "first",
+      "ex": "È la mia prima volta in Italia.",
+      "ex_en": "It's my first time in Italy.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "secondo",
+      "en": "second",
+      "ex": "Prenda la seconda strada a destra.",
+      "ex_en": "Take the second street on the right.",
+      "kind": "word",
+      "level": 1,
+      "notes": "il secondo = also 'second' (of time); secondo me = in my opinion"
+    },
+    {
+      "it": "terzo",
+      "en": "third",
+      "ex": "Abito al terzo piano.",
+      "ex_en": "I live on the third floor.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "mezzogiorno",
+      "en": "noon",
+      "ex": "Pranziamo a mezzogiorno.",
+      "ex_en": "We have lunch at noon.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; usually no article: è mezzogiorno"
+    },
+    {
+      "it": "mezzanotte",
+      "en": "midnight",
+      "ex": "Il bar chiude a mezzanotte.",
+      "ex_en": "The bar closes at midnight.",
+      "kind": "word",
+      "level": 1,
+      "notes": "f.; usually no article: è mezzanotte"
+    },
+    {
+      "it": "Che ore sono?",
+      "en": "What time is it?",
+      "ex": "Scusi, che ore sono? — Sono le dieci.",
+      "ex_en": "Excuse me, what time is it? — It's ten.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "answer with 'sono le…' (plural), except 'è l'una'"
+    },
+    {
+      "it": "Che ora è?",
+      "en": "What time is it?",
+      "ex": "Che ora è? — È mezzogiorno.",
+      "ex_en": "What time is it? — It's noon.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "same meaning as 'che ore sono?'"
+    },
+    {
+      "it": "Sono le tre e mezza.",
+      "en": "It's half past three.",
+      "ex": "Sono le tre e mezza, andiamo!",
+      "ex_en": "It's three thirty, let's go!",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "also 'e mezzo'"
+    },
+    {
+      "it": "È l'una.",
+      "en": "It's one o'clock.",
+      "ex": "È l'una, andiamo a pranzo?",
+      "ex_en": "It's one, shall we go to lunch?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "singular: è l'una, è mezzogiorno, è mezzanotte"
+    },
+    {
+      "it": "A che ora…?",
+      "en": "At what time…?",
+      "ex": "A che ora ci vediamo? — Alle sette.",
+      "ex_en": "What time are we meeting? — At seven.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "alle otto di sera",
+      "en": "at eight p.m.",
+      "ex": "La cena è alle otto di sera.",
+      "ex_en": "Dinner is at eight p.m.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "alle + hour (all'una); di mattina / di pomeriggio / di sera / di notte"
+    },
+    {
+      "it": "Sono le due e un quarto.",
+      "en": "It's a quarter past two.",
+      "ex": "Sono le due e un quarto, siamo in ritardo.",
+      "ex_en": "It's a quarter past two, we're late.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Sono le otto meno un quarto.",
+      "en": "It's a quarter to eight.",
+      "ex": "Sono le otto meno un quarto, sbrigati!",
+      "ex_en": "It's a quarter to eight, hurry up!",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "meno = minus; also 'manca un quarto alle otto'"
+    },
+    {
+      "it": "Che giorno è oggi?",
+      "en": "What day is it today?",
+      "ex": "Che giorno è oggi? — È venerdì.",
+      "ex_en": "What day is it today? — It's Friday.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "mezzo",
+      "en": "half",
+      "ex": "Arrivo tra mezz'ora.",
+      "ex_en": "I'll be there in half an hour.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f. mezza; elides: mezz'ora"
+    },
+    {
+      "it": "dopodomani",
+      "en": "the day after tomorrow",
+      "ex": "Torno dopodomani.",
+      "ex_en": "I'm coming back the day after tomorrow.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "stamattina",
+      "en": "this morning",
+      "ex": "Stamattina ho bevuto due caffè.",
+      "ex_en": "This morning I had two coffees.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il fine settimana",
+      "en": "weekend",
+      "ex": "Cosa fai il fine settimana?",
+      "ex_en": "What are you doing this weekend?",
+      "kind": "word",
+      "level": 2,
+      "notes": "also 'il weekend'",
+      "flag": "'Cosa fai il fine settimana?' can also mean 'What do you do on weekends?'; 'questo fine settimana' is unambiguous for this weekend."
+    },
+    {
+      "it": "prossimo",
+      "en": "next",
+      "ex": "Il prossimo treno parte alle sei.",
+      "ex_en": "The next train leaves at six.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "scorso",
+      "en": "last (previous)",
+      "ex": "L'anno scorso sono stato a Napoli.",
+      "ex_en": "Last year I was in Naples.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la primavera",
+      "en": "spring",
+      "ex": "In primavera Roma è bellissima.",
+      "ex_en": "In spring Rome is beautiful.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "l'estate",
+      "en": "summer",
+      "ex": "D'estate fa molto caldo.",
+      "ex_en": "In summer it's very hot.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f."
+    },
+    {
+      "it": "l'autunno",
+      "en": "fall; autumn",
+      "ex": "In autunno cadono le foglie.",
+      "ex_en": "In the fall the leaves come down.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m."
+    },
+    {
+      "it": "l'inverno",
+      "en": "winter",
+      "ex": "D'inverno andiamo in montagna.",
+      "ex_en": "In winter we go to the mountains.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m."
+    },
+    {
+      "it": "quarto",
+      "en": "fourth",
+      "ex": "La camera è al quarto piano.",
+      "ex_en": "The room is on the fourth floor.",
+      "kind": "word",
+      "level": 2,
+      "notes": "un quarto = a quarter"
+    },
+    {
+      "it": "quinto",
+      "en": "fifth",
+      "ex": "Oggi è il quinto giorno di vacanza.",
+      "ex_en": "Today is the fifth day of vacation.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "l'orologio",
+      "en": "watch; clock",
+      "ex": "Il mio orologio è indietro.",
+      "ex_en": "My watch is slow.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m."
+    },
+    {
+      "it": "il primo maggio",
+      "en": "May 1st",
+      "ex": "Il primo maggio è festa in Italia.",
+      "ex_en": "May 1st is a holiday in Italy.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "dates use cardinal numbers (il due maggio), except 'primo' for the 1st"
+    },
+    {
+      "it": "la settimana prossima",
+      "en": "next week",
+      "ex": "Torno in Italia la settimana prossima.",
+      "ex_en": "I'm coming back to Italy next week.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "also 'la prossima settimana'"
+    },
+    {
+      "it": "due giorni fa",
+      "en": "two days ago",
+      "ex": "Sono arrivato due giorni fa.",
+      "ex_en": "I arrived two days ago.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "fa = ago, placed after the time expression"
+    },
+    {
+      "it": "tra un'ora",
+      "en": "in an hour",
+      "ex": "Ci vediamo tra un'ora.",
+      "ex_en": "See you in an hour.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "tra/fra = in (time from now)"
+    },
+    {
+      "it": "sesto",
+      "en": "sixth",
+      "ex": "È il mio sesto viaggio in Italia.",
+      "ex_en": "It's my sixth trip to Italy.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "settimo",
+      "en": "seventh",
+      "ex": "Sono al settimo cielo!",
+      "ex_en": "I'm on cloud nine! (lit. seventh heaven)",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "ottavo",
+      "en": "eighth",
+      "ex": "L'ottavo giorno torniamo a casa.",
+      "ex_en": "On the eighth day we go back home.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "nono",
+      "en": "ninth",
+      "ex": "Settembre è il nono mese dell'anno.",
+      "ex_en": "September is the ninth month of the year.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "decimo",
+      "en": "tenth",
+      "ex": "Il decimo piano è l'ultimo.",
+      "ex_en": "The tenth floor is the top one.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "Quanti ne abbiamo oggi?",
+      "en": "What's the date today?",
+      "ex": "Quanti ne abbiamo oggi? — Oggi è il cinque.",
+      "ex_en": "What's the date today? — Today is the fifth.",
+      "kind": "phrase",
+      "level": 3
+    }
+  ]
+}

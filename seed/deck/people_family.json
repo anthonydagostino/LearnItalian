@@ -1,0 +1,556 @@
+{
+  "topic": "people_family",
+  "title": "People & Family",
+  "items": [
+    {
+      "it": "la famiglia",
+      "en": "family",
+      "ex": "La mia famiglia è grande.",
+      "ex_en": "My family is big.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il padre",
+      "en": "father",
+      "ex": "Mio padre si chiama Robert.",
+      "ex_en": "My father's name is Robert.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la madre",
+      "en": "mother",
+      "ex": "Mia madre è americana.",
+      "ex_en": "My mother is American.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il figlio",
+      "en": "son",
+      "ex": "Mio figlio ha dieci anni.",
+      "ex_en": "My son is ten.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la figlia",
+      "en": "daughter",
+      "ex": "Mia figlia studia a Boston.",
+      "ex_en": "My daughter studies in Boston.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "i figli",
+      "en": "children (sons and/or daughters); sons",
+      "ex": "I miei figli sono a scuola.",
+      "ex_en": "My kids are at school.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il marito",
+      "en": "husband",
+      "ex": "Mio marito è italiano.",
+      "ex_en": "My husband is Italian.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la moglie",
+      "en": "wife",
+      "ex": "Mia moglie parla bene l'italiano.",
+      "ex_en": "My wife speaks Italian well.",
+      "kind": "word",
+      "level": 1,
+      "notes": "pl. le mogli"
+    },
+    {
+      "it": "il fratello",
+      "en": "brother",
+      "ex": "Ho un fratello e una sorella.",
+      "ex_en": "I have a brother and a sister.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la sorella",
+      "en": "sister",
+      "ex": "Mia sorella vive a Roma.",
+      "ex_en": "My sister lives in Rome.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "i genitori",
+      "en": "parents",
+      "ex": "I miei genitori vivono in Florida.",
+      "ex_en": "My parents live in Florida.",
+      "kind": "word",
+      "level": 1,
+      "notes": "parents only; relatives = i parenti"
+    },
+    {
+      "it": "la mamma",
+      "en": "mom",
+      "ex": "Mamma, dove sei?",
+      "ex_en": "Mom, where are you?",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il papà",
+      "en": "dad",
+      "ex": "Papà, vieni qui!",
+      "ex_en": "Dad, come here!",
+      "kind": "word",
+      "level": 1,
+      "notes": "in Tuscany also 'il babbo'"
+    },
+    {
+      "it": "l'amico",
+      "en": "friend (male)",
+      "ex": "Marco è un mio amico.",
+      "ex_en": "Marco is a friend of mine.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; pl. gli amici"
+    },
+    {
+      "it": "l'amica",
+      "en": "friend (female)",
+      "ex": "Stasera esco con un'amica.",
+      "ex_en": "Tonight I'm going out with a friend.",
+      "kind": "word",
+      "level": 1,
+      "notes": "f.; pl. le amiche"
+    },
+    {
+      "it": "l'uomo",
+      "en": "man",
+      "ex": "Chi è quell'uomo?",
+      "ex_en": "Who is that man?",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; irregular pl. gli uomini"
+    },
+    {
+      "it": "la donna",
+      "en": "woman",
+      "ex": "Quella donna è la mia insegnante.",
+      "ex_en": "That woman is my teacher.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il bambino",
+      "en": "child; little boy",
+      "ex": "Il bambino ha cinque anni.",
+      "ex_en": "The child is five.",
+      "kind": "word",
+      "level": 1,
+      "notes": "i bambini = children"
+    },
+    {
+      "it": "la bambina",
+      "en": "little girl",
+      "ex": "La bambina gioca in giardino.",
+      "ex_en": "The little girl is playing in the yard.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il ragazzo",
+      "en": "boy; young man; boyfriend",
+      "ex": "Quel ragazzo è mio figlio.",
+      "ex_en": "That boy is my son.",
+      "kind": "word",
+      "level": 1,
+      "notes": "il mio ragazzo = my boyfriend"
+    },
+    {
+      "it": "la ragazza",
+      "en": "girl; young woman; girlfriend",
+      "ex": "La ragazza al bar è mia cugina.",
+      "ex_en": "The girl at the bar is my cousin.",
+      "kind": "word",
+      "level": 1,
+      "notes": "la mia ragazza = my girlfriend"
+    },
+    {
+      "it": "la persona",
+      "en": "person",
+      "ex": "È una persona simpatica.",
+      "ex_en": "He's a nice person.",
+      "kind": "word",
+      "level": 1,
+      "notes": "always f., even for men"
+    },
+    {
+      "it": "la gente",
+      "en": "people",
+      "ex": "C'è tanta gente in piazza.",
+      "ex_en": "There are a lot of people in the square.",
+      "kind": "word",
+      "level": 1,
+      "notes": "f. singular: la gente è simpatica"
+    },
+    {
+      "it": "il nonno",
+      "en": "grandfather",
+      "ex": "Mio nonno ha ottant'anni.",
+      "ex_en": "My grandfather is eighty.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la nonna",
+      "en": "grandmother",
+      "ex": "La nonna cucina benissimo.",
+      "ex_en": "Grandma cooks really well.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "i fratelli",
+      "en": "brothers; siblings",
+      "ex": "I miei fratelli abitano lontano.",
+      "ex_en": "My siblings live far away.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "sposato",
+      "en": "married",
+      "ex": "Mia sorella è sposata.",
+      "ex_en": "My sister is married.",
+      "kind": "word",
+      "level": 1,
+      "notes": "f. sposata; sposato con = married to"
+    },
+    {
+      "it": "il medico",
+      "en": "doctor",
+      "ex": "Mio fratello è medico.",
+      "ex_en": "My brother is a doctor.",
+      "kind": "word",
+      "level": 1,
+      "notes": "also used for women"
+    },
+    {
+      "it": "l'insegnante",
+      "en": "teacher",
+      "ex": "Mia madre è insegnante.",
+      "ex_en": "My mother is a teacher.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m./f.: l'insegnante for both"
+    },
+    {
+      "it": "l'ingegnere",
+      "en": "engineer",
+      "ex": "Sono ingegnere.",
+      "ex_en": "I'm an engineer.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; no article after essere: sono ingegnere"
+    },
+    {
+      "it": "lo studente",
+      "en": "student",
+      "ex": "Sono uno studente di italiano.",
+      "ex_en": "I'm a student of Italian.",
+      "kind": "word",
+      "level": 1,
+      "notes": "f. la studentessa"
+    },
+    {
+      "it": "Quanti anni hai?",
+      "en": "How old are you? (informal)",
+      "ex": "Quanti anni hai? — Trentotto.",
+      "ex_en": "How old are you? — Thirty-eight.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "formal: Quanti anni ha?"
+    },
+    {
+      "it": "Ho trentacinque anni.",
+      "en": "I'm 35 years old.",
+      "ex": "Ho trentacinque anni e lavoro a Seattle.",
+      "ex_en": "I'm 35 and I work in Seattle.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "use avere: ho … anni (not sono)"
+    },
+    {
+      "it": "Sono sposato.",
+      "en": "I'm married. (said by a man)",
+      "ex": "Sono sposato da dieci anni.",
+      "ex_en": "I've been married for ten years.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "a woman says: Sono sposata."
+    },
+    {
+      "it": "Hai figli?",
+      "en": "Do you have children? (informal)",
+      "ex": "Hai figli? — Sì, una figlia.",
+      "ex_en": "Do you have kids? — Yes, a daughter.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "formal: Ha figli?"
+    },
+    {
+      "it": "Ho due figli.",
+      "en": "I have two children.",
+      "ex": "Ho due figli, un maschio e una femmina.",
+      "ex_en": "I have two kids, a boy and a girl.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Hai fratelli?",
+      "en": "Do you have any siblings? (informal)",
+      "ex": "Hai fratelli? — Sì, una sorella.",
+      "ex_en": "Do you have siblings? — Yes, a sister.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Questo è mio marito.",
+      "en": "This is my husband.",
+      "ex": "Ciao! Questo è mio marito, Paul.",
+      "ex_en": "Hi! This is my husband, Paul.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "no article with mio/mia + a singular relative (mio padre); plural keeps it: i miei figli"
+    },
+    {
+      "it": "il nipote",
+      "en": "grandson; nephew",
+      "ex": "Ho tre nipoti.",
+      "ex_en": "I have three grandchildren / nephews and nieces.",
+      "kind": "word",
+      "level": 2,
+      "notes": "la nipote = granddaughter; niece"
+    },
+    {
+      "it": "lo zio",
+      "en": "uncle",
+      "ex": "Mio zio vive a Milano.",
+      "ex_en": "My uncle lives in Milan.",
+      "kind": "word",
+      "level": 2,
+      "notes": "pl. gli zii"
+    },
+    {
+      "it": "la zia",
+      "en": "aunt",
+      "ex": "Mia zia ha un ristorante.",
+      "ex_en": "My aunt has a restaurant.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il cugino",
+      "en": "cousin (male)",
+      "ex": "Mio cugino abita a Bologna.",
+      "ex_en": "My cousin lives in Bologna.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la cugina",
+      "en": "cousin (female)",
+      "ex": "Mia cugina è in vacanza.",
+      "ex_en": "My cousin is on vacation.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il fidanzato",
+      "en": "boyfriend; fiancé",
+      "ex": "Il mio fidanzato è italiano.",
+      "ex_en": "My boyfriend is Italian.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f. la fidanzata; used for any serious relationship, not only engaged"
+    },
+    {
+      "it": "la fidanzata",
+      "en": "girlfriend; fiancée",
+      "ex": "La mia fidanzata si chiama Elena.",
+      "ex_en": "My girlfriend's name is Elena.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "i parenti",
+      "en": "relatives",
+      "ex": "Ho molti parenti in Sicilia.",
+      "ex_en": "I have a lot of relatives in Sicily.",
+      "kind": "word",
+      "level": 2,
+      "notes": "false friend: not 'parents' (= i genitori)"
+    },
+    {
+      "it": "single",
+      "en": "single",
+      "ex": "Sono single.",
+      "ex_en": "I'm single.",
+      "kind": "word",
+      "level": 2,
+      "notes": "invariable; English loanword"
+    },
+    {
+      "it": "il dottore",
+      "en": "doctor; Dr. (title)",
+      "ex": "Buongiorno, dottore!",
+      "ex_en": "Good morning, doctor!",
+      "kind": "word",
+      "level": 2,
+      "notes": "f. la dottoressa; title also used for any university graduate"
+    },
+    {
+      "it": "il professore",
+      "en": "teacher (middle/high school); professor",
+      "ex": "Il professore è molto bravo.",
+      "ex_en": "The teacher is very good.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f. la professoressa"
+    },
+    {
+      "it": "l'avvocato",
+      "en": "lawyer",
+      "ex": "Mio cugino è avvocato.",
+      "ex_en": "My cousin is a lawyer.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; for women: l'avvocata or l'avvocato"
+    },
+    {
+      "it": "l'infermiere",
+      "en": "nurse (male)",
+      "ex": "Mia sorella fa l'infermiera.",
+      "ex_en": "My sister is a nurse.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; f. l'infermiera"
+    },
+    {
+      "it": "l'impiegato",
+      "en": "employee; office worker",
+      "ex": "Mio padre è impiegato in banca.",
+      "ex_en": "My father works at a bank.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; f. l'impiegata"
+    },
+    {
+      "it": "il poliziotto",
+      "en": "police officer",
+      "ex": "Chiedi a quel poliziotto.",
+      "ex_en": "Ask that police officer.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f. la poliziotta"
+    },
+    {
+      "it": "il pensionato",
+      "en": "retiree",
+      "ex": "Mio nonno è pensionato.",
+      "ex_en": "My grandfather is retired.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f. la pensionata"
+    },
+    {
+      "it": "Faccio l'ingegnere.",
+      "en": "I work as an engineer.",
+      "ex": "Faccio l'ingegnere informatico.",
+      "ex_en": "I'm a software engineer.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "fare + article + profession; also 'sono ingegnere'"
+    },
+    {
+      "it": "Sono figlio unico.",
+      "en": "I'm an only child. (said by a man)",
+      "ex": "Non ho fratelli, sono figlio unico.",
+      "ex_en": "I don't have siblings, I'm an only child.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "a woman says: Sono figlia unica."
+    },
+    {
+      "it": "Sono in pensione.",
+      "en": "I'm retired.",
+      "ex": "Sono in pensione da due anni.",
+      "ex_en": "I've been retired for two years.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "il suocero",
+      "en": "father-in-law",
+      "ex": "Mio suocero è molto simpatico.",
+      "ex_en": "My father-in-law is very nice.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "la suocera",
+      "en": "mother-in-law",
+      "ex": "Mia suocera vive con noi.",
+      "ex_en": "My mother-in-law lives with us.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il cognato",
+      "en": "brother-in-law",
+      "ex": "Mio cognato è di Torino.",
+      "ex_en": "My brother-in-law is from Turin.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "la cognata",
+      "en": "sister-in-law",
+      "ex": "Mia cognata lavora a Londra.",
+      "ex_en": "My sister-in-law works in London.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "divorziato",
+      "en": "divorced",
+      "ex": "Mio padre è divorziato.",
+      "ex_en": "My father is divorced.",
+      "kind": "word",
+      "level": 3,
+      "notes": "f. divorziata"
+    },
+    {
+      "it": "il compagno",
+      "en": "partner (unmarried); classmate",
+      "ex": "Vive con il suo compagno.",
+      "ex_en": "She lives with her partner.",
+      "kind": "word",
+      "level": 3,
+      "notes": "f. la compagna"
+    },
+    {
+      "it": "il gemello",
+      "en": "twin",
+      "ex": "Ho un fratello gemello.",
+      "ex_en": "I have a twin brother.",
+      "kind": "word",
+      "level": 3,
+      "notes": "f. la gemella"
+    }
+  ]
+}

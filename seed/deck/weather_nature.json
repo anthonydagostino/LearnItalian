@@ -1,0 +1,359 @@
+{
+  "topic": "weather_nature",
+  "title": "Weather & Nature",
+  "items": [
+    {
+      "it": "che tempo fa?",
+      "en": "what's the weather like?",
+      "ex": "Che tempo fa a Roma oggi? — Fa bel tempo.",
+      "ex_en": "What's the weather like in Rome today? — It's nice.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "il tempo",
+      "en": "weather; also time",
+      "ex": "Oggi il tempo è bello.",
+      "ex_en": "The weather is nice today.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "fa caldo",
+      "en": "it's hot (weather)",
+      "ex": "Oggi fa molto caldo.",
+      "ex_en": "It's very hot today.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "for weather use fare: fa caldo, not è caldo"
+    },
+    {
+      "it": "fa freddo",
+      "en": "it's cold (weather)",
+      "ex": "La sera fa freddo.",
+      "ex_en": "It's cold in the evening.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "ho caldo",
+      "en": "I'm hot (I feel hot)",
+      "ex": "Ho caldo, apriamo la finestra?",
+      "ex_en": "I'm hot, shall we open the window?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "a person uses avere: ho caldo / ho freddo; never sono caldo"
+    },
+    {
+      "it": "piove",
+      "en": "it's raining",
+      "ex": "Piove, prendi l'ombrello!",
+      "ex_en": "It's raining, take an umbrella!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "c'è il sole",
+      "en": "it's sunny",
+      "ex": "Oggi c'è il sole.",
+      "ex_en": "It's sunny today.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "fa bel tempo",
+      "en": "the weather is nice",
+      "ex": "Domani fa bel tempo: andiamo al mare!",
+      "ex_en": "It's going to be nice tomorrow: let's go to the beach!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "il sole",
+      "en": "the sun",
+      "ex": "Il sole è forte a mezzogiorno.",
+      "ex_en": "The sun is strong at noon.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la pioggia",
+      "en": "rain",
+      "ex": "Domani arriva la pioggia.",
+      "ex_en": "Rain is coming tomorrow.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural le piogge"
+    },
+    {
+      "it": "il mare",
+      "en": "the sea",
+      "ex": "Andiamo al mare domani?",
+      "ex_en": "Shall we go to the beach tomorrow?",
+      "kind": "word",
+      "level": 1,
+      "notes": "al mare = to/at the seaside, the beach"
+    },
+    {
+      "it": "la montagna",
+      "en": "the mountain; the mountains",
+      "ex": "D'estate andiamo in montagna.",
+      "ex_en": "In summer we go to the mountains.",
+      "kind": "word",
+      "level": 1,
+      "notes": "in montagna = to/in the mountains"
+    },
+    {
+      "it": "il lago",
+      "en": "the lake",
+      "ex": "Il lago di Como è molto famoso.",
+      "ex_en": "Lake Como is very famous.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural i laghi"
+    },
+    {
+      "it": "il cielo",
+      "en": "the sky",
+      "ex": "Il cielo è azzurro.",
+      "ex_en": "The sky is blue.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "l'ombrello",
+      "en": "the umbrella",
+      "ex": "Hai l'ombrello?",
+      "ex_en": "Do you have an umbrella?",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "fa brutto tempo",
+      "en": "the weather is bad",
+      "ex": "Oggi fa brutto tempo, restiamo a casa.",
+      "ex_en": "The weather's bad today, let's stay home.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "c'è vento",
+      "en": "it's windy",
+      "ex": "Al mare oggi c'è vento.",
+      "ex_en": "It's windy at the beach today.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "also tira vento"
+    },
+    {
+      "it": "nevica",
+      "en": "it's snowing",
+      "ex": "In montagna nevica.",
+      "ex_en": "It's snowing in the mountains.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "quanti gradi ci sono?",
+      "en": "what's the temperature? (lit. how many degrees are there?)",
+      "ex": "Quanti gradi ci sono oggi? — Ventotto.",
+      "ex_en": "What's the temperature today? — Twenty-eight.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Italy uses Celsius: 28°C ≈ 82°F"
+    },
+    {
+      "it": "il vento",
+      "en": "wind",
+      "ex": "Il vento è forte stasera.",
+      "ex_en": "The wind is strong tonight.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la neve",
+      "en": "snow",
+      "ex": "Sulle Alpi c'è già la neve.",
+      "ex_en": "There's already snow in the Alps.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la nuvola",
+      "en": "the cloud",
+      "ex": "Non c'è una nuvola in cielo.",
+      "ex_en": "There isn't a cloud in the sky.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la temperatura",
+      "en": "the temperature",
+      "ex": "Di notte la temperatura scende.",
+      "ex_en": "At night the temperature drops.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il grado",
+      "en": "the degree (temperature)",
+      "ex": "Fuori ci sono solo cinque gradi.",
+      "ex_en": "It's only five degrees outside.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Celsius: 5°C ≈ 41°F"
+    },
+    {
+      "it": "le previsioni del tempo",
+      "en": "the weather forecast",
+      "ex": "Secondo le previsioni del tempo, domani piove.",
+      "ex_en": "According to the forecast, it'll rain tomorrow.",
+      "kind": "word",
+      "level": 2,
+      "notes": "usually plural; often just le previsioni"
+    },
+    {
+      "it": "il temporale",
+      "en": "the thunderstorm",
+      "ex": "Stasera arriva un temporale.",
+      "ex_en": "A thunderstorm is coming tonight.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "sereno",
+      "en": "clear (sky)",
+      "ex": "Oggi il cielo è sereno.",
+      "ex_en": "The sky is clear today.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "nuvoloso",
+      "en": "cloudy",
+      "ex": "Oggi è nuvoloso.",
+      "ex_en": "It's cloudy today.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il fiume",
+      "en": "the river",
+      "ex": "Il Tevere è il fiume di Roma.",
+      "ex_en": "The Tiber is Rome's river.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la collina",
+      "en": "the hill",
+      "ex": "In Toscana ci sono tante colline.",
+      "ex_en": "There are lots of hills in Tuscany.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "l'isola",
+      "en": "the island",
+      "ex": "La Sicilia è un'isola grande.",
+      "ex_en": "Sicily is a big island.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f."
+    },
+    {
+      "it": "la campagna",
+      "en": "the countryside",
+      "ex": "Il fine settimana andiamo in campagna.",
+      "ex_en": "On weekends we go to the countryside.",
+      "kind": "word",
+      "level": 2,
+      "notes": "also means campaign"
+    },
+    {
+      "it": "il bosco",
+      "en": "the woods, forest",
+      "ex": "Facciamo una passeggiata nel bosco.",
+      "ex_en": "Let's take a walk in the woods.",
+      "kind": "word",
+      "level": 2,
+      "notes": "plural i boschi"
+    },
+    {
+      "it": "l'albero",
+      "en": "the tree",
+      "ex": "Nel parco ci sono alberi molto vecchi.",
+      "ex_en": "There are very old trees in the park.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m."
+    },
+    {
+      "it": "il fiore",
+      "en": "the flower",
+      "ex": "Il balcone è pieno di fiori.",
+      "ex_en": "The balcony is full of flowers.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "sta per piovere",
+      "en": "it's about to rain",
+      "ex": "Prendi l'ombrello, sta per piovere.",
+      "ex_en": "Take an umbrella, it's about to rain.",
+      "kind": "phrase",
+      "level": 3
+    },
+    {
+      "it": "la nebbia",
+      "en": "fog",
+      "ex": "In inverno a Milano c'è spesso la nebbia.",
+      "ex_en": "In winter there's often fog in Milan.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "l'afa",
+      "en": "muggy heat, sultry weather",
+      "ex": "D'estate a Roma c'è l'afa.",
+      "ex_en": "In summer Rome gets muggy and hot.",
+      "kind": "word",
+      "level": 3,
+      "notes": "f.; che afa! = it's so muggy!"
+    },
+    {
+      "it": "il tramonto",
+      "en": "the sunset",
+      "ex": "Guardiamo il tramonto dalla spiaggia.",
+      "ex_en": "Let's watch the sunset from the beach.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "la costa",
+      "en": "the coast",
+      "ex": "La costa amalfitana è bellissima.",
+      "ex_en": "The Amalfi Coast is beautiful.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il panorama",
+      "en": "the view, panorama",
+      "ex": "Che panorama!",
+      "ex_en": "What a view!",
+      "kind": "word",
+      "level": 3,
+      "notes": "masculine despite ending in -a; plural i panorami"
+    },
+    {
+      "it": "il vulcano",
+      "en": "the volcano",
+      "ex": "L'Etna è un vulcano attivo.",
+      "ex_en": "Etna is an active volcano.",
+      "kind": "word",
+      "level": 3
+    }
+  ]
+}

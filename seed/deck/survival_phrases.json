@@ -1,0 +1,643 @@
+{
+  "topic": "survival_phrases",
+  "title": "Survival & Conversation Repair",
+  "items": [
+    {
+      "it": "Non capisco.",
+      "en": "I don't understand.",
+      "ex": "Mi dispiace, non capisco.",
+      "ex_en": "I'm sorry, I don't understand.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Non ho capito.",
+      "en": "I didn't understand. / I didn't catch that.",
+      "ex": "Scusi, non ho capito.",
+      "ex_en": "Sorry, I didn't catch that.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Italians use the past tense here much more than English does."
+    },
+    {
+      "it": "Può ripetere, per favore?",
+      "en": "Can you repeat that, please? (formal)",
+      "ex": "Scusi, può ripetere il nome, per favore?",
+      "ex_en": "Excuse me, can you repeat the name, please?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Puoi ripetere, per favore?",
+      "en": "Can you repeat that, please? (informal)",
+      "ex": "Non ho capito, puoi ripetere?",
+      "ex_en": "I didn't get it, can you say it again?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Più lentamente, per favore.",
+      "en": "More slowly, please.",
+      "ex": "Scusi, più lentamente, per favore.",
+      "ex_en": "Excuse me, more slowly, please.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Also common: più piano, per favore."
+    },
+    {
+      "it": "Può parlare più lentamente?",
+      "en": "Can you speak more slowly? (formal)",
+      "ex": "Scusi, può parlare più lentamente?",
+      "ex_en": "Excuse me, can you speak more slowly?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Informal: Puoi parlare più lentamente?"
+    },
+    {
+      "it": "Parla inglese?",
+      "en": "Do you speak English? (formal)",
+      "ex": "Scusi, parla inglese? — Un po'.",
+      "ex_en": "Excuse me, do you speak English? — A little.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Parli inglese?",
+      "en": "Do you speak English? (informal)",
+      "ex": "Parli inglese? — Sì, abbastanza.",
+      "ex_en": "Do you speak English? — Yes, pretty well.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Parlo un po' d'italiano.",
+      "en": "I speak a little Italian.",
+      "ex": "Parlo un po' d'italiano, ma non molto.",
+      "ex_en": "I speak a little Italian, but not much.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "po' takes an apostrophe (it's short for poco), not an accent."
+    },
+    {
+      "it": "Sto imparando l'italiano.",
+      "en": "I'm learning Italian.",
+      "ex": "Sto imparando l'italiano da due mesi.",
+      "ex_en": "I've been learning Italian for two months.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Non parlo bene l'italiano.",
+      "en": "I don't speak Italian well.",
+      "ex": "Mi scusi, non parlo bene l'italiano.",
+      "ex_en": "Sorry, I don't speak Italian well.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Come si dice … in italiano?",
+      "en": "How do you say … in Italian?",
+      "ex": "Come si dice 'receipt' in italiano? — Scontrino.",
+      "ex_en": "How do you say 'receipt' in Italian? — Scontrino.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Cosa vuol dire …?",
+      "en": "What does … mean?",
+      "ex": "Cosa vuol dire 'magari'?",
+      "ex_en": "What does 'magari' mean?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Also: Che cosa vuol dire…? / Cosa significa…?"
+    },
+    {
+      "it": "Che significa?",
+      "en": "What does it mean?",
+      "ex": "Che significa 'boh'?",
+      "ex_en": "What does 'boh' mean?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Come, scusi?",
+      "en": "Sorry? / Pardon? (formal)",
+      "ex": "Sono trenta euro. — Come, scusi?",
+      "ex_en": "That's thirty euros. — Sorry?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Informal: Come, scusa? or just Come?"
+    },
+    {
+      "it": "Scusi, non ho sentito.",
+      "en": "Sorry, I didn't hear you. (formal)",
+      "ex": "Scusi, non ho sentito. Come ha detto?",
+      "ex_en": "Sorry, I didn't hear. What did you say?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Informal: Scusa, non ho sentito. Come hai detto?"
+    },
+    {
+      "it": "Ancora una volta, per favore.",
+      "en": "One more time, please.",
+      "ex": "Scusi, ancora una volta, per favore.",
+      "ex_en": "Sorry, one more time, please.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Può scriverlo, per favore?",
+      "en": "Can you write it down, please? (formal)",
+      "ex": "Non ho capito il nome. Può scriverlo, per favore?",
+      "ex_en": "I didn't get the name. Can you write it down, please?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Also: Me lo può scrivere? Informal: Puoi scriverlo?"
+    },
+    {
+      "it": "Come si scrive?",
+      "en": "How do you spell it? / How is it written?",
+      "ex": "Scusi, come si scrive?",
+      "ex_en": "Excuse me, how do you spell it?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Ho capito.",
+      "en": "I understand. / Got it.",
+      "ex": "Ah, ho capito! Grazie.",
+      "ex_en": "Oh, got it! Thanks.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Literally 'I understood' — the normal way to say 'I see / got it'."
+    },
+    {
+      "it": "Un attimo.",
+      "en": "Just a moment. / One sec.",
+      "ex": "Un attimo, per favore. Arrivo!",
+      "ex_en": "Just a moment, please. I'm coming!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Aspetti un momento.",
+      "en": "Wait a moment. (formal)",
+      "ex": "Aspetti un momento, cerco il biglietto.",
+      "ex_en": "Wait a moment, I'm looking for my ticket.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Aspetta un attimo.",
+      "en": "Wait a sec. (informal)",
+      "ex": "Aspetta un attimo, non trovo le chiavi.",
+      "ex_en": "Wait a sec, I can't find the keys.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Mi può aiutare?",
+      "en": "Can you help me? (formal)",
+      "ex": "Scusi, mi può aiutare?",
+      "ex_en": "Excuse me, can you help me?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Also: Può aiutarmi?"
+    },
+    {
+      "it": "Mi puoi aiutare?",
+      "en": "Can you help me? (informal)",
+      "ex": "Mi puoi aiutare con la valigia?",
+      "ex_en": "Can you help me with the suitcase?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Dov'è il bagno?",
+      "en": "Where's the bathroom?",
+      "ex": "Scusi, dov'è il bagno? — In fondo a destra.",
+      "ex_en": "Excuse me, where's the bathroom? — At the end, on the right.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Vorrei…",
+      "en": "I'd like…",
+      "ex": "Vorrei un'informazione, per favore.",
+      "ex_en": "I'd like some information, please.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "The polite, standard way to ask for things — softer than voglio (I want)."
+    },
+    {
+      "it": "Ho una domanda.",
+      "en": "I have a question.",
+      "ex": "Scusi, ho una domanda.",
+      "ex_en": "Excuse me, I have a question.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Che cos'è?",
+      "en": "What is it?",
+      "ex": "Che cos'è questo? — È un arancino.",
+      "ex_en": "What is this? — It's an arancino (fried rice ball).",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Shorter: Cos'è?",
+      "flag": "Regional: arancino (m.) in Catania and eastern Sicily, arancina (f.) in Palermo; both are correct."
+    },
+    {
+      "it": "Come si chiama questo?",
+      "en": "What's this called?",
+      "ex": "Come si chiama questo in italiano?",
+      "ex_en": "What's this called in Italian?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Che cosa mi consiglia?",
+      "en": "What do you recommend? (formal)",
+      "ex": "Cosa mi consiglia oggi?",
+      "ex_en": "What do you recommend today?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Informal: Cosa mi consigli?"
+    },
+    {
+      "it": "Posso?",
+      "en": "May I?",
+      "ex": "Posso? — Sì, prego!",
+      "ex_en": "May I? — Yes, go ahead!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Sto cercando…",
+      "en": "I'm looking for…",
+      "ex": "Sto cercando questo indirizzo.",
+      "ex_en": "I'm looking for this address.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "E tu?",
+      "en": "And you? (informal)",
+      "ex": "Sto bene, e tu?",
+      "ex_en": "I'm fine, and you?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "E Lei?",
+      "en": "And you? (formal)",
+      "ex": "Bene, grazie. E Lei?",
+      "ex_en": "Fine, thanks. And you?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Davvero?",
+      "en": "Really?",
+      "ex": "Sono di New York. — Davvero? Che bello!",
+      "ex_en": "I'm from New York. — Really? How nice!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Anch'io.",
+      "en": "Me too.",
+      "ex": "Sono stanco. — Anch'io!",
+      "ex_en": "I'm tired. — Me too!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Neanch'io.",
+      "en": "Me neither.",
+      "ex": "Non ho fame. — Neanch'io.",
+      "ex_en": "I'm not hungry. — Me neither.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Also: Nemmeno io."
+    },
+    {
+      "it": "Lo so.",
+      "en": "I know.",
+      "ex": "È tardi! — Lo so, lo so.",
+      "ex_en": "It's late! — I know, I know.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Mi dispiace.",
+      "en": "I'm sorry.",
+      "ex": "Mi dispiace, non ho tempo.",
+      "ex_en": "I'm sorry, I don't have time.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "For real regret or bad news; for 'excuse me' use scusi / scusa."
+    },
+    {
+      "it": "Non importa.",
+      "en": "It doesn't matter.",
+      "ex": "Il vino rosso è finito. — Non importa.",
+      "ex_en": "We're out of red wine. — It doesn't matter.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Nessun problema.",
+      "en": "No problem.",
+      "ex": "Scusi il ritardo! — Nessun problema.",
+      "ex_en": "Sorry I'm late! — No problem.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Also: Non c'è problema."
+    },
+    {
+      "it": "Grazie dell'aiuto.",
+      "en": "Thanks for the help.",
+      "ex": "Grazie dell'aiuto, è molto gentile!",
+      "ex_en": "Thanks for the help, that's very kind of you!",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Also: Grazie per l'aiuto."
+    },
+    {
+      "it": "È molto gentile.",
+      "en": "That's very kind of you. (formal)",
+      "ex": "Grazie, è molto gentile.",
+      "ex_en": "Thank you, that's very kind of you.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Informal: Sei molto gentile."
+    },
+    {
+      "it": "C'è un problema.",
+      "en": "There's a problem.",
+      "ex": "Scusi, c'è un problema con il conto.",
+      "ex_en": "Excuse me, there's a problem with the check.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Aiuto!",
+      "en": "Help!",
+      "ex": "Aiuto! Chiamate un'ambulanza!",
+      "ex_en": "Help! Call an ambulance!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Ho bisogno di aiuto.",
+      "en": "I need help.",
+      "ex": "Scusi, ho bisogno di aiuto.",
+      "ex_en": "Excuse me, I need help.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Chiami la polizia!",
+      "en": "Call the police! (formal)",
+      "ex": "Chiami la polizia, per favore!",
+      "ex_en": "Call the police, please!",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Informal: Chiama la polizia! Emergency number in Italy and the EU: 112."
+    },
+    {
+      "it": "Mi sono perso.",
+      "en": "I'm lost.",
+      "ex": "Scusi, mi sono perso. Dov'è il centro?",
+      "ex_en": "Excuse me, I'm lost. Where's downtown?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "A woman says: Mi sono persa."
+    },
+    {
+      "it": "Capito?",
+      "en": "Got it? (informal)",
+      "ex": "Domani alle otto. Capito? — Sì, capito!",
+      "ex_en": "Tomorrow at eight. Got it? — Yes, got it!",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "C'è qualcuno che parla inglese?",
+      "en": "Is there anyone who speaks English?",
+      "ex": "Scusi, c'è qualcuno che parla inglese?",
+      "ex_en": "Excuse me, is there anyone who speaks English?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Come si pronuncia?",
+      "en": "How do you pronounce it?",
+      "ex": "Come si pronuncia questa parola?",
+      "ex_en": "How do you pronounce this word?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Può parlare più forte?",
+      "en": "Can you speak louder? (formal)",
+      "ex": "Scusi, può parlare più forte? C'è rumore.",
+      "ex_en": "Sorry, can you speak up? It's noisy.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Può dirlo in un altro modo?",
+      "en": "Can you say it another way? (formal)",
+      "ex": "Non ho capito. Può dirlo in un altro modo?",
+      "ex_en": "I didn't understand. Can you say it another way?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "In che senso?",
+      "en": "What do you mean? / In what way?",
+      "ex": "È un posto particolare. — In che senso?",
+      "ex_en": "It's an unusual place. — What do you mean?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Cioè?",
+      "en": "Meaning? / Like what?",
+      "ex": "Arrivo tra poco. — Cioè? Quando?",
+      "ex_en": "I'll be there soon. — Meaning? When?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Non so come si dice.",
+      "en": "I don't know how to say it.",
+      "ex": "Vorrei… non so come si dice…",
+      "ex_en": "I'd like… I don't know how to say it…",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Potrebbe…?",
+      "en": "Could you…? (formal, polite)",
+      "ex": "Potrebbe chiamare un taxi, per favore?",
+      "ex_en": "Could you call a taxi, please?",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Conditional of potere; more polite than può. Informal: potresti…?"
+    },
+    {
+      "it": "Mi saprebbe dire…?",
+      "en": "Could you tell me…? (formal, very polite)",
+      "ex": "Mi saprebbe dire dov'è la stazione?",
+      "ex_en": "Could you tell me where the station is?",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Informal: Mi sapresti dire…?"
+    },
+    {
+      "it": "Sarebbe possibile…?",
+      "en": "Would it be possible…?",
+      "ex": "Sarebbe possibile cambiare camera?",
+      "ex_en": "Would it be possible to change rooms?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Si può…?",
+      "en": "Can one…? / Is it OK to…?",
+      "ex": "Scusi, si può entrare?",
+      "ex_en": "Excuse me, can we go in?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Scusi il disturbo.",
+      "en": "Sorry to bother you. (formal)",
+      "ex": "Scusi il disturbo, ha un minuto?",
+      "ex_en": "Sorry to bother you, do you have a minute?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Scusi, posso passare?",
+      "en": "Excuse me, can I get by? (formal)",
+      "ex": "Scusi, posso passare? Scendo qui.",
+      "ex_en": "Excuse me, can I get by? I'm getting off here.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Also just: Permesso!"
+    },
+    {
+      "it": "Non fa niente.",
+      "en": "Never mind. / No worries.",
+      "ex": "Scusa! — Non fa niente.",
+      "ex_en": "Sorry! — No worries.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Non si preoccupi.",
+      "en": "Don't worry. (formal)",
+      "ex": "Non si preoccupi, va bene così.",
+      "ex_en": "Don't worry, it's fine like this.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Non ti preoccupare.",
+      "en": "Don't worry. (informal)",
+      "ex": "Non ti preoccupare, pago io.",
+      "ex_en": "Don't worry, I'll pay.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Also: Non preoccuparti."
+    },
+    {
+      "it": "Ho sbagliato.",
+      "en": "I made a mistake. / My mistake.",
+      "ex": "Scusi, ho sbagliato numero.",
+      "ex_en": "Sorry, wrong number.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Non sono sicuro.",
+      "en": "I'm not sure.",
+      "ex": "Non sono sicuro, forse domani.",
+      "ex_en": "I'm not sure, maybe tomorrow.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "A woman says: Non sono sicura."
+    },
+    {
+      "it": "Dipende.",
+      "en": "It depends.",
+      "ex": "Quanto ci vuole? — Dipende.",
+      "ex_en": "How long does it take? — It depends.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "È un'emergenza.",
+      "en": "It's an emergency.",
+      "ex": "Per favore, è un'emergenza!",
+      "ex_en": "Please, it's an emergency!",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Ho perso il passaporto.",
+      "en": "I lost my passport.",
+      "ex": "Aiuto, ho perso il passaporto!",
+      "ex_en": "Help, I lost my passport!",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Mi hanno rubato il portafoglio.",
+      "en": "My wallet was stolen.",
+      "ex": "Mi hanno rubato il portafoglio sul tram.",
+      "ex_en": "Someone stole my wallet on the streetcar.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Cos'è successo?",
+      "en": "What happened?",
+      "ex": "Cos'è successo? — Niente, tutto bene.",
+      "ex_en": "What happened? — Nothing, everything's fine.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Also: Che cosa è successo?"
+    },
+    {
+      "it": "Attenzione!",
+      "en": "Watch out! / Careful!",
+      "ex": "Attenzione! C'è un gradino.",
+      "ex_en": "Watch out! There's a step.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Also: Attento! / Attenta! (to a man / a woman)."
+    },
+    {
+      "it": "Basta!",
+      "en": "Enough! / Stop!",
+      "ex": "Basta così, grazie!",
+      "ex_en": "That's enough, thanks!",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Mi lasci in pace!",
+      "en": "Leave me alone! (formal)",
+      "ex": "Basta, mi lasci in pace!",
+      "ex_en": "That's enough, leave me alone!",
+      "kind": "phrase",
+      "level": 3,
+      "notes": "Informal: Lasciami in pace!"
+    }
+  ]
+}

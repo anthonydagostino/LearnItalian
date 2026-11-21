@@ -1,0 +1,436 @@
+{
+  "topic": "hotel",
+  "title": "Hotel & Lodging",
+  "items": [
+    {
+      "it": "la camera",
+      "en": "the (hotel) room, bedroom",
+      "ex": "La camera è grande e pulita.",
+      "ex_en": "The room is big and clean.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la prenotazione",
+      "en": "the reservation, booking",
+      "ex": "La prenotazione è per due notti.",
+      "ex_en": "The reservation is for two nights.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "ho una prenotazione a nome…",
+      "en": "I have a reservation under the name…",
+      "ex": "Buonasera, ho una prenotazione a nome Smith.",
+      "ex_en": "Good evening, I have a reservation under the name Smith.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "l'albergo",
+      "en": "the hotel",
+      "ex": "L'albergo è in centro.",
+      "ex_en": "The hotel is downtown.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; plural gli alberghi"
+    },
+    {
+      "it": "l'hotel",
+      "en": "the hotel",
+      "ex": "L'hotel ha una bella terrazza.",
+      "ex_en": "The hotel has a nice terrace.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; the h is silent; plural gli hotel (invariable)"
+    },
+    {
+      "it": "la chiave",
+      "en": "the key",
+      "ex": "Ecco la chiave della camera.",
+      "ex_en": "Here's the room key.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural le chiavi"
+    },
+    {
+      "it": "la colazione",
+      "en": "breakfast",
+      "ex": "La colazione è inclusa.",
+      "ex_en": "Breakfast is included.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "a che ora è la colazione?",
+      "en": "what time is breakfast?",
+      "ex": "A che ora è la colazione? — Dalle sette alle dieci.",
+      "ex_en": "What time is breakfast? — From seven to ten.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "il wifi",
+      "en": "Wi-Fi",
+      "ex": "Il wifi è gratuito.",
+      "ex_en": "The Wi-Fi is free.",
+      "kind": "word",
+      "level": 1,
+      "notes": "usually pronounced as in English (uài-fai); also written wi-fi",
+      "flag": "Pronunciation varies: many Italians say 'uài-fai', others 'uì-fi'; both are heard."
+    },
+    {
+      "it": "c'è il wifi?",
+      "en": "is there Wi-Fi?",
+      "ex": "Scusi, c'è il wifi in camera?",
+      "ex_en": "Excuse me, is there Wi-Fi in the room?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "qual è la password?",
+      "en": "what's the password?",
+      "ex": "Qual è la password del wifi?",
+      "ex_en": "What's the Wi-Fi password?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "qual è has no apostrophe"
+    },
+    {
+      "it": "il check-in",
+      "en": "the check-in",
+      "ex": "Il check-in è dalle due.",
+      "ex_en": "Check-in starts at two.",
+      "kind": "word",
+      "level": 1,
+      "notes": "fare il check-in = to check in"
+    },
+    {
+      "it": "la reception",
+      "en": "the front desk, reception",
+      "ex": "Chiedo alla reception.",
+      "ex_en": "I'll ask at the front desk.",
+      "kind": "word",
+      "level": 1,
+      "notes": "pronounced roughly as in English"
+    },
+    {
+      "it": "la camera singola",
+      "en": "the single room",
+      "ex": "Vorrei una camera singola.",
+      "ex_en": "I'd like a single room.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la camera doppia",
+      "en": "the double room (for two people)",
+      "ex": "Avete una camera doppia per stasera?",
+      "ex_en": "Do you have a double room for tonight?",
+      "kind": "word",
+      "level": 1,
+      "notes": "may have two single beds; ask for matrimoniale for one double bed"
+    },
+    {
+      "it": "avete una camera libera?",
+      "en": "do you have a room available?",
+      "ex": "Buongiorno, avete una camera libera per stanotte?",
+      "ex_en": "Hello, do you have a room available for tonight?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "vorrei prenotare una camera",
+      "en": "I'd like to book a room",
+      "ex": "Vorrei prenotare una camera doppia per due notti.",
+      "ex_en": "I'd like to book a double room for two nights.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "per quante notti?",
+      "en": "for how many nights?",
+      "ex": "Per quante notti? — Per tre notti.",
+      "ex_en": "For how many nights? — For three nights.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "siamo in due",
+      "en": "there are two of us",
+      "ex": "Siamo in due, per tre notti.",
+      "ex_en": "There are two of us, for three nights.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "quanto costa a notte?",
+      "en": "how much is it per night?",
+      "ex": "Quanto costa a notte? — Novanta euro.",
+      "ex_en": "How much is it per night? — Ninety euros.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "la colazione è inclusa?",
+      "en": "is breakfast included?",
+      "ex": "La colazione è inclusa nel prezzo?",
+      "ex_en": "Is breakfast included in the price?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "posso lasciare le valigie?",
+      "en": "can I leave my suitcases?",
+      "ex": "Posso lasciare le valigie qui fino alle tre?",
+      "ex_en": "Can I leave my suitcases here until three?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "l'ascensore",
+      "en": "the elevator",
+      "ex": "L'ascensore è a destra.",
+      "ex_en": "The elevator is on the right.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "dov'è l'ascensore?",
+      "en": "where is the elevator?",
+      "ex": "Scusi, dov'è l'ascensore?",
+      "ex_en": "Excuse me, where is the elevator?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "il bagno",
+      "en": "the bathroom",
+      "ex": "Il bagno è molto piccolo.",
+      "ex_en": "The bathroom is very small.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "a che ora è il check-out?",
+      "en": "what time is check-out?",
+      "ex": "A che ora è il check-out? — Entro le undici.",
+      "ex_en": "What time is check-out? — By eleven.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "l'asciugamano",
+      "en": "the towel",
+      "ex": "Gli asciugamani sono in bagno.",
+      "ex_en": "The towels are in the bathroom.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; plural gli asciugamani"
+    },
+    {
+      "it": "mi può dare un altro asciugamano?",
+      "en": "could you give me another towel? (formal)",
+      "ex": "Mi può dare un altro asciugamano, per favore?",
+      "ex_en": "Could I have another towel, please?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "l'aria condizionata",
+      "en": "air conditioning",
+      "ex": "La camera ha l'aria condizionata?",
+      "ex_en": "Does the room have air conditioning?",
+      "kind": "word",
+      "level": 2,
+      "notes": "f."
+    },
+    {
+      "it": "l'aria condizionata non funziona",
+      "en": "the air conditioning doesn't work",
+      "ex": "Scusi, in camera l'aria condizionata non funziona.",
+      "ex_en": "Excuse me, the air conditioning in my room doesn't work.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "swap in any item: la doccia non funziona, il wifi non funziona"
+    },
+    {
+      "it": "la camera matrimoniale",
+      "en": "the room with a double bed",
+      "ex": "Vorremmo una camera matrimoniale.",
+      "ex_en": "We'd like a room with a double bed.",
+      "kind": "word",
+      "level": 2,
+      "notes": "il letto matrimoniale = double bed"
+    },
+    {
+      "it": "il check-out",
+      "en": "the check-out",
+      "ex": "Il check-out è alle dieci.",
+      "ex_en": "Check-out is at ten.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "vorrei fare il check-out",
+      "en": "I'd like to check out",
+      "ex": "Buongiorno, vorrei fare il check-out.",
+      "ex_en": "Good morning, I'd like to check out.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "un documento, per favore",
+      "en": "(may I see) an ID, please",
+      "ex": "Buonasera. Un documento, per favore. — Ecco il passaporto.",
+      "ex_en": "Good evening. An ID, please. — Here's my passport.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "by law, Italian lodgings must register every guest's ID at check-in"
+    },
+    {
+      "it": "a che piano è la camera?",
+      "en": "what floor is the room on?",
+      "ex": "A che piano è la camera? — Al terzo.",
+      "ex_en": "What floor is the room on? — The third.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "la tassa di soggiorno",
+      "en": "the tourist tax, city tax",
+      "ex": "La tassa di soggiorno è di tre euro a notte.",
+      "ex_en": "The tourist tax is three euros per night.",
+      "kind": "word",
+      "level": 2,
+      "notes": "charged per person per night by many cities; often paid at the property and not included in the online price"
+    },
+    {
+      "it": "la carta igienica",
+      "en": "toilet paper",
+      "ex": "Non c'è più carta igienica.",
+      "ex_en": "There's no more toilet paper.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "l'agriturismo",
+      "en": "the farm stay, rural inn",
+      "ex": "Dormiamo in un agriturismo in Toscana.",
+      "ex_en": "We're staying at a farm stay in Tuscany.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; working farm offering rooms and often home-cooked meals"
+    },
+    {
+      "it": "c'è un parcheggio?",
+      "en": "is there a parking lot?",
+      "ex": "C'è un parcheggio per gli ospiti?",
+      "ex_en": "Is there parking for guests?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "non c'è acqua calda",
+      "en": "there's no hot water",
+      "ex": "Scusi, in bagno non c'è acqua calda.",
+      "ex_en": "Excuse me, there's no hot water in the bathroom.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "ho perso la chiave",
+      "en": "I lost the key",
+      "ex": "Scusi, ho perso la chiave della camera.",
+      "ex_en": "Excuse me, I lost my room key.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "la cassaforte",
+      "en": "the safe (for valuables)",
+      "ex": "La cassaforte è nell'armadio.",
+      "ex_en": "The safe is in the closet.",
+      "kind": "word",
+      "level": 3,
+      "notes": "plural le casseforti"
+    },
+    {
+      "it": "il phon",
+      "en": "the hair dryer",
+      "ex": "C'è il phon in bagno?",
+      "ex_en": "Is there a hair dryer in the bathroom?",
+      "kind": "word",
+      "level": 3,
+      "notes": "also spelled fon; formal term: l'asciugacapelli (m.)"
+    },
+    {
+      "it": "la mezza pensione",
+      "en": "half board (breakfast and dinner included)",
+      "ex": "Prendiamo la mezza pensione.",
+      "ex_en": "We'll take half board.",
+      "kind": "word",
+      "level": 3,
+      "notes": "la pensione completa = full board (all meals)"
+    },
+    {
+      "it": "la vista",
+      "en": "the view",
+      "ex": "Vorrei una camera con vista sul mare.",
+      "ex_en": "I'd like a room with a sea view.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "l'ostello",
+      "en": "the hostel",
+      "ex": "L'ostello è economico e centrale.",
+      "ex_en": "The hostel is cheap and central.",
+      "kind": "word",
+      "level": 3,
+      "notes": "m."
+    },
+    {
+      "it": "posso avere una camera più tranquilla?",
+      "en": "could I have a quieter room?",
+      "ex": "C'è troppo rumore. Posso avere una camera più tranquilla?",
+      "ex_en": "It's too noisy. Could I have a quieter room?",
+      "kind": "phrase",
+      "level": 3
+    },
+    {
+      "it": "c'è troppo rumore",
+      "en": "it's too noisy, there's too much noise",
+      "ex": "Di notte c'è troppo rumore dalla strada.",
+      "ex_en": "At night there's too much noise from the street.",
+      "kind": "phrase",
+      "level": 3
+    },
+    {
+      "it": "la camera non è pulita",
+      "en": "the room isn't clean",
+      "ex": "Scusi, la camera non è pulita.",
+      "ex_en": "Excuse me, the room isn't clean.",
+      "kind": "phrase",
+      "level": 3
+    },
+    {
+      "it": "mi può svegliare alle sette?",
+      "en": "could you wake me up at seven? (formal; wake-up call)",
+      "ex": "Mi può svegliare alle sette, domani?",
+      "ex_en": "Could you wake me up at seven tomorrow?",
+      "kind": "phrase",
+      "level": 3
+    },
+    {
+      "it": "avete un adattatore?",
+      "en": "do you have a (plug) adapter?",
+      "ex": "Avete un adattatore per la presa?",
+      "ex_en": "Do you have an adapter for the outlet?",
+      "kind": "phrase",
+      "level": 3,
+      "notes": "Italy uses type F and L plugs at 230V"
+    }
+  ]
+}

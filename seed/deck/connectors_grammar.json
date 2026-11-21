@@ -1,0 +1,863 @@
+{
+  "topic": "connectors_grammar",
+  "title": "Connectors & Function Words",
+  "items": [
+    {
+      "it": "e",
+      "en": "and",
+      "ex": "Un caffè e un cornetto, per favore.",
+      "ex_en": "A coffee and a croissant, please.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Often ed before a word starting with e: lui ed Elena. Don't confuse with è (is)."
+    },
+    {
+      "it": "non",
+      "en": "not",
+      "ex": "Non parlo tedesco.",
+      "ex_en": "I don't speak German.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Goes right before the verb, and before object pronouns: non lo so."
+    },
+    {
+      "it": "il / lo / la (the — singular)",
+      "en": "the (singular)",
+      "ex": "Il caffè e la pizza sono buoni.",
+      "ex_en": "The coffee and the pizza are good.",
+      "kind": "word",
+      "level": 1,
+      "notes": "il: most masculine nouns. lo: masculine before s+consonant, z, gn, ps (lo zaino). l': before a vowel (l'amico, l'acqua). la: feminine."
+    },
+    {
+      "it": "i / gli / le (the — plural)",
+      "en": "the (plural)",
+      "ex": "Gli amici arrivano domani.",
+      "ex_en": "The friends are arriving tomorrow.",
+      "kind": "word",
+      "level": 1,
+      "notes": "i = plural of il (i treni); gli = plural of lo and masculine l' (gli zaini, gli amici); le = feminine plural (le case)."
+    },
+    {
+      "it": "un / uno / una (a, an)",
+      "en": "a, an",
+      "ex": "Un caffè e una birra, per favore.",
+      "ex_en": "A coffee and a beer, please.",
+      "kind": "word",
+      "level": 1,
+      "notes": "uno before s+consonant or z (uno zaino); un' before a feminine vowel (un'amica); masculine has no apostrophe (un amico)."
+    },
+    {
+      "it": "io",
+      "en": "I",
+      "ex": "Io sono americano.",
+      "ex_en": "I'm American.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Subject pronouns are usually dropped: Sono americano. Use them for emphasis or contrast."
+    },
+    {
+      "it": "tu",
+      "en": "you (informal, singular)",
+      "ex": "Tu sei italiano?",
+      "ex_en": "Are you Italian?",
+      "kind": "word",
+      "level": 1,
+      "notes": "For friends, family, kids and peers. With strangers use Lei."
+    },
+    {
+      "it": "Lei (you — formal)",
+      "en": "you (formal, singular)",
+      "ex": "Lei è molto gentile.",
+      "ex_en": "You're very kind.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Takes third-person verb forms: Lei parla inglese? Often capitalized in polite writing."
+    },
+    {
+      "it": "lui",
+      "en": "he, him",
+      "ex": "Lui è mio fratello.",
+      "ex_en": "He's my brother.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "lei (she)",
+      "en": "she, her",
+      "ex": "Lei è la mia amica Giulia.",
+      "ex_en": "She's my friend Giulia.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "noi",
+      "en": "we, us",
+      "ex": "Noi siamo di Boston.",
+      "ex_en": "We're from Boston.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "voi",
+      "en": "you (plural), you all",
+      "ex": "Voi di dove siete?",
+      "ex_en": "Where are you all from?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Plural 'you'; also used to address a group politely."
+    },
+    {
+      "it": "loro (they)",
+      "en": "they, them",
+      "ex": "Loro arrivano domani.",
+      "ex_en": "They're arriving tomorrow.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "ma",
+      "en": "but",
+      "ex": "È piccolo, ma è carino.",
+      "ex_en": "It's small, but it's cute.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "o",
+      "en": "or",
+      "ex": "Vino rosso o bianco?",
+      "ex_en": "Red or white wine?",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "che (that, who — linking word)",
+      "en": "that, which, who",
+      "ex": "Il ragazzo che parla è mio fratello.",
+      "ex_en": "The guy who's talking is my brother.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Also joins clauses: So che è tardi = I know (that) it's late. Never dropped like English 'that'. In exclamations: Che bello! = How nice!"
+    },
+    {
+      "it": "cosa / che cosa",
+      "en": "what?",
+      "ex": "Cosa fai stasera?",
+      "ex_en": "What are you doing tonight?",
+      "kind": "word",
+      "level": 1,
+      "notes": "che cosa, cosa and che all mean 'what?'. Cos'è? = What is it?"
+    },
+    {
+      "it": "dove",
+      "en": "where?",
+      "ex": "Dove abiti?",
+      "ex_en": "Where do you live?",
+      "kind": "word",
+      "level": 1,
+      "notes": "dov'è = where is."
+    },
+    {
+      "it": "quando",
+      "en": "when?; when",
+      "ex": "Quando parte il treno?",
+      "ex_en": "When does the train leave?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Also 'when' in statements: Quando piove, resto a casa."
+    },
+    {
+      "it": "perché (why)",
+      "en": "why?",
+      "ex": "Perché ridi?",
+      "ex_en": "Why are you laughing?",
+      "kind": "word",
+      "level": 1,
+      "notes": "The answer also uses perché (= because). Written with an acute accent: é."
+    },
+    {
+      "it": "perché (because)",
+      "en": "because",
+      "ex": "Resto qui perché sono stanco.",
+      "ex_en": "I'm staying here because I'm tired.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "come",
+      "en": "how?; like, as",
+      "ex": "Come funziona?",
+      "ex_en": "How does it work?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Also 'like/as': come te = like you. Com'è? = What's it like?"
+    },
+    {
+      "it": "quanto",
+      "en": "how much?; how many? (quanti)",
+      "ex": "Quanto tempo ci vuole?",
+      "ex_en": "How long does it take?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Agrees with the noun: quanto, quanta, quanti, quante (Quanti anni hai?). Quanto costa? = How much is it?"
+    },
+    {
+      "it": "chi",
+      "en": "who?",
+      "ex": "Chi è? — Sono io.",
+      "ex_en": "Who is it? — It's me.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "quale",
+      "en": "which?; what?",
+      "ex": "Quale preferisci?",
+      "ex_en": "Which one do you prefer?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Before è it becomes qual è — no apostrophe! Plural quali."
+    },
+    {
+      "it": "anche",
+      "en": "also, too",
+      "ex": "Prendo anche un'acqua.",
+      "ex_en": "I'll also have a water.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Anch'io = me too."
+    },
+    {
+      "it": "allora",
+      "en": "so, well then; then",
+      "ex": "Allora, cosa prendi?",
+      "ex_en": "So, what are you having?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Very common conversation starter. Can also mean 'at that time'."
+    },
+    {
+      "it": "quindi",
+      "en": "so, therefore",
+      "ex": "Piove, quindi resto a casa.",
+      "ex_en": "It's raining, so I'm staying home.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "poi",
+      "en": "then, afterwards",
+      "ex": "Prima il museo, poi il pranzo.",
+      "ex_en": "First the museum, then lunch.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "prima",
+      "en": "before; first",
+      "ex": "Prima mangiamo, poi andiamo.",
+      "ex_en": "First we eat, then we go.",
+      "kind": "word",
+      "level": 1,
+      "notes": "prima di + noun or infinitive = before: prima di cena, prima di partire."
+    },
+    {
+      "it": "dopo",
+      "en": "after; later",
+      "ex": "Ci vediamo dopo.",
+      "ex_en": "See you later.",
+      "kind": "word",
+      "level": 1,
+      "notes": "dopo + noun = after: dopo cena."
+    },
+    {
+      "it": "se",
+      "en": "if",
+      "ex": "Se vuoi, andiamo insieme.",
+      "ex_en": "If you want, we'll go together.",
+      "kind": "word",
+      "level": 1,
+      "notes": "No accent. Sé (with accent) means 'oneself'."
+    },
+    {
+      "it": "di",
+      "en": "of; from (origin); 's (possession)",
+      "ex": "È la macchina di Marco.",
+      "ex_en": "It's Marco's car.",
+      "kind": "word",
+      "level": 1,
+      "notes": "di + article = del, dello, della, dell', dei, degli, delle. Also 'some': del pane. Origin: sono di Boston."
+    },
+    {
+      "it": "a",
+      "en": "to; at; in (cities)",
+      "ex": "Vado a Roma domani.",
+      "ex_en": "I'm going to Rome tomorrow.",
+      "kind": "word",
+      "level": 1,
+      "notes": "a + article = al, allo, alla, all', ai, agli, alle. Cities take a (a Milano); ad before a word starting with a (ad Assisi)."
+    },
+    {
+      "it": "da",
+      "en": "from; at/to someone's place; since, for (time)",
+      "ex": "Vengo da Chicago.",
+      "ex_en": "I come from Chicago.",
+      "kind": "word",
+      "level": 1,
+      "notes": "da + article = dal, dallo, dalla, dall', dai, dagli, dalle. Vado da Marco = I'm going to Marco's. Studio italiano da due mesi = I've been studying Italian for two months."
+    },
+    {
+      "it": "in",
+      "en": "in; to (countries, regions); by (transport)",
+      "ex": "Vado in Italia a maggio.",
+      "ex_en": "I'm going to Italy in May.",
+      "kind": "word",
+      "level": 1,
+      "notes": "in + article = nel, nello, nella, nell', nei, negli, nelle. Countries: in Italia; transport: in treno, in macchina."
+    },
+    {
+      "it": "con",
+      "en": "with",
+      "ex": "Vieni con me?",
+      "ex_en": "Are you coming with me?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Usually not combined with the article: con il, con la (col exists but is less common)."
+    },
+    {
+      "it": "per",
+      "en": "for; through; in order to",
+      "ex": "Questo regalo è per te.",
+      "ex_en": "This gift is for you.",
+      "kind": "word",
+      "level": 1,
+      "notes": "per + infinitive = in order to: per imparare. Not combined with the article."
+    },
+    {
+      "it": "su",
+      "en": "on; about",
+      "ex": "Il telefono è sul tavolo.",
+      "ex_en": "The phone is on the table.",
+      "kind": "word",
+      "level": 1,
+      "notes": "su + article = sul, sullo, sulla, sull', sui, sugli, sulle."
+    },
+    {
+      "it": "tra / fra",
+      "en": "between, among; in (time from now)",
+      "ex": "Arrivo tra dieci minuti.",
+      "ex_en": "I'll be there in ten minutes.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Interchangeable; choose by sound (fra tre, tra fratelli). Between: tra Roma e Firenze."
+    },
+    {
+      "it": "senza",
+      "en": "without",
+      "ex": "Un caffè senza zucchero, per favore.",
+      "ex_en": "A coffee without sugar, please.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "mi",
+      "en": "me, to me; myself",
+      "ex": "Mi senti?",
+      "ex_en": "Can you hear me?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Also reflexive: mi chiamo… = my name is… (literally 'I call myself')."
+    },
+    {
+      "it": "ti",
+      "en": "you, to you (informal); yourself",
+      "ex": "Ti aiuto io.",
+      "ex_en": "I'll help you.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "ci (us)",
+      "en": "us, to us; ourselves",
+      "ex": "Ci porta il conto, per favore?",
+      "ex_en": "Could you bring us the check, please?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Ci vediamo! = See you! (literally 'we'll see each other')."
+    },
+    {
+      "it": "lo (him/it — pronoun)",
+      "en": "him, it (masculine)",
+      "ex": "Questo? Sì, lo prendo.",
+      "ex_en": "This one? Yes, I'll take it.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Becomes l' before a vowel or h: l'ho visto."
+    },
+    {
+      "it": "la (her/it — pronoun)",
+      "en": "her, it (feminine)",
+      "ex": "La chiave? Non la trovo.",
+      "ex_en": "The key? I can't find it.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Capitalized La = you (formal object): La ringrazio = thank you (formal)."
+    },
+    {
+      "it": "c'è",
+      "en": "there is; is there?",
+      "ex": "C'è un bar qui vicino?",
+      "ex_en": "Is there a café near here?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Singular. Plural: ci sono. Non c'è = there isn't / he's not here."
+    },
+    {
+      "it": "ci sono",
+      "en": "there are; are there?",
+      "ex": "Ci sono molti turisti oggi.",
+      "ex_en": "There are a lot of tourists today.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "questo",
+      "en": "this; this one",
+      "ex": "Questo è il mio amico Marco.",
+      "ex_en": "This is my friend Marco.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Forms: questo, questa, questi, queste."
+    },
+    {
+      "it": "quello",
+      "en": "that; that one",
+      "ex": "Quello è il Duomo.",
+      "ex_en": "That's the cathedral.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Before a noun it changes like the article: quel ragazzo, quello zaino, quell'albergo, quei ragazzi, quegli zaini; feminine quella, quelle."
+    },
+    {
+      "it": "mio",
+      "en": "my, mine",
+      "ex": "È il mio passaporto.",
+      "ex_en": "It's my passport.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Forms: il mio, la mia, i miei, le mie. Usually with the article, but none with a singular family member: mia madre."
+    },
+    {
+      "it": "tuo",
+      "en": "your, yours (informal)",
+      "ex": "È la tua borsa?",
+      "ex_en": "Is this your bag?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Forms: tuo, tua, tuoi, tue."
+    },
+    {
+      "it": "suo",
+      "en": "his, her, its; your (formal: Suo)",
+      "ex": "Questo è il suo zaino.",
+      "ex_en": "This is his (or her) backpack.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Agrees with the thing owned, not the owner: la sua macchina = his/her car. Forms: suo, sua, suoi, sue."
+    },
+    {
+      "it": "nostro",
+      "en": "our, ours",
+      "ex": "La nostra camera è piccola.",
+      "ex_en": "Our room is small.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Forms: nostro, nostra, nostri, nostre."
+    },
+    {
+      "it": "tutto",
+      "en": "all, everything; everyone (tutti)",
+      "ex": "Qui tutti parlano inglese.",
+      "ex_en": "Everyone here speaks English.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Before a noun add the article: tutto il giorno, tutta la notte, tutti i giorni."
+    },
+    {
+      "it": "niente / nulla",
+      "en": "nothing; anything (with non)",
+      "ex": "Non voglio niente, grazie.",
+      "ex_en": "I don't want anything, thanks.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Needs non before the verb (double negative). On its own: Niente! = Nothing!"
+    },
+    {
+      "it": "qualcosa",
+      "en": "something; anything (in questions)",
+      "ex": "Vuoi qualcosa da bere?",
+      "ex_en": "Do you want something to drink?",
+      "kind": "word",
+      "level": 1,
+      "notes": "qualcosa di + adjective: qualcosa di buono = something good."
+    },
+    {
+      "it": "ogni",
+      "en": "every, each",
+      "ex": "Il treno parte ogni ora.",
+      "ex_en": "The train leaves every hour.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Invariable; always followed by a singular noun: ogni giorno."
+    },
+    {
+      "it": "non… mai",
+      "en": "never, not ever",
+      "ex": "Non bevo mai il caffè la sera.",
+      "ex_en": "I never drink coffee in the evening.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Double negative: non + verb + mai."
+    },
+    {
+      "it": "non… più",
+      "en": "not anymore, no longer",
+      "ex": "Non fumo più.",
+      "ex_en": "I don't smoke anymore.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Non c'è più = there's none left / it's gone."
+    },
+    {
+      "it": "invece",
+      "en": "instead; on the other hand",
+      "ex": "Io prendo il pesce, tu invece?",
+      "ex_en": "I'll have the fish — what about you?",
+      "kind": "word",
+      "level": 1,
+      "notes": "invece di = instead of: invece del vino, l'acqua."
+    },
+    {
+      "it": "oppure",
+      "en": "or (else)",
+      "ex": "Prendiamo il treno oppure l'autobus?",
+      "ex_en": "Shall we take the train or the bus?",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "me / te (after prepositions)",
+      "en": "me / you (informal) — after prepositions",
+      "ex": "Per me, un caffè.",
+      "ex_en": "For me, a coffee.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Stressed forms used after prepositions: con te, per me, da me, a te."
+    },
+    {
+      "it": "cioè",
+      "en": "that is, I mean",
+      "ex": "Arrivo dopo, cioè verso le nove.",
+      "ex_en": "I'll come later, I mean around nine.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Also a very common filler: Cioè… = I mean… / Like…"
+    },
+    {
+      "it": "comunque",
+      "en": "anyway; however",
+      "ex": "Comunque, grazie lo stesso.",
+      "ex_en": "Anyway, thanks all the same.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "però",
+      "en": "but, however",
+      "ex": "È caro, però è molto buono.",
+      "ex_en": "It's expensive, but it's very good.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Similar to ma, slightly more emphatic."
+    },
+    {
+      "it": "mentre",
+      "en": "while",
+      "ex": "Leggo mentre aspetto il treno.",
+      "ex_en": "I read while I wait for the train.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "infatti",
+      "en": "indeed, in fact, sure enough",
+      "ex": "Sembra buono, e infatti è ottimo.",
+      "ex_en": "It looks good, and sure enough, it's excellent.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Confirms what was just said. It does NOT introduce a contradiction (for 'actually' use in realtà)."
+    },
+    {
+      "it": "neanche / nemmeno",
+      "en": "not even; neither",
+      "ex": "Non ho neanche un euro.",
+      "ex_en": "I don't even have one euro.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Neanch'io / Nemmeno io = me neither."
+    },
+    {
+      "it": "magari",
+      "en": "maybe; I wish! (exclamation)",
+      "ex": "Magari domani andiamo al mare.",
+      "ex_en": "Maybe tomorrow we'll go to the beach.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Magari! on its own = I wish! / If only!"
+    },
+    {
+      "it": "insomma",
+      "en": "in short; well…; so-so",
+      "ex": "Com'è il film? — Insomma…",
+      "ex_en": "How's the movie? — Meh, so-so.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Also 'in short / basically', or impatient 'come on!'."
+    },
+    {
+      "it": "tipo",
+      "en": "like (informal filler)",
+      "ex": "Ci sono tipo cento persone.",
+      "ex_en": "There are like a hundred people.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Informal, like English filler 'like'. As a noun: il tipo = type, kind; guy."
+    },
+    {
+      "it": "dunque",
+      "en": "so, therefore; well then",
+      "ex": "Dunque, dove eravamo?",
+      "ex_en": "So, where were we?",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "vi",
+      "en": "you, to you (plural); yourselves",
+      "ex": "Vi aspetto qui.",
+      "ex_en": "I'll wait for you (all) here.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "gli (to him/them — pronoun)",
+      "en": "to him; to them (colloquial)",
+      "ex": "Gli scrivo un messaggio.",
+      "ex_en": "I'll text him.",
+      "kind": "word",
+      "level": 2,
+      "notes": "In everyday speech gli also means 'to them'. Also the plural article (gli amici)."
+    },
+    {
+      "it": "le (to her — pronoun)",
+      "en": "to her; to you (formal: Le)",
+      "ex": "Le telefono domani.",
+      "ex_en": "I'll call her tomorrow.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Le (formal) = to you: Le porto il menù. Also 'them' (feminine direct object) and the plural article."
+    },
+    {
+      "it": "ci (there)",
+      "en": "there (replacing a place)",
+      "ex": "Ci vado domani.",
+      "ex_en": "I'm going there tomorrow.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Replaces a place already mentioned: a Roma? — Sì, ci vado."
+    },
+    {
+      "it": "ne",
+      "en": "of it, of them; some",
+      "ex": "Quante ne vuole? — Ne vorrei due.",
+      "ex_en": "How many would you like? — I'd like two.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Replaces a quantity of something already mentioned; often has no English equivalent."
+    },
+    {
+      "it": "nessuno",
+      "en": "nobody, no one; no (adjective)",
+      "ex": "Non c'è nessuno.",
+      "ex_en": "There's nobody here.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Needs non before the verb. As an adjective it changes like un: nessun problema, nessuna idea."
+    },
+    {
+      "it": "qualcuno",
+      "en": "someone, somebody; anyone (in questions)",
+      "ex": "C'è qualcuno?",
+      "ex_en": "Is anybody there?",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "qualche",
+      "en": "some, a few",
+      "ex": "Resto qui qualche giorno.",
+      "ex_en": "I'm staying here a few days.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Invariable and always followed by a SINGULAR noun, even though it means 'a few': qualche giorno."
+    },
+    {
+      "it": "alcuni",
+      "en": "some, a few",
+      "ex": "Alcuni amici arrivano stasera.",
+      "ex_en": "Some friends are arriving tonight.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Plural only; feminine alcune."
+    },
+    {
+      "it": "vostro",
+      "en": "your, yours (plural)",
+      "ex": "Qual è il vostro albergo?",
+      "ex_en": "Which one is your hotel?",
+      "kind": "word",
+      "level": 2,
+      "notes": "Forms: vostro, vostra, vostri, vostre."
+    },
+    {
+      "it": "il loro (their)",
+      "en": "their, theirs",
+      "ex": "La loro casa è bellissima.",
+      "ex_en": "Their house is gorgeous.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Invariable, always with the article: il loro, la loro, i loro, le loro."
+    },
+    {
+      "it": "anzi",
+      "en": "on the contrary; actually, rather",
+      "ex": "Non è caro, anzi, è economico.",
+      "ex_en": "It's not expensive — actually, it's cheap.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "allora, vediamo…",
+      "en": "so, let's see…",
+      "ex": "Allora, vediamo… prendo la pasta.",
+      "ex_en": "So, let's see… I'll have the pasta.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "va bene",
+      "en": "OK, all right",
+      "ex": "Alle otto? — Va bene!",
+      "ex_en": "At eight? — OK!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "certo",
+      "en": "of course, sure",
+      "ex": "Posso sedermi? — Certo!",
+      "ex_en": "May I sit down? — Of course!",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Also: certamente, come no!"
+    },
+    {
+      "it": "non lo so",
+      "en": "I don't know",
+      "ex": "Dov'è la fermata? — Non lo so, mi dispiace.",
+      "ex_en": "Where's the stop? — I don't know, sorry.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Also just: non so."
+    },
+    {
+      "it": "ecco",
+      "en": "here it is; there you go; that's it",
+      "ex": "Ecco il tuo caffè.",
+      "ex_en": "Here's your coffee.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "Ah, ecco! = Oh, I see! / That's it! Eccomi! = Here I am!"
+    },
+    {
+      "it": "esatto",
+      "en": "exactly",
+      "ex": "Quindi a destra? — Esatto!",
+      "ex_en": "So, to the right? — Exactly!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "per esempio",
+      "en": "for example",
+      "ex": "Ci sono tante cose da vedere, per esempio il Colosseo.",
+      "ex_en": "There's lots to see, for example the Colosseum.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "dai!",
+      "en": "come on!",
+      "ex": "Dai, andiamo!",
+      "ex_en": "Come on, let's go!",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Also encouragement. Ma dai! = No way! / Really?"
+    },
+    {
+      "it": "infatti!",
+      "en": "exactly! / right!",
+      "ex": "È troppo caro. — Infatti!",
+      "ex_en": "It's too expensive. — Exactly!",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Used alone to agree strongly."
+    },
+    {
+      "it": "beh…",
+      "en": "well…",
+      "ex": "Beh, dipende.",
+      "ex_en": "Well, it depends.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "senti / senta",
+      "en": "listen; excuse me (informal / formal)",
+      "ex": "Senta, scusi, quanto costa?",
+      "ex_en": "Excuse me, how much is it?",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "senti = informal, senta = formal. Used to get attention or to introduce a point."
+    },
+    {
+      "it": "vabbè",
+      "en": "oh well; OK, fine (informal)",
+      "ex": "È chiuso? Vabbè, torniamo domani.",
+      "ex_en": "It's closed? Oh well, we'll come back tomorrow.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Short for va bene; also spelled va be'. Informal."
+    },
+    {
+      "it": "boh",
+      "en": "dunno (informal shrug)",
+      "ex": "Dov'è Marco? — Boh!",
+      "ex_en": "Where's Marco? — No idea!",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "Very informal; avoid in formal situations."
+    }
+  ]
+}

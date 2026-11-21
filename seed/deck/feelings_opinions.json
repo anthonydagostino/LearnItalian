@@ -1,0 +1,535 @@
+{
+  "topic": "feelings_opinions",
+  "title": "Feelings & Opinions",
+  "items": [
+    {
+      "it": "stanco",
+      "en": "tired",
+      "ex": "Oggi sono molto stanco.",
+      "ex_en": "I'm very tired today.",
+      "kind": "word",
+      "level": 1,
+      "notes": "pl. stanchi; f. stanca"
+    },
+    {
+      "it": "contento",
+      "en": "glad; happy; pleased",
+      "ex": "Sono contento di vederti!",
+      "ex_en": "I'm glad to see you!",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "felice",
+      "en": "happy",
+      "ex": "Sono felice di essere qui.",
+      "ex_en": "I'm happy to be here.",
+      "kind": "word",
+      "level": 1,
+      "notes": "same form for m. and f."
+    },
+    {
+      "it": "triste",
+      "en": "sad",
+      "ex": "Perché sei triste?",
+      "ex_en": "Why are you sad?",
+      "kind": "word",
+      "level": 1,
+      "notes": "same form for m. and f."
+    },
+    {
+      "it": "arrabbiato",
+      "en": "angry; mad",
+      "ex": "Sei arrabbiato con me?",
+      "ex_en": "Are you mad at me?",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "l'idea",
+      "en": "idea",
+      "ex": "Che bella idea!",
+      "ex_en": "What a great idea!",
+      "kind": "word",
+      "level": 1,
+      "notes": "f."
+    },
+    {
+      "it": "il problema",
+      "en": "problem",
+      "ex": "Nessun problema!",
+      "ex_en": "No problem!",
+      "kind": "word",
+      "level": 1,
+      "notes": "m. despite -a; pl. i problemi"
+    },
+    {
+      "it": "Mi piace…",
+      "en": "I like… (singular thing or verb)",
+      "ex": "Mi piace molto Firenze.",
+      "ex_en": "I really like Florence.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "lit. 'it pleases me'; also with verbs: mi piace ballare"
+    },
+    {
+      "it": "Mi piacciono…",
+      "en": "I like… (plural things)",
+      "ex": "Mi piacciono i musei.",
+      "ex_en": "I like museums.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Non mi piace.",
+      "en": "I don't like it.",
+      "ex": "Questo non mi piace.",
+      "ex_en": "I don't like this.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Ti piace?",
+      "en": "Do you like it? (informal)",
+      "ex": "Ti piace Roma? — Sì, tantissimo!",
+      "ex_en": "Do you like Rome? — Yes, a lot!",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "formal: Le piace?"
+    },
+    {
+      "it": "Secondo me…",
+      "en": "In my opinion…",
+      "ex": "Secondo me, è una buona idea.",
+      "ex_en": "In my opinion, it's a good idea.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Penso di sì.",
+      "en": "I think so.",
+      "ex": "Domani piove? — Penso di sì.",
+      "ex_en": "Is it going to rain tomorrow? — I think so.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Penso di no.",
+      "en": "I don't think so.",
+      "ex": "È aperto? — Penso di no.",
+      "ex_en": "Is it open? — I don't think so.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Sono d'accordo.",
+      "en": "I agree.",
+      "ex": "Sono d'accordo con te.",
+      "ex_en": "I agree with you.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Non sono d'accordo.",
+      "en": "I disagree.",
+      "ex": "Scusa, ma non sono d'accordo.",
+      "ex_en": "Sorry, but I disagree.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Hai ragione.",
+      "en": "You're right. (informal)",
+      "ex": "Hai ragione, è troppo tardi.",
+      "ex_en": "You're right, it's too late.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "formal: Ha ragione."
+    },
+    {
+      "it": "Non sono sicuro.",
+      "en": "I'm not sure. (said by a man)",
+      "ex": "Non sono sicuro, forse domani.",
+      "ex_en": "I'm not sure, maybe tomorrow.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "a woman says: Non sono sicura."
+    },
+    {
+      "it": "Che bello!",
+      "en": "How nice! Great!",
+      "ex": "Domani andiamo al mare. — Che bello!",
+      "ex_en": "Tomorrow we're going to the beach. — Great!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Che peccato!",
+      "en": "What a shame! Too bad!",
+      "ex": "Il museo è chiuso. — Che peccato!",
+      "ex_en": "The museum is closed. — What a shame!",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "also just 'Peccato!'"
+    },
+    {
+      "it": "Dipende.",
+      "en": "It depends.",
+      "ex": "Vieni stasera? — Dipende.",
+      "ex_en": "Are you coming tonight? — It depends.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Mamma mia!",
+      "en": "Oh my gosh! Wow!",
+      "ex": "Mamma mia, che traffico!",
+      "ex_en": "Oh my gosh, what traffic!",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "genuinely used, for surprise or dismay"
+    },
+    {
+      "it": "Non importa.",
+      "en": "It doesn't matter.",
+      "ex": "Non importa, grazie lo stesso.",
+      "ex_en": "It doesn't matter, thanks anyway.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Non fa niente.",
+      "en": "Never mind; no worries.",
+      "ex": "Scusa! — Non fa niente.",
+      "ex_en": "Sorry! — No worries.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "preoccupato",
+      "en": "worried",
+      "ex": "Sono preoccupato per mio figlio.",
+      "ex_en": "I'm worried about my son.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "annoiato",
+      "en": "bored",
+      "ex": "I bambini sono annoiati.",
+      "ex_en": "The kids are bored.",
+      "kind": "word",
+      "level": 2,
+      "notes": "annoiato = bored (feeling); noioso = boring"
+    },
+    {
+      "it": "nervoso",
+      "en": "nervous; irritable, on edge",
+      "ex": "Prima dell'esame sono nervoso.",
+      "ex_en": "Before the exam I'm nervous.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "stressato",
+      "en": "stressed",
+      "ex": "Al lavoro sono sempre stressato.",
+      "ex_en": "I'm always stressed at work.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "emozionato",
+      "en": "excited; moved",
+      "ex": "Sono emozionato per il viaggio!",
+      "ex_en": "I'm excited about the trip!",
+      "kind": "word",
+      "level": 2,
+      "notes": "don't use 'eccitato' for excited (sexual connotation)"
+    },
+    {
+      "it": "rilassato",
+      "en": "relaxed",
+      "ex": "In vacanza sono rilassato.",
+      "ex_en": "On vacation I'm relaxed.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "sorpreso",
+      "en": "surprised",
+      "ex": "Sono sorpreso di vederti qui!",
+      "ex_en": "I'm surprised to see you here!",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "deluso",
+      "en": "disappointed",
+      "ex": "Sono un po' deluso.",
+      "ex_en": "I'm a little disappointed.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "spaventato",
+      "en": "scared; frightened",
+      "ex": "Il bambino è spaventato.",
+      "ex_en": "The child is scared.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "innamorato",
+      "en": "in love",
+      "ex": "Sono innamorato di Roma!",
+      "ex_en": "I'm in love with Rome!",
+      "kind": "word",
+      "level": 2,
+      "notes": "innamorato di = in love with"
+    },
+    {
+      "it": "confuso",
+      "en": "confused",
+      "ex": "Scusa, sono un po' confuso.",
+      "ex_en": "Sorry, I'm a bit confused.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la paura",
+      "en": "fear",
+      "ex": "Che paura!",
+      "ex_en": "How scary!",
+      "kind": "word",
+      "level": 2,
+      "notes": "avere paura = to be afraid"
+    },
+    {
+      "it": "la voglia",
+      "en": "desire; wish; (feeling like)",
+      "ex": "Non ho voglia di uscire.",
+      "ex_en": "I don't feel like going out.",
+      "kind": "word",
+      "level": 2,
+      "notes": "avere voglia di = to feel like"
+    },
+    {
+      "it": "l'amore",
+      "en": "love; (term of endearment) honey",
+      "ex": "Ciao, amore!",
+      "ex_en": "Hi, honey!",
+      "kind": "word",
+      "level": 2,
+      "notes": "m."
+    },
+    {
+      "it": "l'opinione",
+      "en": "opinion",
+      "ex": "Qual è la tua opinione?",
+      "ex_en": "What's your opinion?",
+      "kind": "word",
+      "level": 2,
+      "notes": "f."
+    },
+    {
+      "it": "magari",
+      "en": "maybe; I wish!; if only!",
+      "ex": "Vieni in Italia con noi? — Magari!",
+      "ex_en": "Are you coming to Italy with us? — I wish!",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "boh",
+      "en": "dunno; who knows (informal)",
+      "ex": "Dov'è Marco? — Boh!",
+      "ex_en": "Where's Marco? — Dunno!",
+      "kind": "word",
+      "level": 2,
+      "notes": "informal; often with a shrug"
+    },
+    {
+      "it": "dai",
+      "en": "come on!",
+      "ex": "Dai, andiamo!",
+      "ex_en": "Come on, let's go!",
+      "kind": "word",
+      "level": 2,
+      "notes": "informal; Dai! can also mean 'no way!'"
+    },
+    {
+      "it": "basta",
+      "en": "enough!; stop!",
+      "ex": "Basta così, grazie.",
+      "ex_en": "That's enough, thanks.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "Ho paura.",
+      "en": "I'm afraid; I'm scared.",
+      "ex": "Ho paura dei cani.",
+      "ex_en": "I'm afraid of dogs.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "avere paura di = to be afraid of"
+    },
+    {
+      "it": "Ho voglia di…",
+      "en": "I feel like…",
+      "ex": "Ho voglia di un gelato.",
+      "ex_en": "I feel like having an ice cream.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "+ noun or infinitive: ho voglia di uscire"
+    },
+    {
+      "it": "Penso che…",
+      "en": "I think that…",
+      "ex": "Penso che sia vero.",
+      "ex_en": "I think it's true.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "followed by the subjunctive: penso che sia…"
+    },
+    {
+      "it": "Che ne pensi?",
+      "en": "What do you think (about it)? (informal)",
+      "ex": "Che ne pensi di Firenze?",
+      "ex_en": "What do you think of Florence?",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "formal: Che ne pensa?"
+    },
+    {
+      "it": "Mi manchi.",
+      "en": "I miss you.",
+      "ex": "Mi manchi tanto!",
+      "ex_en": "I miss you so much!",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "lit. 'you are missing to me'; mi manca Roma = I miss Rome"
+    },
+    {
+      "it": "Non vedo l'ora!",
+      "en": "I can't wait!",
+      "ex": "Parto domani. Non vedo l'ora!",
+      "ex_en": "I leave tomorrow. I can't wait!",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "non vedo l'ora di + infinitive"
+    },
+    {
+      "it": "Meno male!",
+      "en": "Thank goodness!",
+      "ex": "Il treno è in orario. Meno male!",
+      "ex_en": "The train is on time. Thank goodness!",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Che noia!",
+      "en": "How boring!",
+      "ex": "Che noia questo film!",
+      "ex_en": "This movie is so boring!",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Che schifo!",
+      "en": "Gross! How disgusting! (informal)",
+      "ex": "Che schifo! Il caffè è freddo.",
+      "ex_en": "Gross! The coffee is cold.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "informal"
+    },
+    {
+      "it": "Sono stanco morto.",
+      "en": "I'm dead tired. (said by a man)",
+      "ex": "Dopo il viaggio sono stanco morto.",
+      "ex_en": "After the trip I'm dead tired.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "informal; a woman says: stanca morta"
+    },
+    {
+      "it": "imbarazzato",
+      "en": "embarrassed",
+      "ex": "Sono imbarazzato, scusa.",
+      "ex_en": "I'm embarrassed, sorry.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "orgoglioso",
+      "en": "proud",
+      "ex": "Sono orgoglioso di te.",
+      "ex_en": "I'm proud of you.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "geloso",
+      "en": "jealous",
+      "ex": "Mio marito è geloso.",
+      "ex_en": "My husband is jealous.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "soddisfatto",
+      "en": "satisfied",
+      "ex": "Sono soddisfatto del risultato.",
+      "ex_en": "I'm satisfied with the result.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "stufo",
+      "en": "fed up",
+      "ex": "Sono stufo di aspettare!",
+      "ex_en": "I'm fed up with waiting!",
+      "kind": "word",
+      "level": 3,
+      "notes": "informal; stufo di + noun/infinitive"
+    },
+    {
+      "it": "la felicità",
+      "en": "happiness",
+      "ex": "Per me la felicità è la famiglia.",
+      "ex_en": "For me, happiness is family.",
+      "kind": "word",
+      "level": 3,
+      "notes": "invariable plural"
+    },
+    {
+      "it": "accidenti",
+      "en": "darn!; wow!",
+      "ex": "Accidenti, ho perso il treno!",
+      "ex_en": "Darn, I missed the train!",
+      "kind": "word",
+      "level": 3,
+      "notes": "mild exclamation"
+    },
+    {
+      "it": "uffa",
+      "en": "ugh! (annoyance)",
+      "ex": "Uffa, che caldo!",
+      "ex_en": "Ugh, it's so hot!",
+      "kind": "word",
+      "level": 3,
+      "notes": "informal"
+    },
+    {
+      "it": "Che figata!",
+      "en": "How cool! Awesome! (slang)",
+      "ex": "Che figata questa macchina!",
+      "ex_en": "This car is so cool!",
+      "kind": "phrase",
+      "level": 3,
+      "notes": "slang, very informal; avoid in formal settings"
+    }
+  ]
+}

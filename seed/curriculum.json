@@ -1,0 +1,220 @@
+{
+  "_comment": "Edit freely. Server reloads this on restart. startDate/targetDate are defaults; you can override them in Settings.",
+  "startDate": "2026-11-23",
+  "targetDate": "2027-01-26",
+  "weeklyTargetHours": 14,
+  "plans": {
+    "foundation": [
+      { "id": "lesson", "kind": "lesson", "label": "Structured lesson", "minutes": 30, "hint": "Language Transfer / Pimsleur — log which lesson you finished." },
+      { "id": "flashcards", "kind": "flashcards", "label": "Flashcard review", "minutes": 20 },
+      { "id": "speaking", "kind": "speaking", "label": "Speak with the AI partner", "minutes": 20 },
+      { "id": "shadowing", "kind": "shadowing", "label": "Shadowing", "minutes": 20 },
+      { "id": "listening", "kind": "listening", "label": "Listening", "minutes": 20, "hint": "Slow Italian podcast, kids' show, or YouTube with Italian subtitles." },
+      { "id": "review", "kind": "review", "label": "Review today's mistakes", "minutes": 10 }
+    ],
+    "talking": [
+      { "id": "lesson", "kind": "lesson", "label": "Structured lesson", "minutes": 25, "hint": "Language Transfer / Pimsleur — log which lesson you finished." },
+      { "id": "flashcards", "kind": "flashcards", "label": "Flashcard review", "minutes": 20 },
+      { "id": "speaking", "kind": "speaking", "label": "Speak with the AI partner (or your tutor)", "minutes": 25 },
+      { "id": "shadowing", "kind": "shadowing", "label": "Shadowing", "minutes": 20 },
+      { "id": "listening", "kind": "listening", "label": "Listening", "minutes": 20, "hint": "Podcast or a show with Italian subtitles." },
+      { "id": "review", "kind": "review", "label": "Review today's mistakes", "minutes": 10 }
+    ],
+    "conversation": [
+      { "id": "lesson", "kind": "lesson", "label": "Structured lesson", "minutes": 15, "hint": "Finish your course, or review older lessons." },
+      { "id": "flashcards", "kind": "flashcards", "label": "Flashcard review", "minutes": 20 },
+      { "id": "speaking", "kind": "speaking", "label": "Speak with the AI partner (or your tutor)", "minutes": 35 },
+      { "id": "shadowing", "kind": "shadowing", "label": "Shadowing", "minutes": 15 },
+      { "id": "listening", "kind": "listening", "label": "Listening", "minutes": 25, "hint": "Native-speed content: Italian series, news, podcasts." },
+      { "id": "review", "kind": "review", "label": "Review today's mistakes", "minutes": 10 }
+    ],
+    "short": [
+      { "id": "flashcards", "kind": "flashcards", "label": "Flashcard review", "minutes": 12 },
+      { "id": "speaking", "kind": "speaking", "label": "Speak with the AI partner", "minutes": 10 },
+      { "id": "shadowing", "kind": "shadowing", "label": "Shadowing", "minutes": 8 }
+    ]
+  },
+  "levels": {
+    "1": {
+      "label": "Beginner",
+      "englishSupport": "high",
+      "replySentences": "1-2",
+      "maxWords": 12,
+      "tenses": "present tense only (plus fixed polite phrases like 'vorrei')",
+      "ttsRate": 0.8,
+      "notes": "Speak slowly and simply. After each Italian reply, it's OK to add a very short English gloss of hard words. Gently offer two choices to answer from when the learner seems stuck."
+    },
+    "2": {
+      "label": "Elementary",
+      "englishSupport": "some",
+      "replySentences": "2-3",
+      "maxWords": 18,
+      "tenses": "present, passato prossimo, and modal verbs (volere, potere, dovere); avoid the subjunctive",
+      "ttsRate": 0.9,
+      "notes": "Use English only for a single tricky word, and only if the learner seems lost. Ask follow-up questions that make the learner talk about the past."
+    },
+    "3": {
+      "label": "Conversational",
+      "englishSupport": "none",
+      "replySentences": "2-4",
+      "maxWords": 25,
+      "tenses": "natural spoken Italian: present, passato prossimo, imperfetto, future, conditional (vorrei, potrei); occasional common subjunctive in fixed phrases is fine",
+      "ttsRate": 1.0,
+      "notes": "Natural speed and register. No English unless the learner explicitly asks. Occasionally say something the learner may not understand, so they practice 'può ripetere?' and 'come si dice…?'."
+    }
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "phase": "foundation",
+      "level": 1,
+      "theme": "Sounds, greetings, and introducing yourself",
+      "grammar": ["Italian pronunciation (c/g/sc, double consonants, gli, gn)", "essere: io sono, tu sei, lui/lei è", "Formal Lei vs. informal tu"],
+      "topics": ["greetings", "survival_phrases", "people_family", "numbers_time"],
+      "scenarios": ["introductions", "small_talk"],
+      "goal": "Say hello, your name, where you're from, and that you're learning Italian."
+    },
+    {
+      "week": 2,
+      "phase": "foundation",
+      "level": 1,
+      "theme": "Articles, gender, and food",
+      "grammar": ["Definite and indefinite articles (il/lo/la/l'/i/gli/le, un/uno/una/un')", "Noun gender and plurals", "avere: ho, hai, ha; 'ho fame', 'ho 35 anni'"],
+      "topics": ["food_drink", "numbers_time", "connectors_grammar", "core_verbs"],
+      "scenarios": ["introductions", "restaurant", "small_talk"],
+      "goal": "Order coffee and a simple meal; say what you like and don't like."
+    },
+    {
+      "week": 3,
+      "phase": "foundation",
+      "level": 1,
+      "theme": "Present tense, numbers, and time",
+      "grammar": ["Regular present tense: -are, -ere, -ire (parlo, prendo, dormo, capisco)", "Numbers, prices, and telling time", "Question words: dove, quando, quanto, come, perché"],
+      "topics": ["numbers_time", "core_verbs", "shopping_money", "home_routine", "adjectives"],
+      "scenarios": ["introductions", "restaurant", "shopping", "small_talk"],
+      "goal": "Talk about your day in the present tense; handle prices and times."
+    },
+    {
+      "week": 4,
+      "phase": "talking",
+      "level": 2,
+      "theme": "Irregular verbs and getting around",
+      "grammar": ["andare, fare, venire, stare, uscire (present)", "volere, potere, dovere + infinitive", "Prepositions with articles (al, del, nel, sul)"],
+      "topics": ["travel_transport", "places_city", "core_verbs", "connectors_grammar"],
+      "scenarios": ["train_tickets", "directions", "small_talk", "job"],
+      "goal": "Buy a train ticket and ask for directions without English."
+    },
+    {
+      "week": 5,
+      "phase": "talking",
+      "level": 2,
+      "theme": "Talking about the past",
+      "grammar": ["Passato prossimo with avere (ho mangiato, ho fatto)", "Passato prossimo with essere (sono andato/a)", "Common irregular past participles (fatto, detto, visto, preso, stato)"],
+      "topics": ["hobbies_leisure", "home_routine", "weather_nature", "core_verbs"],
+      "scenarios": ["small_talk", "hotel", "restaurant", "free"],
+      "goal": "Tell someone what you did last weekend."
+    },
+    {
+      "week": 6,
+      "phase": "talking",
+      "level": 2,
+      "theme": "Work, routine, and hotels",
+      "grammar": ["Reflexive verbs (mi sveglio, mi chiamo)", "Frequency words (sempre, spesso, mai)", "Direct object pronouns (lo, la, li, le)"],
+      "topics": ["work_tech", "home_routine", "hotel", "people_family"],
+      "scenarios": ["job", "hotel", "introductions", "free"],
+      "goal": "Describe your job as a software engineer and your daily routine."
+    },
+    {
+      "week": 7,
+      "phase": "conversation",
+      "level": 3,
+      "theme": "Plans and polite requests",
+      "grammar": ["Simple future (andrò, farò, sarò)", "Conditional for politeness: vorrei, potrei, mi piacerebbe", "Making plans: 'pensavo di…', 'ho intenzione di…'"],
+      "topics": ["travel_transport", "hotel", "shopping_money", "survival_phrases"],
+      "scenarios": ["hotel", "shopping", "train_tickets", "free"],
+      "goal": "Talk about your summer trip plans and make polite requests."
+    },
+    {
+      "week": 8,
+      "phase": "conversation",
+      "level": 3,
+      "theme": "Opinions and connecting ideas",
+      "grammar": ["Opinions: secondo me, penso che, mi sembra", "Connectors: però, quindi, allora, invece, comunque, infatti", "Comparisons: più… di, meno… di, come"],
+      "topics": ["feelings_opinions", "connectors_grammar", "adjectives", "hobbies_leisure"],
+      "scenarios": ["small_talk", "free", "job", "restaurant"],
+      "goal": "Give and defend a simple opinion; keep a conversation going for 15 minutes."
+    },
+    {
+      "week": 9,
+      "phase": "conversation",
+      "level": 3,
+      "theme": "Handling problems and misunderstandings",
+      "grammar": ["Repair strategies: può ripetere?, come si dice…?, cosa vuol dire…?", "Describing problems: non funziona, ho perso…, mi fa male…", "Review: passato prossimo vs. present vs. future"],
+      "topics": ["health_pharmacy", "survival_phrases", "travel_transport", "places_city"],
+      "scenarios": ["pharmacy", "hotel", "directions", "free"],
+      "goal": "Get through a 20 to 30 minute conversation and solve a travel problem."
+    }
+  ],
+  "scenarios": {
+    "introductions": {
+      "label": "Introducing myself",
+      "role": "a friendly Italian person (Giulia, 30s, from Bologna) meeting the learner at a language exchange evening",
+      "goal": "Get to know the learner: name, where they're from, family, why they're learning Italian.",
+      "opening": "Greet the learner warmly and ask their name."
+    },
+    "job": {
+      "label": "Talking about my job",
+      "role": "Marco, an Italian product manager at a tech meetup in Milan, curious about the learner's work as a software engineer",
+      "goal": "Ask about the learner's job, company, what they build, working from home, and their new job starting in January.",
+      "opening": "Introduce yourself briefly and ask what the learner does for work."
+    },
+    "restaurant": {
+      "label": "Ordering at a restaurant",
+      "role": "a waiter at a trattoria in Florence",
+      "goal": "Seat the learner, take a drink order, recommend a dish, take the food order, handle a question or allergy, and bring the check.",
+      "opening": "Greet the learner at the door and ask how many people."
+    },
+    "hotel": {
+      "label": "Checking into a hotel",
+      "role": "a receptionist at a small hotel in Rome",
+      "goal": "Check the learner in: reservation name, ID, breakfast time, Wi-Fi, and one small problem (the room isn't ready yet, or the air conditioning is broken).",
+      "opening": "Greet the learner at the front desk."
+    },
+    "train_tickets": {
+      "label": "Buying train tickets",
+      "role": "a ticket agent at Roma Termini station",
+      "goal": "Sell the learner a ticket: destination, one-way or round trip, time, class, price, platform, and a delay or a change of trains.",
+      "opening": "Call the learner to the window and ask how you can help."
+    },
+    "directions": {
+      "label": "Asking for directions",
+      "role": "a helpful local walking a dog in Naples",
+      "goal": "Help the learner find a place (the station, a museum, a pharmacy). Give directions with a destra, a sinistra, dritto, and landmarks; check they understood.",
+      "opening": "React to the learner saying 'scusi' on the street."
+    },
+    "shopping": {
+      "label": "Shopping",
+      "role": "a shop assistant in a clothing store in Milan",
+      "goal": "Help the learner find a size and color, try something on, discuss price, and pay.",
+      "opening": "Greet the learner as they enter the shop."
+    },
+    "pharmacy": {
+      "label": "At the pharmacy",
+      "role": "a pharmacist in Venice",
+      "goal": "Ask about symptoms, how long, allergies; recommend something; explain how often to take it.",
+      "opening": "Greet the learner and ask what they need."
+    },
+    "small_talk": {
+      "label": "Small talk with a stranger",
+      "role": "a chatty older Italian (Signor Rossi) sitting next to the learner on a train",
+      "goal": "Chat about where the learner is going, the weather, family, food, and Italy vs. America.",
+      "opening": "Make a friendly comment and ask where the learner is headed."
+    },
+    "free": {
+      "label": "Free conversation",
+      "role": "a friendly Italian conversation partner (Luca, from Turin)",
+      "goal": "Have a natural conversation about whatever the learner wants: plans, hobbies, opinions, the trip to Italy next summer. Keep it going with follow-up questions.",
+      "opening": "Greet the learner and ask how their day is going."
+    }
+  }
+}

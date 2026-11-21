@@ -1,0 +1,817 @@
+{
+  "topic": "travel_transport",
+  "title": "Travel & Transport",
+  "items": [
+    {
+      "it": "il treno",
+      "en": "the train",
+      "ex": "Il treno per Roma parte alle otto.",
+      "ex_en": "The train to Rome leaves at eight.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la stazione",
+      "en": "the (train) station",
+      "ex": "La stazione è vicino al centro.",
+      "ex_en": "The station is near the center.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il biglietto",
+      "en": "the ticket",
+      "ex": "Ho già il biglietto.",
+      "ex_en": "I already have the ticket.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il binario",
+      "en": "the (train) platform, track",
+      "ex": "Il treno parte dal binario tre.",
+      "ex_en": "The train leaves from track three.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "un biglietto per Firenze, per favore",
+      "en": "a ticket to Florence, please",
+      "ex": "Un biglietto per Firenze, per favore. — Andata e ritorno?",
+      "ex_en": "A ticket to Florence, please. — Round trip?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "da quale binario parte?",
+      "en": "which track does it leave from?",
+      "ex": "Scusi, il treno per Milano da quale binario parte?",
+      "ex_en": "Excuse me, which track does the train to Milan leave from?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "l'autobus",
+      "en": "the bus",
+      "ex": "Prendo l'autobus per andare in centro.",
+      "ex_en": "I take the bus to go downtown.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; plural gli autobus (invariable)"
+    },
+    {
+      "it": "la fermata",
+      "en": "the (bus/tram) stop",
+      "ex": "La fermata è davanti alla chiesa.",
+      "ex_en": "The stop is in front of the church.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "dov'è la fermata dell'autobus?",
+      "en": "where is the bus stop?",
+      "ex": "Scusi, dov'è la fermata dell'autobus? — È lì, a destra.",
+      "ex_en": "Excuse me, where is the bus stop? — It's there, on the right.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "dov'è la stazione?",
+      "en": "where is the station?",
+      "ex": "Scusi, dov'è la stazione?",
+      "ex_en": "Excuse me, where is the station?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "l'aereo",
+      "en": "the airplane",
+      "ex": "L'aereo parte alle dieci.",
+      "ex_en": "The plane leaves at ten.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m.; plural gli aerei"
+    },
+    {
+      "it": "l'aeroporto",
+      "en": "the airport",
+      "ex": "L'aeroporto è lontano dalla città.",
+      "ex_en": "The airport is far from the city.",
+      "kind": "word",
+      "level": 1,
+      "notes": "m."
+    },
+    {
+      "it": "il volo",
+      "en": "the flight",
+      "ex": "Il mio volo è alle sei.",
+      "ex_en": "My flight is at six.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la valigia",
+      "en": "the suitcase",
+      "ex": "La mia valigia è molto pesante.",
+      "ex_en": "My suitcase is very heavy.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural le valigie"
+    },
+    {
+      "it": "il taxi",
+      "en": "the taxi",
+      "ex": "Prendiamo un taxi?",
+      "ex_en": "Shall we take a taxi?",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural i taxi (invariable)"
+    },
+    {
+      "it": "la macchina",
+      "en": "the car",
+      "ex": "Noleggiamo una macchina per tre giorni.",
+      "ex_en": "We're renting a car for three days.",
+      "kind": "word",
+      "level": 1,
+      "notes": "also l'auto (f., invariable plural)"
+    },
+    {
+      "it": "la metropolitana",
+      "en": "the subway, metro",
+      "ex": "Prendiamo la metropolitana fino al Colosseo.",
+      "ex_en": "Let's take the subway to the Colosseum.",
+      "kind": "word",
+      "level": 1,
+      "notes": "often shortened to la metro"
+    },
+    {
+      "it": "a destra",
+      "en": "to the right, on the right",
+      "ex": "La farmacia è a destra.",
+      "ex_en": "The pharmacy is on the right.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "a sinistra",
+      "en": "to the left, on the left",
+      "ex": "Al semaforo giri a sinistra.",
+      "ex_en": "At the traffic light, turn left.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "dritto",
+      "en": "straight ahead",
+      "ex": "Continui dritto per cento metri.",
+      "ex_en": "Continue straight ahead for a hundred meters.",
+      "kind": "word",
+      "level": 1,
+      "notes": "also spelled diritto"
+    },
+    {
+      "it": "vicino",
+      "en": "near, close by",
+      "ex": "L'albergo è vicino alla stazione.",
+      "ex_en": "The hotel is close to the station.",
+      "kind": "word",
+      "level": 1,
+      "notes": "vicino a = near (something)"
+    },
+    {
+      "it": "lontano",
+      "en": "far, far away",
+      "ex": "Il mare non è lontano.",
+      "ex_en": "The sea isn't far.",
+      "kind": "word",
+      "level": 1,
+      "notes": "lontano da = far from (something)"
+    },
+    {
+      "it": "a piedi",
+      "en": "on foot",
+      "ex": "Andiamo a piedi o in autobus?",
+      "ex_en": "Are we walking or taking the bus?",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "come arrivo a…?",
+      "en": "how do I get to…?",
+      "ex": "Scusi, come arrivo al Duomo?",
+      "ex_en": "Excuse me, how do I get to the cathedral?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "a + il = al, a + la = alla; for a city just a: come arrivo a Siena?"
+    },
+    {
+      "it": "è lontano da qui?",
+      "en": "is it far from here?",
+      "ex": "Il museo è lontano da qui? — No, cinque minuti a piedi.",
+      "ex_en": "Is the museum far from here? — No, five minutes on foot.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "è qui vicino",
+      "en": "it's nearby, it's close by",
+      "ex": "Il bancomat? È qui vicino.",
+      "ex_en": "The ATM? It's nearby.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "giri a destra",
+      "en": "turn right (formal)",
+      "ex": "Al semaforo giri a destra.",
+      "ex_en": "At the traffic light, turn right.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "informal: gira a destra"
+    },
+    {
+      "it": "vada sempre dritto",
+      "en": "keep going straight ahead (formal)",
+      "ex": "Vada sempre dritto fino alla piazza.",
+      "ex_en": "Keep going straight until you reach the square.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "informal: vai sempre dritto"
+    },
+    {
+      "it": "mi sono perso",
+      "en": "I'm lost (said by a man)",
+      "ex": "Scusi, mi sono perso. Dov'è la stazione?",
+      "ex_en": "Excuse me, I'm lost. Where is the station?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "a woman says: mi sono persa"
+    },
+    {
+      "it": "sa dov'è…?",
+      "en": "do you know where … is? (formal)",
+      "ex": "Scusi, sa dov'è via Roma?",
+      "ex_en": "Excuse me, do you know where Via Roma is?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "informal: sai dov'è…?"
+    },
+    {
+      "it": "il ritardo",
+      "en": "the delay",
+      "ex": "Il treno ha venti minuti di ritardo.",
+      "ex_en": "The train is twenty minutes late.",
+      "kind": "word",
+      "level": 1,
+      "notes": "in ritardo = late"
+    },
+    {
+      "it": "il treno è in ritardo?",
+      "en": "is the train late?",
+      "ex": "Scusi, il treno è in ritardo? — Sì, di dieci minuti.",
+      "ex_en": "Excuse me, is the train late? — Yes, by ten minutes.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "a che ora parte il treno?",
+      "en": "what time does the train leave?",
+      "ex": "A che ora parte il treno per Roma?",
+      "ex_en": "What time does the train to Rome leave?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "a che ora arriva?",
+      "en": "what time does it arrive?",
+      "ex": "A che ora arriva a Napoli?",
+      "ex_en": "What time does it get to Naples?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "quanto costa il biglietto?",
+      "en": "how much is the ticket?",
+      "ex": "Quanto costa il biglietto per Pisa?",
+      "ex_en": "How much is the ticket to Pisa?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "andata e ritorno",
+      "en": "round trip",
+      "ex": "Un biglietto di andata e ritorno, per favore.",
+      "ex_en": "A round-trip ticket, please.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "solo andata",
+      "en": "one way",
+      "ex": "Solo andata, per favore.",
+      "ex_en": "One way, please.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il passaporto",
+      "en": "the passport",
+      "ex": "Ecco il mio passaporto.",
+      "ex_en": "Here's my passport.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il viaggio",
+      "en": "the trip, journey",
+      "ex": "Il viaggio dura tre ore.",
+      "ex_en": "The trip takes three hours.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural i viaggi"
+    },
+    {
+      "it": "buon viaggio!",
+      "en": "have a good trip!",
+      "ex": "Ciao, e buon viaggio!",
+      "ex_en": "Bye, and have a good trip!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "la strada",
+      "en": "the road, street",
+      "ex": "Questa strada va al mare.",
+      "ex_en": "This road goes to the sea.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il posto",
+      "en": "the seat; the place",
+      "ex": "Il mio posto è vicino al finestrino.",
+      "ex_en": "My seat is by the window.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "questo posto è libero?",
+      "en": "is this seat free?",
+      "ex": "Scusi, questo posto è libero? — Sì, prego.",
+      "ex_en": "Excuse me, is this seat free? — Yes, go ahead.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "quanto ci vuole?",
+      "en": "how long does it take?",
+      "ex": "Quanto ci vuole per arrivare a Pisa? — Circa un'ora.",
+      "ex_en": "How long does it take to get to Pisa? — About an hour.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "la partenza",
+      "en": "the departure",
+      "ex": "La partenza è alle nove e un quarto.",
+      "ex_en": "Departure is at nine fifteen.",
+      "kind": "word",
+      "level": 2,
+      "notes": "on station boards: Partenze = Departures"
+    },
+    {
+      "it": "l'arrivo",
+      "en": "the arrival",
+      "ex": "L'arrivo a Venezia è previsto alle undici.",
+      "ex_en": "Arrival in Venice is scheduled for eleven.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; on boards: Arrivi = Arrivals"
+    },
+    {
+      "it": "l'orario",
+      "en": "the schedule, timetable",
+      "ex": "Controllo l'orario dei treni.",
+      "ex_en": "I'm checking the train schedule.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; in orario = on time"
+    },
+    {
+      "it": "il treno è in orario?",
+      "en": "is the train on time?",
+      "ex": "Il treno per Roma è in orario?",
+      "ex_en": "Is the train to Rome on time?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "la biglietteria",
+      "en": "the ticket office",
+      "ex": "La biglietteria è chiusa, uso la macchinetta.",
+      "ex_en": "The ticket office is closed, I'll use the machine.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "dove si comprano i biglietti?",
+      "en": "where can you buy tickets?",
+      "ex": "Dove si comprano i biglietti dell'autobus? — In tabaccheria.",
+      "ex_en": "Where can you buy bus tickets? — At the tobacco shop.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "bus tickets are often sold at a tabaccheria or newsstand, not on board"
+    },
+    {
+      "it": "convalidare",
+      "en": "to validate (a ticket)",
+      "ex": "Devi convalidare il biglietto prima di salire.",
+      "ex_en": "You have to validate the ticket before boarding.",
+      "kind": "word",
+      "level": 2,
+      "notes": "validate paper regional train tickets in the machine before boarding, and bus tickets on board; otherwise you can be fined"
+    },
+    {
+      "it": "la coincidenza",
+      "en": "the (train/flight) connection",
+      "ex": "Ho una coincidenza a Bologna.",
+      "ex_en": "I have a connection in Bologna.",
+      "kind": "word",
+      "level": 2,
+      "notes": "also means coincidence"
+    },
+    {
+      "it": "devo cambiare?",
+      "en": "do I have to change (trains)?",
+      "ex": "Per Siena devo cambiare? — Sì, a Empoli.",
+      "ex_en": "Do I have to change for Siena? — Yes, in Empoli.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "questo treno va a Bologna?",
+      "en": "does this train go to Bologna?",
+      "ex": "Scusi, questo treno va a Bologna? — Sì, ferma anche a Bologna.",
+      "ex_en": "Excuse me, does this train go to Bologna? — Yes, it stops in Bologna too.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "dove devo scendere per…?",
+      "en": "where do I get off for…?",
+      "ex": "Scusi, dove devo scendere per il Colosseo?",
+      "ex_en": "Excuse me, where do I get off for the Colosseum?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "è questa la fermata per…?",
+      "en": "is this the stop for…?",
+      "ex": "Scusi, è questa la fermata per il centro?",
+      "ex_en": "Excuse me, is this the stop for downtown?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "l'incrocio",
+      "en": "the intersection",
+      "ex": "Al primo incrocio giri a destra.",
+      "ex_en": "At the first intersection, turn right.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; plural gli incroci"
+    },
+    {
+      "it": "il semaforo",
+      "en": "the traffic light",
+      "ex": "Il semaforo è rosso.",
+      "ex_en": "The light is red.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "l'angolo",
+      "en": "the corner",
+      "ex": "Il bar è all'angolo.",
+      "ex_en": "The café is on the corner.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m."
+    },
+    {
+      "it": "prenda la seconda a destra",
+      "en": "take the second (street) on the right (formal)",
+      "ex": "Prenda la seconda a destra, poi vada dritto.",
+      "ex_en": "Take the second right, then go straight.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "informal: prendi la seconda a destra; la prima = the first"
+    },
+    {
+      "it": "è a cinque minuti a piedi",
+      "en": "it's a five-minute walk",
+      "ex": "Il museo è a cinque minuti a piedi.",
+      "ex_en": "The museum is a five-minute walk away.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "si può andare a piedi?",
+      "en": "can you get there on foot?",
+      "ex": "Si può andare a piedi alla stazione? — Sì, è vicina.",
+      "ex_en": "Can you walk to the station? — Yes, it's close.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "lo sciopero",
+      "en": "the strike (labor)",
+      "ex": "Domani c'è lo sciopero dei treni.",
+      "ex_en": "Tomorrow there's a train strike.",
+      "kind": "word",
+      "level": 2,
+      "notes": "transport strikes are common in Italy and announced in advance"
+    },
+    {
+      "it": "ho perso il treno",
+      "en": "I missed the train",
+      "ex": "Ho perso il treno! Quando parte il prossimo?",
+      "ex_en": "I missed the train! When does the next one leave?",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "perdere = to miss (a train, bus) and to lose"
+    },
+    {
+      "it": "il pullman",
+      "en": "the coach, long-distance bus",
+      "ex": "Il pullman per Assisi parte dalla piazza.",
+      "ex_en": "The coach to Assisi leaves from the square.",
+      "kind": "word",
+      "level": 2,
+      "notes": "plural i pullman (invariable)"
+    },
+    {
+      "it": "il tram",
+      "en": "the tram, streetcar",
+      "ex": "Il tram passa ogni dieci minuti.",
+      "ex_en": "The tram comes every ten minutes.",
+      "kind": "word",
+      "level": 2,
+      "notes": "plural i tram (invariable)"
+    },
+    {
+      "it": "il traghetto",
+      "en": "the ferry",
+      "ex": "Prendiamo il traghetto per Capri.",
+      "ex_en": "We're taking the ferry to Capri.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il porto",
+      "en": "the port, harbor",
+      "ex": "Il traghetto parte dal porto.",
+      "ex_en": "The ferry leaves from the port.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la bicicletta",
+      "en": "the bicycle",
+      "ex": "Giro la città in bicicletta.",
+      "ex_en": "I get around the city by bike.",
+      "kind": "word",
+      "level": 2,
+      "notes": "often shortened to la bici (invariable plural)"
+    },
+    {
+      "it": "il bagaglio",
+      "en": "luggage; a bag",
+      "ex": "Il bagaglio è troppo pesante.",
+      "ex_en": "The bag is too heavy.",
+      "kind": "word",
+      "level": 2,
+      "notes": "plural i bagagli"
+    },
+    {
+      "it": "il bagaglio a mano",
+      "en": "the carry-on bag",
+      "ex": "Ho solo il bagaglio a mano.",
+      "ex_en": "I only have a carry-on.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la carta d'imbarco",
+      "en": "the boarding pass",
+      "ex": "Ecco la carta d'imbarco.",
+      "ex_en": "Here's the boarding pass.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "l'uscita",
+      "en": "the exit; the (airport) gate",
+      "ex": "Il volo parte dall'uscita dodici.",
+      "ex_en": "The flight leaves from gate twelve.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f.; Italians also say il gate"
+    },
+    {
+      "it": "l'imbarco",
+      "en": "boarding (of a plane, ship)",
+      "ex": "L'imbarco è alle nove e mezza.",
+      "ex_en": "Boarding is at nine thirty.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m."
+    },
+    {
+      "it": "a che ora è l'imbarco?",
+      "en": "what time is boarding?",
+      "ex": "A che ora è l'imbarco? — Alle dieci.",
+      "ex_en": "What time is boarding? — At ten.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "il volo è stato cancellato",
+      "en": "the flight has been canceled",
+      "ex": "Il volo è stato cancellato. E adesso?",
+      "ex_en": "The flight has been canceled. Now what?",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "for trains, boards often say soppresso (canceled)"
+    },
+    {
+      "it": "mi può chiamare un taxi?",
+      "en": "could you call me a taxi? (formal)",
+      "ex": "Mi può chiamare un taxi, per favore?",
+      "ex_en": "Could you call me a taxi, please?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "mi porta a questo indirizzo?",
+      "en": "could you take me to this address? (formal, to a taxi driver)",
+      "ex": "Buongiorno, mi porta a questo indirizzo, per favore?",
+      "ex_en": "Hello, could you take me to this address, please?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "la mappa",
+      "en": "the map",
+      "ex": "Guardo la mappa sul telefono.",
+      "ex_en": "I'm looking at the map on my phone.",
+      "kind": "word",
+      "level": 2,
+      "notes": "a paper city map is also la cartina"
+    },
+    {
+      "it": "il parcheggio",
+      "en": "the parking lot; parking space",
+      "ex": "Il parcheggio è dietro l'albergo.",
+      "ex_en": "The parking lot is behind the hotel.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "dove posso parcheggiare?",
+      "en": "where can I park?",
+      "ex": "Scusi, dove posso parcheggiare qui vicino?",
+      "ex_en": "Excuse me, where can I park around here?",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "l'autostrada",
+      "en": "the highway, freeway (usually toll)",
+      "ex": "Prendiamo l'autostrada per Milano.",
+      "ex_en": "We're taking the highway to Milan.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f.; most Italian autostrade have tolls"
+    },
+    {
+      "it": "la benzina",
+      "en": "gasoline, gas",
+      "ex": "Dobbiamo fare benzina.",
+      "ex_en": "We need to get gas.",
+      "kind": "word",
+      "level": 2,
+      "notes": "fare benzina = to fill up / get gas"
+    },
+    {
+      "it": "vorrei noleggiare una macchina",
+      "en": "I'd like to rent a car",
+      "ex": "Vorrei noleggiare una macchina per una settimana.",
+      "ex_en": "I'd like to rent a car for a week.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "la nave",
+      "en": "the ship",
+      "ex": "La nave per la Sardegna parte stasera.",
+      "ex_en": "The ship to Sardinia leaves tonight.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "la carrozza",
+      "en": "the (train) car, coach",
+      "ex": "Il mio posto è nella carrozza sei.",
+      "ex_en": "My seat is in car six.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il controllore",
+      "en": "the ticket inspector, conductor",
+      "ex": "Il controllore chiede i biglietti.",
+      "ex_en": "The conductor is asking for tickets.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "la multa",
+      "en": "the fine, ticket (penalty)",
+      "ex": "Senza biglietto c'è la multa.",
+      "ex_en": "Without a ticket, you get a fine.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il noleggio",
+      "en": "the rental",
+      "ex": "Il noleggio auto è all'aeroporto.",
+      "ex_en": "The car rental is at the airport.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "la ZTL",
+      "en": "the limited traffic zone (in historic centers)",
+      "ex": "Attenzione, qui inizia la ZTL.",
+      "ex_en": "Careful, the limited traffic zone starts here.",
+      "kind": "word",
+      "level": 3,
+      "notes": "zona a traffico limitato; driving in without a permit means an automatic camera fine"
+    },
+    {
+      "it": "la moto",
+      "en": "the motorcycle",
+      "ex": "Lui va al lavoro in moto.",
+      "ex_en": "He goes to work by motorcycle.",
+      "kind": "word",
+      "level": 3,
+      "notes": "f., short for la motocicletta; plural le moto (invariable)"
+    },
+    {
+      "it": "l'autista",
+      "en": "the driver (bus, taxi, chauffeur)",
+      "ex": "L'autista è molto gentile.",
+      "ex_en": "The driver is very kind.",
+      "kind": "word",
+      "level": 3,
+      "notes": "m. or f. (l'autista); plural gli autisti / le autiste"
+    },
+    {
+      "it": "la mia valigia non è arrivata",
+      "en": "my suitcase didn't arrive",
+      "ex": "Scusi, la mia valigia non è arrivata.",
+      "ex_en": "Excuse me, my suitcase didn't arrive.",
+      "kind": "phrase",
+      "level": 3
+    },
+    {
+      "it": "può fermarsi qui, per favore?",
+      "en": "can you stop here, please? (formal, to a driver)",
+      "ex": "Può fermarsi qui, per favore? Grazie.",
+      "ex_en": "Can you stop here, please? Thanks.",
+      "kind": "phrase",
+      "level": 3
+    },
+    {
+      "it": "scende alla prossima?",
+      "en": "are you getting off at the next stop? (formal)",
+      "ex": "Scusi, scende alla prossima?",
+      "ex_en": "Excuse me, are you getting off at the next stop?",
+      "kind": "phrase",
+      "level": 3,
+      "notes": "asked on a crowded bus to get toward the door"
+    },
+    {
+      "it": "il pieno, per favore",
+      "en": "fill it up, please (at a gas station)",
+      "ex": "Il pieno, per favore. — Benzina o diesel?",
+      "ex_en": "Fill it up, please. — Gas or diesel?",
+      "kind": "phrase",
+      "level": 3,
+      "notes": "many pumps are self-service (fai da te); servito = attended, slightly pricier"
+    }
+  ]
+}

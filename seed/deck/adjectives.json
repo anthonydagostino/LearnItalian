@@ -1,0 +1,819 @@
+{
+  "topic": "adjectives",
+  "title": "Adjectives & Adverbs",
+  "items": [
+    {
+      "it": "bene",
+      "en": "well; fine",
+      "ex": "Parli molto bene!",
+      "ex_en": "You speak very well!",
+      "kind": "word",
+      "level": 1,
+      "notes": "Sto bene = I'm fine. Va bene = OK."
+    },
+    {
+      "it": "molto",
+      "en": "very; a lot, much",
+      "ex": "È molto bello.",
+      "ex_en": "It's very beautiful.",
+      "kind": "word",
+      "level": 1,
+      "notes": "As an adjective it agrees: molta gente, molti turisti."
+    },
+    {
+      "it": "buono",
+      "en": "good (taste, quality)",
+      "ex": "Questa pizza è molto buona.",
+      "ex_en": "This pizza is very good.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Before a masculine singular noun: buon (buon vino), but buono before s+consonant or z (buono studente). Feminine buona (buon' before a vowel: buon'idea); plural buoni, buone."
+    },
+    {
+      "it": "bello",
+      "en": "beautiful, nice, good-looking",
+      "ex": "Che bella giornata!",
+      "ex_en": "What a beautiful day!",
+      "kind": "word",
+      "level": 1,
+      "notes": "Before a noun it changes like the article: bel posto, bello zaino, bell'albergo; plural bei, begli. Feminine bella, belle."
+    },
+    {
+      "it": "grande",
+      "en": "big, large; great",
+      "ex": "La camera è molto grande.",
+      "ex_en": "The room is very big.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Same form for masculine and feminine; plural grandi. Before a noun often means 'great': un grande artista."
+    },
+    {
+      "it": "piccolo",
+      "en": "small, little",
+      "ex": "Vorrei una birra piccola.",
+      "ex_en": "I'd like a small beer.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "troppo",
+      "en": "too; too much",
+      "ex": "È troppo caro.",
+      "ex_en": "It's too expensive.",
+      "kind": "word",
+      "level": 1,
+      "notes": "As an adjective it agrees: troppa gente, troppi turisti."
+    },
+    {
+      "it": "poco",
+      "en": "little, not much; not very",
+      "ex": "Mangio poco la sera.",
+      "ex_en": "I don't eat much in the evening.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Un po' (short for un poco) = a little: un po' di pane. As an adjective it agrees: pochi soldi. Plural pochi, poche."
+    },
+    {
+      "it": "più",
+      "en": "more; most",
+      "ex": "Questo è più caro.",
+      "ex_en": "This one is more expensive.",
+      "kind": "word",
+      "level": 1,
+      "notes": "più… di = more… than: più alto di me."
+    },
+    {
+      "it": "meno",
+      "en": "less; minus",
+      "ex": "Questo è meno caro.",
+      "ex_en": "This one is less expensive.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Also used in telling time: le otto meno dieci = ten to eight."
+    },
+    {
+      "it": "ancora",
+      "en": "still; yet; again; more",
+      "ex": "Sei ancora qui?",
+      "ex_en": "Are you still here?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Non ancora = not yet. Ancora un po' = a little more."
+    },
+    {
+      "it": "già",
+      "en": "already",
+      "ex": "Ho già mangiato, grazie.",
+      "ex_en": "I've already eaten, thanks.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Già! on its own = Right! / Exactly."
+    },
+    {
+      "it": "adesso / ora",
+      "en": "now",
+      "ex": "Adesso non posso.",
+      "ex_en": "I can't right now.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Interchangeable. Ora is also a noun: l'ora = the hour."
+    },
+    {
+      "it": "qui / qua",
+      "en": "here",
+      "ex": "Vieni qui!",
+      "ex_en": "Come here!",
+      "kind": "word",
+      "level": 1,
+      "notes": "Interchangeable; qua is slightly more colloquial."
+    },
+    {
+      "it": "lì / là",
+      "en": "there",
+      "ex": "Il bagno è lì.",
+      "ex_en": "The bathroom is there.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Interchangeable. Mind the accents: without them, li is a pronoun and la is an article or pronoun."
+    },
+    {
+      "it": "solo",
+      "en": "only, just; alone",
+      "ex": "Solo un caffè, grazie.",
+      "ex_en": "Just a coffee, thanks.",
+      "kind": "word",
+      "level": 1,
+      "notes": "As an adjective = alone: sono solo / sola. Synonym for 'only': soltanto."
+    },
+    {
+      "it": "così",
+      "en": "like this, like that; so",
+      "ex": "Si fa così.",
+      "ex_en": "This is how you do it.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Così così = so-so. Va bene così = it's fine like that."
+    },
+    {
+      "it": "nuovo",
+      "en": "new",
+      "ex": "Ho un telefono nuovo.",
+      "ex_en": "I have a new phone.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "vecchio",
+      "en": "old",
+      "ex": "Questa macchina è vecchia.",
+      "ex_en": "This car is old.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Plural vecchi, vecchie. For elderly people, anziano is more polite."
+    },
+    {
+      "it": "caro",
+      "en": "expensive; dear",
+      "ex": "Questo ristorante è troppo caro.",
+      "ex_en": "This restaurant is too expensive.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Also 'dear': Caro Marco (in letters)."
+    },
+    {
+      "it": "economico",
+      "en": "cheap, inexpensive",
+      "ex": "C'è un ristorante economico qui vicino?",
+      "ex_en": "Is there a cheap restaurant nearby?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Plural economici, economiche."
+    },
+    {
+      "it": "aperto",
+      "en": "open",
+      "ex": "Il museo è aperto oggi?",
+      "ex_en": "Is the museum open today?",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "chiuso",
+      "en": "closed",
+      "ex": "La farmacia è chiusa la domenica.",
+      "ex_en": "The pharmacy is closed on Sundays.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "libero",
+      "en": "free, available; vacant",
+      "ex": "Scusi, è libero questo posto?",
+      "ex_en": "Excuse me, is this seat free?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Not 'free of charge' — that's gratis or gratuito."
+    },
+    {
+      "it": "occupato",
+      "en": "busy; taken, occupied",
+      "ex": "Il bagno è occupato.",
+      "ex_en": "The bathroom is occupied.",
+      "kind": "word",
+      "level": 1,
+      "notes": "On the phone: è occupato = the line is busy."
+    },
+    {
+      "it": "pronto",
+      "en": "ready; hello? (on the phone)",
+      "ex": "La cena è pronta!",
+      "ex_en": "Dinner is ready!",
+      "kind": "word",
+      "level": 1,
+      "notes": "Pronto? = Hello? when answering the phone."
+    },
+    {
+      "it": "giusto",
+      "en": "right, correct; fair",
+      "ex": "È la strada giusta?",
+      "ex_en": "Is this the right way?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Giusto! = Right! / Good point!"
+    },
+    {
+      "it": "sbagliato",
+      "en": "wrong",
+      "ex": "Scusi, il conto è sbagliato.",
+      "ex_en": "Excuse me, the check is wrong.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "vero",
+      "en": "true; real",
+      "ex": "È vero, hai ragione.",
+      "ex_en": "It's true, you're right.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Vero? at the end of a sentence = right? / isn't it?: È bello, vero?"
+    },
+    {
+      "it": "davvero",
+      "en": "really",
+      "ex": "È davvero buono.",
+      "ex_en": "It's really good.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Davvero? = Really?"
+    },
+    {
+      "it": "forse",
+      "en": "maybe, perhaps",
+      "ex": "Forse domani piove.",
+      "ex_en": "Maybe it'll rain tomorrow.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "subito",
+      "en": "right away, immediately",
+      "ex": "Arrivo subito!",
+      "ex_en": "I'll be right there!",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "presto",
+      "en": "early; soon",
+      "ex": "Domani mi alzo presto.",
+      "ex_en": "Tomorrow I'm getting up early.",
+      "kind": "word",
+      "level": 1,
+      "notes": "A presto! = See you soon!"
+    },
+    {
+      "it": "tardi",
+      "en": "late",
+      "ex": "È tardi, andiamo.",
+      "ex_en": "It's late, let's go.",
+      "kind": "word",
+      "level": 1,
+      "notes": "For being behind schedule use in ritardo: il treno è in ritardo."
+    },
+    {
+      "it": "insieme",
+      "en": "together",
+      "ex": "Andiamo insieme?",
+      "ex_en": "Shall we go together?",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "male",
+      "en": "badly; bad",
+      "ex": "Ho dormito male.",
+      "ex_en": "I slept badly.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Non c'è male = not bad. Also a noun: il male = pain; evil."
+    },
+    {
+      "it": "abbastanza",
+      "en": "enough; fairly, quite",
+      "ex": "Parlo abbastanza bene.",
+      "ex_en": "I speak fairly well.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Invariable: abbastanza tempo = enough time."
+    },
+    {
+      "it": "quasi",
+      "en": "almost",
+      "ex": "Siamo quasi arrivati.",
+      "ex_en": "We're almost there.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "tanto",
+      "en": "so much, a lot; so",
+      "ex": "Grazie tanto!",
+      "ex_en": "Thanks so much!",
+      "kind": "word",
+      "level": 1,
+      "notes": "As an adjective it agrees: tanti auguri, tanta gente."
+    },
+    {
+      "it": "meglio",
+      "en": "better (adverb)",
+      "ex": "Oggi sto meglio.",
+      "ex_en": "I'm feeling better today.",
+      "kind": "word",
+      "level": 1,
+      "notes": "The adjective 'better' is migliore. Meglio così = it's better this way."
+    },
+    {
+      "it": "facile",
+      "en": "easy",
+      "ex": "Questo esercizio è facile.",
+      "ex_en": "This exercise is easy.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Same form for masculine and feminine; plural facili."
+    },
+    {
+      "it": "difficile",
+      "en": "difficult, hard",
+      "ex": "L'italiano non è difficile!",
+      "ex_en": "Italian isn't difficult!",
+      "kind": "word",
+      "level": 1,
+      "notes": "Same form for masculine and feminine; plural difficili."
+    },
+    {
+      "it": "importante",
+      "en": "important",
+      "ex": "È molto importante.",
+      "ex_en": "It's very important.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "interessante",
+      "en": "interesting",
+      "ex": "Il museo è molto interessante.",
+      "ex_en": "The museum is very interesting.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "bravo",
+      "en": "good (at something), skilled; well done!",
+      "ex": "È un bravo cuoco.",
+      "ex_en": "He's a good cook.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Bravo! / Brava! / Bravi! = Well done! — agrees with the person praised."
+    },
+    {
+      "it": "simpatico",
+      "en": "nice, likeable, friendly",
+      "ex": "Tua sorella è molto simpatica.",
+      "ex_en": "Your sister is really nice.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Plural simpatici (m), simpatiche (f)."
+    },
+    {
+      "it": "gentile",
+      "en": "kind",
+      "ex": "Il personale è molto gentile.",
+      "ex_en": "The staff is very kind.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "caldo",
+      "en": "hot, warm",
+      "ex": "Il caffè è molto caldo.",
+      "ex_en": "The coffee is very hot.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Weather: fa caldo. People: ho caldo = I'm hot."
+    },
+    {
+      "it": "freddo",
+      "en": "cold",
+      "ex": "La birra è fredda?",
+      "ex_en": "Is the beer cold?",
+      "kind": "word",
+      "level": 1,
+      "notes": "Weather: fa freddo. People: ho freddo = I'm cold."
+    },
+    {
+      "it": "pieno",
+      "en": "full",
+      "ex": "Il treno è pieno.",
+      "ex_en": "The train is full.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Colloquially, sono pieno = I'm full (after eating)."
+    },
+    {
+      "it": "vuoto",
+      "en": "empty",
+      "ex": "Il frigo è vuoto.",
+      "ex_en": "The fridge is empty.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "perfetto",
+      "en": "perfect",
+      "ex": "Perfetto, grazie mille!",
+      "ex_en": "Perfect, thanks a lot!",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "bellissimo",
+      "en": "very beautiful, gorgeous",
+      "ex": "Firenze è bellissima!",
+      "ex_en": "Florence is gorgeous!",
+      "kind": "word",
+      "level": 1,
+      "notes": "-issimo = 'very': buonissimo, carissimo, grandissimo."
+    },
+    {
+      "it": "altro",
+      "en": "other, another",
+      "ex": "Un altro caffè, per favore.",
+      "ex_en": "Another coffee, please.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Forms: altro, altra, altri, altre. Qualcos'altro? = Anything else?"
+    },
+    {
+      "it": "rosso",
+      "en": "red",
+      "ex": "Un bicchiere di vino rosso, per favore.",
+      "ex_en": "A glass of red wine, please.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "bianco",
+      "en": "white",
+      "ex": "Preferisco il vino bianco.",
+      "ex_en": "I prefer white wine.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Plural bianchi, bianche."
+    },
+    {
+      "it": "nero",
+      "en": "black",
+      "ex": "Ho una valigia nera.",
+      "ex_en": "I have a black suitcase.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "verde",
+      "en": "green",
+      "ex": "Il semaforo è verde.",
+      "ex_en": "The light is green.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Same form for masculine and feminine; plural verdi."
+    },
+    {
+      "it": "blu",
+      "en": "blue (dark blue)",
+      "ex": "Ha una giacca blu.",
+      "ex_en": "He has a blue jacket.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Invariable: same form for every gender and number (le macchine blu)."
+    },
+    {
+      "it": "giallo",
+      "en": "yellow",
+      "ex": "I taxi a Roma sono bianchi, non gialli.",
+      "ex_en": "Taxis in Rome are white, not yellow.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "brutto",
+      "en": "ugly; bad, nasty",
+      "ex": "È una brutta notizia.",
+      "ex_en": "It's bad news.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "cattivo",
+      "en": "bad; mean, naughty",
+      "ex": "Questo vino è cattivo.",
+      "ex_en": "This wine is bad.",
+      "kind": "word",
+      "level": 1,
+      "notes": "For food and drink it means 'tastes bad'; for people, 'mean'."
+    },
+    {
+      "it": "veloce",
+      "en": "fast, quick",
+      "ex": "Il treno è più veloce.",
+      "ex_en": "The train is faster.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Adverb: velocemente = quickly."
+    },
+    {
+      "it": "lento",
+      "en": "slow",
+      "ex": "Il Wi-Fi è molto lento.",
+      "ex_en": "The Wi-Fi is really slow.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Adverb: lentamente = slowly."
+    },
+    {
+      "it": "giovane",
+      "en": "young",
+      "ex": "È ancora giovane.",
+      "ex_en": "He's still young.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Same form for masculine and feminine; plural giovani."
+    },
+    {
+      "it": "pulito",
+      "en": "clean",
+      "ex": "La camera è pulita.",
+      "ex_en": "The room is clean.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "sporco",
+      "en": "dirty",
+      "ex": "Il bicchiere è sporco.",
+      "ex_en": "The glass is dirty.",
+      "kind": "word",
+      "level": 1,
+      "notes": "Plural sporchi, sporche."
+    },
+    {
+      "it": "ottimo",
+      "en": "excellent, very good",
+      "ex": "Il vino è ottimo.",
+      "ex_en": "The wine is excellent.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Ottimo! on its own = Excellent! / Great!"
+    },
+    {
+      "it": "stesso",
+      "en": "same",
+      "ex": "Abbiamo lo stesso nome.",
+      "ex_en": "We have the same name.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Usually with the article: lo stesso, la stessa. Grazie lo stesso = thanks all the same."
+    },
+    {
+      "it": "tipico",
+      "en": "typical; traditional, local",
+      "ex": "Vorrei un piatto tipico.",
+      "ex_en": "I'd like a traditional local dish.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Plural tipici, tipiche."
+    },
+    {
+      "it": "possibile",
+      "en": "possible",
+      "ex": "Non è possibile!",
+      "ex_en": "That's not possible!",
+      "kind": "word",
+      "level": 2,
+      "notes": "Opposite: impossibile."
+    },
+    {
+      "it": "tranquillo",
+      "en": "calm, quiet, peaceful",
+      "ex": "È una zona tranquilla.",
+      "ex_en": "It's a quiet area.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Tranquillo! = Relax! / Don't worry! (informal)."
+    },
+    {
+      "it": "sicuro",
+      "en": "safe; sure",
+      "ex": "Sei sicuro?",
+      "ex_en": "Are you sure?",
+      "kind": "word",
+      "level": 2,
+      "notes": "È sicuro qui? = Is it safe here?"
+    },
+    {
+      "it": "carino",
+      "en": "cute, pretty; nice",
+      "ex": "Che carino questo posto!",
+      "ex_en": "This place is so cute!",
+      "kind": "word",
+      "level": 2,
+      "notes": "For people also 'nice, sweet': sei carino / carina."
+    },
+    {
+      "it": "diverso",
+      "en": "different",
+      "ex": "Qui è tutto diverso.",
+      "ex_en": "Everything is different here.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Before a plural noun it can mean 'several': diversi giorni."
+    },
+    {
+      "it": "alto",
+      "en": "tall; high",
+      "ex": "Marco è molto alto.",
+      "ex_en": "Marco is very tall.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "basso",
+      "en": "short (height); low",
+      "ex": "Il prezzo è basso.",
+      "ex_en": "The price is low.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "lungo",
+      "en": "long",
+      "ex": "Il viaggio è lungo.",
+      "ex_en": "The trip is long.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Plural lunghi, lunghe."
+    },
+    {
+      "it": "comodo",
+      "en": "comfortable; convenient",
+      "ex": "Il letto è molto comodo.",
+      "ex_en": "The bed is very comfortable.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Also 'convenient, handy': è comodo."
+    },
+    {
+      "it": "azzurro",
+      "en": "light blue, sky blue",
+      "ex": "Il cielo è azzurro.",
+      "ex_en": "The sky is blue.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Italy's national teams are called gli Azzurri."
+    },
+    {
+      "it": "grigio",
+      "en": "gray",
+      "ex": "Oggi il cielo è grigio.",
+      "ex_en": "The sky is gray today.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Plural grigi, grigie."
+    },
+    {
+      "it": "marrone",
+      "en": "brown",
+      "ex": "Vorrei le scarpe marroni.",
+      "ex_en": "I'd like the brown shoes.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Same form for masculine and feminine; plural marroni. Brown eyes/hair: occhi/capelli castani."
+    },
+    {
+      "it": "rosa",
+      "en": "pink",
+      "ex": "Ha una maglietta rosa.",
+      "ex_en": "She has a pink T-shirt.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Invariable. Also a noun: la rosa = the rose."
+    },
+    {
+      "it": "arancione",
+      "en": "orange (color)",
+      "ex": "La borsa arancione è mia.",
+      "ex_en": "The orange bag is mine.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Plural arancioni. The fruit is l'arancia."
+    },
+    {
+      "it": "viola",
+      "en": "purple",
+      "ex": "I fiori sono viola.",
+      "ex_en": "The flowers are purple.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Invariable."
+    },
+    {
+      "it": "purtroppo",
+      "en": "unfortunately",
+      "ex": "Purtroppo è chiuso.",
+      "ex_en": "Unfortunately it's closed.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "proprio",
+      "en": "really, exactly, just",
+      "ex": "È proprio qui.",
+      "ex_en": "It's right here.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Proprio adesso = right now. As an adjective = one's own."
+    },
+    {
+      "it": "almeno",
+      "en": "at least",
+      "ex": "Ci vogliono almeno due ore.",
+      "ex_en": "It takes at least two hours.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "peggio",
+      "en": "worse (adverb)",
+      "ex": "È peggio di ieri.",
+      "ex_en": "It's worse than yesterday.",
+      "kind": "word",
+      "level": 2,
+      "notes": "The adjective 'worse' is peggiore."
+    },
+    {
+      "it": "antipatico",
+      "en": "unpleasant, unlikeable",
+      "ex": "Il cameriere è un po' antipatico.",
+      "ex_en": "The waiter is a bit unpleasant.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Plural antipatici, antipatiche."
+    },
+    {
+      "it": "forte",
+      "en": "strong; great, cool (informal)",
+      "ex": "Questo caffè è troppo forte.",
+      "ex_en": "This coffee is too strong.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Che forte! = How cool! (informal). Same form for masculine and feminine; plural forti."
+    },
+    {
+      "it": "utile",
+      "en": "useful",
+      "ex": "Questa app è molto utile.",
+      "ex_en": "This app is very useful.",
+      "kind": "word",
+      "level": 2,
+      "notes": "Opposite: inutile = useless, pointless."
+    },
+    {
+      "it": "pericoloso",
+      "en": "dangerous",
+      "ex": "Questa zona è pericolosa?",
+      "ex_en": "Is this area dangerous?",
+      "kind": "word",
+      "level": 2
+    }
+  ]
+}

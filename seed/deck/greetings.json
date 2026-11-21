@@ -1,0 +1,621 @@
+{
+  "topic": "greetings",
+  "title": "Greetings & Basics",
+  "items": [
+    {
+      "it": "ciao",
+      "en": "hi; bye (informal)",
+      "ex": "Ciao, Marco! Come va?",
+      "ex_en": "Hi, Marco! How's it going?",
+      "kind": "word",
+      "level": 1,
+      "notes": "informal: friends, family, young people"
+    },
+    {
+      "it": "buongiorno",
+      "en": "good morning; hello (until mid-afternoon)",
+      "ex": "Buongiorno, signora! Come sta?",
+      "ex_en": "Good morning, ma'am! How are you?",
+      "kind": "word",
+      "level": 1,
+      "notes": "also used as a goodbye during the day",
+      "flag": "When people switch to buonasera varies by region; in much of central/southern Italy it starts right after lunch (~1-2 p.m.)."
+    },
+    {
+      "it": "grazie",
+      "en": "thank you; thanks",
+      "ex": "Grazie per l'aiuto!",
+      "ex_en": "Thanks for the help!",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "prego",
+      "en": "you're welcome; please, go ahead",
+      "ex": "Grazie! — Prego!",
+      "ex_en": "Thank you! — You're welcome!",
+      "kind": "word",
+      "level": 1,
+      "notes": "also 'after you', 'come in', 'please do'"
+    },
+    {
+      "it": "per favore",
+      "en": "please",
+      "ex": "Un momento, per favore.",
+      "ex_en": "One moment, please.",
+      "kind": "word",
+      "level": 1,
+      "notes": "also 'per piacere'"
+    },
+    {
+      "it": "sì",
+      "en": "yes",
+      "ex": "Sei americano? — Sì.",
+      "ex_en": "Are you American? — Yes.",
+      "kind": "word",
+      "level": 1,
+      "notes": "with accent; 'si' without accent is a pronoun"
+    },
+    {
+      "it": "no",
+      "en": "no",
+      "ex": "No, non sono italiano.",
+      "ex_en": "No, I'm not Italian.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "scusi",
+      "en": "excuse me; sorry (formal)",
+      "ex": "Scusi, dov'è il bagno?",
+      "ex_en": "Excuse me, where's the restroom?",
+      "kind": "word",
+      "level": 1,
+      "notes": "formal (Lei): to get attention or apologize"
+    },
+    {
+      "it": "scusa",
+      "en": "excuse me; sorry (informal)",
+      "ex": "Scusa, hai un minuto?",
+      "ex_en": "Excuse me, do you have a minute?",
+      "kind": "word",
+      "level": 1,
+      "notes": "informal (tu)"
+    },
+    {
+      "it": "permesso",
+      "en": "excuse me (to get past); may I come in?",
+      "ex": "Permesso, devo scendere.",
+      "ex_en": "Excuse me, I need to get off.",
+      "kind": "word",
+      "level": 1,
+      "notes": "to get past people, or when entering someone's home"
+    },
+    {
+      "it": "buonasera",
+      "en": "good evening; hello (from mid/late afternoon)",
+      "ex": "Buonasera, signor Rossi!",
+      "ex_en": "Good evening, Mr. Rossi!",
+      "kind": "word",
+      "level": 1,
+      "notes": "also used as a goodbye in the evening"
+    },
+    {
+      "it": "arrivederci",
+      "en": "goodbye",
+      "ex": "Grazie di tutto, arrivederci!",
+      "ex_en": "Thanks for everything, goodbye!",
+      "kind": "word",
+      "level": 1,
+      "notes": "safe in both formal and informal situations"
+    },
+    {
+      "it": "piacere",
+      "en": "nice to meet you; pleasure",
+      "ex": "Piacere, sono Anna.",
+      "ex_en": "Nice to meet you, I'm Anna.",
+      "kind": "word",
+      "level": 1,
+      "notes": "said with a handshake when introduced"
+    },
+    {
+      "it": "buonanotte",
+      "en": "good night",
+      "ex": "Buonanotte, dormi bene!",
+      "ex_en": "Good night, sleep well!",
+      "kind": "word",
+      "level": 1,
+      "notes": "only when parting late at night or going to bed"
+    },
+    {
+      "it": "certo",
+      "en": "of course; sure",
+      "ex": "Posso sedermi? — Certo!",
+      "ex_en": "May I sit down? — Of course!",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la signora",
+      "en": "lady; ma'am; Mrs.",
+      "ex": "Grazie, signora!",
+      "ex_en": "Thank you, ma'am!",
+      "kind": "word",
+      "level": 1,
+      "notes": "no article when addressing someone directly; la signora Bianchi = Mrs. Bianchi"
+    },
+    {
+      "it": "americano",
+      "en": "American",
+      "ex": "Mio marito è americano.",
+      "ex_en": "My husband is American.",
+      "kind": "word",
+      "level": 1,
+      "notes": "f. americana"
+    },
+    {
+      "it": "italiano",
+      "en": "Italian",
+      "ex": "Sei italiano? — No, americano.",
+      "ex_en": "Are you Italian? — No, American.",
+      "kind": "word",
+      "level": 1,
+      "notes": "f. italiana; l'italiano = the Italian language"
+    },
+    {
+      "it": "il nome",
+      "en": "name; first name",
+      "ex": "Scriva il nome qui, per favore.",
+      "ex_en": "Write your name here, please.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "Come stai?",
+      "en": "How are you? (informal)",
+      "ex": "Ciao, Luca! Come stai?",
+      "ex_en": "Hi, Luca! How are you?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Come sta?",
+      "en": "How are you? (formal)",
+      "ex": "Buongiorno, signora. Come sta?",
+      "ex_en": "Good morning, ma'am. How are you?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Bene, grazie.",
+      "en": "Fine, thanks.",
+      "ex": "Come stai? — Bene, grazie.",
+      "ex_en": "How are you? — Fine, thanks.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Sto bene.",
+      "en": "I'm fine; I'm well.",
+      "ex": "Sto bene, grazie. E tu?",
+      "ex_en": "I'm fine, thanks. And you?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "E tu?",
+      "en": "And you? (informal)",
+      "ex": "Mi chiamo Tom, e tu?",
+      "ex_en": "My name is Tom, and you?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "E Lei?",
+      "en": "And you? (formal)",
+      "ex": "Bene, grazie. E Lei?",
+      "ex_en": "Fine, thanks. And you?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "formal Lei is often capitalized in writing"
+    },
+    {
+      "it": "Come va?",
+      "en": "How's it going?",
+      "ex": "Ciao! Come va? — Non c'è male.",
+      "ex_en": "Hi! How's it going? — Not bad.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "works in both formal and informal situations"
+    },
+    {
+      "it": "Mi chiamo…",
+      "en": "My name is…",
+      "ex": "Ciao, mi chiamo David.",
+      "ex_en": "Hi, my name is David.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "lit. 'I call myself…'"
+    },
+    {
+      "it": "Come ti chiami?",
+      "en": "What's your name? (informal)",
+      "ex": "Come ti chiami? — Mi chiamo Sara.",
+      "ex_en": "What's your name? — My name is Sara.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Come si chiama?",
+      "en": "What's your name? (formal)",
+      "ex": "Scusi, come si chiama? — Mario Bianchi.",
+      "ex_en": "Excuse me, what's your name? — Mario Bianchi.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Di dove sei?",
+      "en": "Where are you from? (informal)",
+      "ex": "Di dove sei? — Sono di Chicago.",
+      "ex_en": "Where are you from? — I'm from Chicago.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Di dov'è?",
+      "en": "Where are you from? (formal)",
+      "ex": "Scusi, di dov'è? — Sono americano.",
+      "ex_en": "Excuse me, where are you from? — I'm American.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Sono americano.",
+      "en": "I'm American. (said by a man)",
+      "ex": "Sono americano, di Boston.",
+      "ex_en": "I'm American, from Boston.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "a woman says: Sono americana."
+    },
+    {
+      "it": "Sono di…",
+      "en": "I'm from… (city)",
+      "ex": "Sono di Denver, in Colorado.",
+      "ex_en": "I'm from Denver, in Colorado.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "di + city"
+    },
+    {
+      "it": "Abito a…",
+      "en": "I live in… (city)",
+      "ex": "Abito a San Francisco.",
+      "ex_en": "I live in San Francisco.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "a + city; in + state/country: abito in California"
+    },
+    {
+      "it": "Grazie mille.",
+      "en": "Thanks a lot.",
+      "ex": "Grazie mille per l'aiuto!",
+      "ex_en": "Thanks a lot for the help!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Di niente.",
+      "en": "You're welcome; it's nothing.",
+      "ex": "Grazie! — Di niente.",
+      "ex_en": "Thanks! — It's nothing.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "also 'di nulla'"
+    },
+    {
+      "it": "Mi dispiace.",
+      "en": "I'm sorry.",
+      "ex": "Mi dispiace, oggi non posso.",
+      "ex_en": "I'm sorry, I can't today.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Mi scusi.",
+      "en": "Excuse me; I'm sorry. (formal)",
+      "ex": "Mi scusi, è libero questo posto?",
+      "ex_en": "Excuse me, is this seat free?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "informal: scusami"
+    },
+    {
+      "it": "Non c'è male.",
+      "en": "Not bad.",
+      "ex": "Come va? — Non c'è male, grazie.",
+      "ex_en": "How's it going? — Not bad, thanks.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Così così.",
+      "en": "So-so.",
+      "ex": "Come stai? — Così così.",
+      "ex_en": "How are you? — So-so.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Tutto bene?",
+      "en": "Everything OK? All good?",
+      "ex": "Ciao Giulia, tutto bene? — Sì, grazie!",
+      "ex_en": "Hi Giulia, all good? — Yes, thanks!",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "also a reply: Tutto bene!"
+    },
+    {
+      "it": "Piacere di conoscerti.",
+      "en": "Nice to meet you. (informal)",
+      "ex": "Ciao Marco, piacere di conoscerti!",
+      "ex_en": "Hi Marco, nice to meet you!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Piacere di conoscerla.",
+      "en": "Nice to meet you. (formal)",
+      "ex": "Signor Rossi, piacere di conoscerla.",
+      "ex_en": "Mr. Rossi, nice to meet you.",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "often written conoscerLa"
+    },
+    {
+      "it": "A presto!",
+      "en": "See you soon!",
+      "ex": "Ciao, a presto!",
+      "ex_en": "Bye, see you soon!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "A dopo!",
+      "en": "See you later! (same day)",
+      "ex": "Vado a fare la spesa, a dopo!",
+      "ex_en": "I'm going grocery shopping, see you later!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "A domani!",
+      "en": "See you tomorrow!",
+      "ex": "Ciao, a domani!",
+      "ex_en": "Bye, see you tomorrow!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Ci vediamo!",
+      "en": "See you!",
+      "ex": "Ci vediamo stasera!",
+      "ex_en": "See you tonight!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Buona giornata!",
+      "en": "Have a nice day!",
+      "ex": "Grazie e buona giornata!",
+      "ex_en": "Thanks and have a nice day!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Buona serata!",
+      "en": "Have a nice evening!",
+      "ex": "Arrivederci, buona serata!",
+      "ex_en": "Goodbye, have a nice evening!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Posso?",
+      "en": "May I?",
+      "ex": "Posso? — Prego!",
+      "ex_en": "May I? — Go ahead!",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "No, grazie.",
+      "en": "No, thank you.",
+      "ex": "Un caffè? — No, grazie.",
+      "ex_en": "A coffee? — No, thank you.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "Pronto?",
+      "en": "Hello? (on the phone)",
+      "ex": "Pronto? Chi parla?",
+      "ex_en": "Hello? Who's speaking?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "only on the phone"
+    },
+    {
+      "it": "Vengo dagli Stati Uniti.",
+      "en": "I come from the United States.",
+      "ex": "Vengo dagli Stati Uniti, dalla California.",
+      "ex_en": "I come from the US, from California.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "salve",
+      "en": "hello (neutral, polite)",
+      "ex": "Salve, posso entrare?",
+      "ex_en": "Hello, may I come in?",
+      "kind": "word",
+      "level": 2,
+      "notes": "neutral; handy when unsure whether to use tu or Lei"
+    },
+    {
+      "it": "il signore",
+      "en": "gentleman; sir; Mr.",
+      "ex": "Buonasera, signore.",
+      "ex_en": "Good evening, sir.",
+      "kind": "word",
+      "level": 2,
+      "notes": "shortened to 'signor' before a name: signor Rossi"
+    },
+    {
+      "it": "il cognome",
+      "en": "last name; surname",
+      "ex": "Qual è il suo cognome?",
+      "ex_en": "What's your last name? (formal)",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "benvenuto",
+      "en": "welcome",
+      "ex": "Benvenuti in Italia!",
+      "ex_en": "Welcome to Italy!",
+      "kind": "word",
+      "level": 2,
+      "notes": "agrees: benvenuta (f.), benvenuti (pl.)"
+    },
+    {
+      "it": "Piacere mio.",
+      "en": "The pleasure is mine.",
+      "ex": "Piacere! — Piacere mio.",
+      "ex_en": "Nice to meet you! — The pleasure is mine.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Ti presento…",
+      "en": "Let me introduce… (informal)",
+      "ex": "Ti presento mia moglie, Laura.",
+      "ex_en": "Let me introduce my wife, Laura.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Le presento…",
+      "en": "Let me introduce… (formal)",
+      "ex": "Le presento mio marito, John.",
+      "ex_en": "Let me introduce my husband, John.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Figurati!",
+      "en": "Don't mention it! No problem! (informal)",
+      "ex": "Grazie mille! — Figurati!",
+      "ex_en": "Thanks a lot! — Don't mention it!",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "formal: Si figuri!"
+    },
+    {
+      "it": "Non c'è di che.",
+      "en": "Don't mention it.",
+      "ex": "Grazie! — Non c'è di che.",
+      "ex_en": "Thanks! — Don't mention it.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "È molto gentile.",
+      "en": "That's very kind of you. (formal)",
+      "ex": "Grazie, è molto gentile.",
+      "ex_en": "Thank you, that's very kind of you.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "informal: sei molto gentile"
+    },
+    {
+      "it": "Scusa il ritardo.",
+      "en": "Sorry I'm late. (informal)",
+      "ex": "Ciao! Scusa il ritardo.",
+      "ex_en": "Hi! Sorry I'm late.",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "formal: scusi il ritardo"
+    },
+    {
+      "it": "Ci sentiamo!",
+      "en": "Talk soon! (by phone/message)",
+      "ex": "Ti chiamo domani. Ci sentiamo!",
+      "ex_en": "I'll call you tomorrow. Talk soon!",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Buon pomeriggio!",
+      "en": "Good afternoon!; have a nice afternoon!",
+      "ex": "Buon pomeriggio, signora!",
+      "ex_en": "Good afternoon, ma'am!",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "mostly a parting wish; as a greeting, buongiorno/buonasera are more common"
+    },
+    {
+      "it": "Buon fine settimana!",
+      "en": "Have a nice weekend!",
+      "ex": "Ciao a tutti, buon fine settimana!",
+      "ex_en": "Bye, everyone, have a nice weekend!",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "also 'buon weekend'"
+    },
+    {
+      "it": "Salutami…",
+      "en": "Say hi to… for me (informal)",
+      "ex": "Salutami tua madre!",
+      "ex_en": "Say hi to your mom for me!",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "formal: Mi saluti…"
+    },
+    {
+      "it": "Prego, si accomodi.",
+      "en": "Please, come in / have a seat. (formal)",
+      "ex": "Buongiorno! Prego, si accomodi.",
+      "ex_en": "Hello! Please, have a seat.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "Possiamo darci del tu?",
+      "en": "Can we use 'tu' (be informal) with each other?",
+      "ex": "Possiamo darci del tu? — Certo!",
+      "ex_en": "Can we be on first-name terms? — Sure!",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "dare del tu = informal; dare del Lei = formal"
+    },
+    {
+      "it": "la signorina",
+      "en": "young lady; Miss",
+      "ex": "Signorina, scusi!",
+      "ex_en": "Excuse me, miss!",
+      "kind": "word",
+      "level": 3,
+      "notes": "for young women; can sound dated"
+    },
+    {
+      "it": "arrivederla",
+      "en": "goodbye (very formal)",
+      "ex": "Arrivederla, dottore.",
+      "ex_en": "Goodbye, doctor.",
+      "kind": "word",
+      "level": 3,
+      "notes": "very formal, a bit old-fashioned; arrivederci is fine everywhere"
+    }
+  ]
+}

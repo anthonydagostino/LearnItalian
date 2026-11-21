@@ -1,0 +1,476 @@
+{
+  "topic": "places_city",
+  "title": "Places & the City",
+  "items": [
+    {
+      "it": "la città",
+      "en": "the city, town",
+      "ex": "Roma è una città bellissima.",
+      "ex_en": "Rome is a beautiful city.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural le città (invariable)"
+    },
+    {
+      "it": "il centro",
+      "en": "the center, downtown",
+      "ex": "Il centro è pieno di turisti.",
+      "ex_en": "Downtown is full of tourists.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "in centro",
+      "en": "downtown, in/to the center",
+      "ex": "Stasera andiamo in centro?",
+      "ex_en": "Shall we go downtown tonight?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "no article: in centro = downtown; with a modifier use the article: nel centro storico, nel centro di Roma"
+    },
+    {
+      "it": "il centro storico",
+      "en": "the historic center, old town",
+      "ex": "Il nostro albergo è nel centro storico.",
+      "ex_en": "Our hotel is in the old town.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "la piazza",
+      "en": "the (town) square",
+      "ex": "Ci vediamo in piazza alle otto.",
+      "ex_en": "See you in the square at eight.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural le piazze"
+    },
+    {
+      "it": "la via",
+      "en": "the street",
+      "ex": "Abito in via Garibaldi.",
+      "ex_en": "I live on Via Garibaldi.",
+      "kind": "word",
+      "level": 1,
+      "notes": "in addresses the number follows: via Roma 12"
+    },
+    {
+      "it": "la chiesa",
+      "en": "the church",
+      "ex": "La chiesa è aperta la mattina.",
+      "ex_en": "The church is open in the morning.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural le chiese; cover shoulders and knees when visiting"
+    },
+    {
+      "it": "il museo",
+      "en": "the museum",
+      "ex": "Il museo è chiuso il lunedì.",
+      "ex_en": "The museum is closed on Mondays.",
+      "kind": "word",
+      "level": 1,
+      "notes": "many Italian museums close on Mondays"
+    },
+    {
+      "it": "il bar",
+      "en": "the café, coffee bar",
+      "ex": "Prendiamo un caffè al bar?",
+      "ex_en": "Shall we get a coffee at the café?",
+      "kind": "word",
+      "level": 1,
+      "notes": "an Italian bar is mainly a café; standing at the counter (al banco) is often cheaper than sitting"
+    },
+    {
+      "it": "il ristorante",
+      "en": "the restaurant",
+      "ex": "Il ristorante apre alle sette e mezza.",
+      "ex_en": "The restaurant opens at seven thirty.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il negozio",
+      "en": "the store, shop",
+      "ex": "Il negozio chiude all'una.",
+      "ex_en": "The shop closes at one.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural i negozi; small shops often close for lunch"
+    },
+    {
+      "it": "il supermercato",
+      "en": "the supermarket",
+      "ex": "C'è un supermercato vicino all'albergo.",
+      "ex_en": "There's a supermarket near the hotel.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "il mercato",
+      "en": "the market",
+      "ex": "Il sabato c'è il mercato in piazza.",
+      "ex_en": "On Saturdays there's a market in the square.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural i mercati"
+    },
+    {
+      "it": "la banca",
+      "en": "the bank",
+      "ex": "La banca è chiusa il sabato.",
+      "ex_en": "The bank is closed on Saturdays.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural le banche"
+    },
+    {
+      "it": "c'è un … qui vicino?",
+      "en": "is there a … nearby?",
+      "ex": "Scusi, c'è un supermercato qui vicino?",
+      "ex_en": "Excuse me, is there a supermarket nearby?",
+      "kind": "phrase",
+      "level": 1,
+      "notes": "use una for feminine nouns: c'è una banca qui vicino?"
+    },
+    {
+      "it": "la spiaggia",
+      "en": "the beach",
+      "ex": "La spiaggia è a dieci minuti.",
+      "ex_en": "The beach is ten minutes away.",
+      "kind": "word",
+      "level": 1,
+      "notes": "plural le spiagge"
+    },
+    {
+      "it": "il duomo",
+      "en": "the cathedral (main church of a city)",
+      "ex": "Il Duomo di Milano è enorme.",
+      "ex_en": "Milan Cathedral is huge.",
+      "kind": "word",
+      "level": 1,
+      "notes": "capitalized when naming a specific one: il Duomo"
+    },
+    {
+      "it": "la gelateria",
+      "en": "the ice cream shop",
+      "ex": "La gelateria è aperta fino a mezzanotte.",
+      "ex_en": "The ice cream shop is open until midnight.",
+      "kind": "word",
+      "level": 1
+    },
+    {
+      "it": "a che ora apre?",
+      "en": "what time does it open?",
+      "ex": "A che ora apre il museo? — Alle nove.",
+      "ex_en": "What time does the museum open? — At nine.",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "a che ora chiude?",
+      "en": "what time does it close?",
+      "ex": "Scusi, a che ora chiude il negozio?",
+      "ex_en": "Excuse me, what time does the shop close?",
+      "kind": "phrase",
+      "level": 1
+    },
+    {
+      "it": "il ponte",
+      "en": "the bridge",
+      "ex": "Il Ponte Vecchio è a Firenze.",
+      "ex_en": "The Ponte Vecchio is in Florence.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il parco",
+      "en": "the park",
+      "ex": "La domenica andiamo al parco.",
+      "ex_en": "On Sundays we go to the park.",
+      "kind": "word",
+      "level": 2,
+      "notes": "plural i parchi"
+    },
+    {
+      "it": "il paese",
+      "en": "the small town, village; the country",
+      "ex": "Vivo in un piccolo paese vicino a Napoli.",
+      "ex_en": "I live in a small town near Naples.",
+      "kind": "word",
+      "level": 2,
+      "notes": "also means country (nation): l'Italia è un bel paese"
+    },
+    {
+      "it": "l'ufficio postale",
+      "en": "the post office",
+      "ex": "L'ufficio postale è in piazza.",
+      "ex_en": "The post office is on the square.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; commonly just la posta"
+    },
+    {
+      "it": "la biblioteca",
+      "en": "the library",
+      "ex": "La biblioteca è vicino all'università.",
+      "ex_en": "The library is near the university.",
+      "kind": "word",
+      "level": 2,
+      "notes": "false friend: bookstore = la libreria"
+    },
+    {
+      "it": "il palazzo",
+      "en": "the building, apartment block; palace",
+      "ex": "Abito in un palazzo antico.",
+      "ex_en": "I live in an old building.",
+      "kind": "word",
+      "level": 2,
+      "notes": "plural i palazzi"
+    },
+    {
+      "it": "il castello",
+      "en": "the castle",
+      "ex": "Il castello è sulla collina.",
+      "ex_en": "The castle is on the hill.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la torre",
+      "en": "the tower",
+      "ex": "La Torre di Pisa è pendente.",
+      "ex_en": "The Tower of Pisa is leaning.",
+      "kind": "word",
+      "level": 2,
+      "flag": "'È pendente' is correct but a bit textbook; Italians more often say 'La Torre di Pisa pende' or refer to 'la Torre pendente'."
+    },
+    {
+      "it": "la fontana",
+      "en": "the fountain",
+      "ex": "La Fontana di Trevi è sempre piena di gente.",
+      "ex_en": "The Trevi Fountain is always crowded.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il monumento",
+      "en": "the monument, landmark",
+      "ex": "Il Colosseo è il monumento più famoso di Roma.",
+      "ex_en": "The Colosseum is Rome's most famous landmark.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il quartiere",
+      "en": "the neighborhood, district",
+      "ex": "Trastevere è un quartiere molto vivace.",
+      "ex_en": "Trastevere is a very lively neighborhood.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "il teatro",
+      "en": "the theater",
+      "ex": "Il teatro è in centro.",
+      "ex_en": "The theater is downtown.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la pasticceria",
+      "en": "the pastry shop",
+      "ex": "Questa pasticceria fa dolci buonissimi.",
+      "ex_en": "This pastry shop makes delicious sweets.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "la scuola",
+      "en": "the school",
+      "ex": "La scuola è in fondo alla strada.",
+      "ex_en": "The school is at the end of the street.",
+      "kind": "word",
+      "level": 2
+    },
+    {
+      "it": "l'università",
+      "en": "the university",
+      "ex": "L'università di Bologna è molto antica.",
+      "ex_en": "The University of Bologna is very old.",
+      "kind": "word",
+      "level": 2,
+      "notes": "f.; plural le università (invariable)"
+    },
+    {
+      "it": "l'ingresso",
+      "en": "the entrance; admission",
+      "ex": "L'ingresso del museo è dall'altra parte.",
+      "ex_en": "The museum entrance is on the other side.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; also l'entrata (f.)"
+    },
+    {
+      "it": "quanto costa l'ingresso?",
+      "en": "how much is admission?",
+      "ex": "Quanto costa l'ingresso al museo? — Quindici euro.",
+      "ex_en": "How much is admission to the museum? — Fifteen euros.",
+      "kind": "phrase",
+      "level": 2
+    },
+    {
+      "it": "è aperto la domenica?",
+      "en": "is it open on Sundays?",
+      "ex": "Il mercato è aperto la domenica?",
+      "ex_en": "Is the market open on Sundays?",
+      "kind": "phrase",
+      "level": 2,
+      "notes": "aperta for a feminine noun: la banca è aperta?"
+    },
+    {
+      "it": "la polizia",
+      "en": "the police",
+      "ex": "Devo andare alla polizia.",
+      "ex_en": "I need to go to the police.",
+      "kind": "word",
+      "level": 2,
+      "notes": "emergency number: 112; the Carabinieri are another police force"
+    },
+    {
+      "it": "l'ufficio turistico",
+      "en": "the tourist information office",
+      "ex": "L'ufficio turistico dà mappe gratis.",
+      "ex_en": "The tourist office gives out free maps.",
+      "kind": "word",
+      "level": 2,
+      "notes": "m.; signs often just say Informazioni or i"
+    },
+    {
+      "it": "lo stadio",
+      "en": "the stadium",
+      "ex": "Lo stadio è pieno per la partita.",
+      "ex_en": "The stadium is full for the game.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il panificio",
+      "en": "the bakery (bread)",
+      "ex": "Il panificio apre alle sette.",
+      "ex_en": "The bakery opens at seven.",
+      "kind": "word",
+      "level": 3,
+      "notes": "also commonly il forno"
+    },
+    {
+      "it": "il centro commerciale",
+      "en": "the shopping mall",
+      "ex": "Il centro commerciale è fuori città.",
+      "ex_en": "The mall is outside the city.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "la periferia",
+      "en": "the outskirts, suburbs",
+      "ex": "L'albergo è in periferia.",
+      "ex_en": "The hotel is on the outskirts.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il municipio",
+      "en": "the town hall, city hall",
+      "ex": "Il municipio è in piazza.",
+      "ex_en": "City hall is on the square.",
+      "kind": "word",
+      "level": 3,
+      "notes": "also il comune"
+    },
+    {
+      "it": "il vicolo",
+      "en": "the alley, narrow lane",
+      "ex": "Il ristorante è in un piccolo vicolo.",
+      "ex_en": "The restaurant is in a little alley.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "la zona pedonale",
+      "en": "the pedestrian zone",
+      "ex": "Il centro è zona pedonale.",
+      "ex_en": "Downtown is a pedestrian zone.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il lungomare",
+      "en": "the seafront, waterfront promenade",
+      "ex": "La sera passeggiamo sul lungomare.",
+      "ex_en": "In the evening we stroll along the seafront.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il belvedere",
+      "en": "the scenic viewpoint, lookout",
+      "ex": "Dal belvedere si vede tutta la città.",
+      "ex_en": "From the lookout you can see the whole city.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il borgo",
+      "en": "the (historic) village, hamlet",
+      "ex": "Questo borgo medievale è bellissimo.",
+      "ex_en": "This medieval village is beautiful.",
+      "kind": "word",
+      "level": 3,
+      "notes": "plural i borghi"
+    },
+    {
+      "it": "l'enoteca",
+      "en": "the wine bar, wine shop",
+      "ex": "Stasera beviamo un bicchiere in enoteca.",
+      "ex_en": "Tonight we're having a glass at a wine bar.",
+      "kind": "word",
+      "level": 3,
+      "notes": "f.; plural le enoteche"
+    },
+    {
+      "it": "la galleria",
+      "en": "the gallery; shopping arcade; tunnel",
+      "ex": "La Galleria degli Uffizi è a Firenze.",
+      "ex_en": "The Uffizi Gallery is in Florence.",
+      "kind": "word",
+      "level": 3,
+      "notes": "also means a road or rail tunnel"
+    },
+    {
+      "it": "il campanile",
+      "en": "the bell tower",
+      "ex": "Dal campanile c'è una vista bellissima.",
+      "ex_en": "There's a beautiful view from the bell tower.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "il cortile",
+      "en": "the courtyard",
+      "ex": "Il palazzo ha un cortile molto bello.",
+      "ex_en": "The building has a lovely courtyard.",
+      "kind": "word",
+      "level": 3
+    },
+    {
+      "it": "le terme",
+      "en": "the thermal baths, hot springs spa",
+      "ex": "In Toscana ci sono tante terme.",
+      "ex_en": "There are lots of thermal spas in Tuscany.",
+      "kind": "word",
+      "level": 3,
+      "notes": "f. plural"
+    }
+  ]
+}
