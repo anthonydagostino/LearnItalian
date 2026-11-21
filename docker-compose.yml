@@ -1,0 +1,25 @@
+services:
+  parla:
+    build: .
+    container_name: parla
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - DATA_DIR=/data
+    volumes:
+      - ./data:/data          # SQLite database (back this up)
+      - ./seed:/app/seed:ro   # edit deck/curriculum JSON here, then restart (or Settings → Reload seed files)
+    ports:
+      # Bound to localhost only; Tailscale Serve exposes it over HTTPS on your tailnet.
+      - "127.0.0.1:8080:8080"
+
+  # Optional self-hosted speech-to-text (faster-whisper behind an OpenAI-compatible API).
+  # Start with:  docker compose --profile whisper up -d
+  # and set STT_URL=http://whisper:8000/v1/audio/transcriptions in .env
+  whisper:
+    image: ghcr.io/speaches-ai/speaches:latest-cpu
+    container_name: parla-whisper
+    restart: unless-stopped
+    profiles: ["whisper"]
+    volumes:
+      - ./whisper-cache:/home/ubuntu/.cache/huggingface/hub
