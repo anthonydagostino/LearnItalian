@@ -103,6 +103,7 @@ export interface Settings {
   lessonCourse: string;
   lessonNext: number;
   speakAnswers: boolean;
+  sounds: boolean;
   autoplay: boolean;
 }
 

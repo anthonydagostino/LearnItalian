@@ -42,6 +42,7 @@ export const DEFAULT_SETTINGS: Settings = {
   lessonCourse: "Language Transfer — Complete Italian",
   lessonNext: 1,
   speakAnswers: true,
+  sounds: true,
   autoplay: true,
 };
 

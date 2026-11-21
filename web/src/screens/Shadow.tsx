@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { lastServerConfig } from "../api";
 import { useCollection } from "../db";
 import { unlockedTopics } from "../plan";
@@ -7,7 +7,8 @@ import { playBlob, speak, startRecording, transcribeOnServer, unlockAudio } from
 import type { AppCtx } from "../state";
 import type { CardData, SrsData } from "../types";
 import { Empty, Header } from "../ui";
-import { Icon } from "../look";
+import { Icon, toast } from "../look";
+import { autoLog } from "../state";
 
 interface Sentence {
   it: string;
@@ -60,6 +61,16 @@ export default function Shadow({ app }: { app: AppCtx }) {
   const [err, setErr] = useState("");
   const rec = useRef<Awaited<ReturnType<typeof startRecording>> | null>(null);
   const [slow, setSlow] = useState(false);
+  const startedAt = useRef(Date.now());
+  const repsRef = useRef(0);
+  repsRef.current = reps;
+  useEffect(
+    () => () => {
+      if (repsRef.current > 0)
+        void autoLog("shadowing", startedAt.current, `${repsRef.current} reps`).then((m) => m && toast(`${m} min of shadowing logged ✓`));
+    },
+    [],
+  );
 
   if (!cards) return <div className="screen">Loading…</div>;
   if (!sentences.length) return <Empty emoji="🎧" title="No sentences yet" />;

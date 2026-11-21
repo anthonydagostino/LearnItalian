@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { api, lastServerConfig } from "../api";
 import { createNote } from "../cards";
-import { all, patch, useDoc } from "../db";
+import { all, patch, useCollection, useDoc } from "../db";
 import { speak, startListening, stopSpeaking, unlockAudio, type Listening } from "../speech";
 import { logTime, setActiveBlock, type AppCtx } from "../state";
 import { sync } from "../sync";
@@ -9,6 +9,7 @@ import type { ChatMessage, ConversationData, Correction, MistakeData } from "../
 import { MISTAKE_LABELS } from "../types";
 import { activeFor, Header, Modal, SpeakBtn } from "../ui";
 import { celebrate, cheer, Icon, SCENARIO_EMOJI, toast } from "../look";
+import { computeSkills, Stars } from "../skills";
 
 const KEY = "parla.activeConversation";
 
@@ -53,11 +54,14 @@ function Picker({ app, onStart }: { app: AppCtx; onStart: (id: string) => void }
   }
 
   const colors = ["tomato", "blue", "amber", "teal", "purple", "pink", "green"];
+  const convs = useCollection<ConversationData>("conversations") ?? [];
+  const stars = new Map(computeSkills(convs).map((k) => [k.scenario, k.stars]));
   const Tile = ({ s, i, suggested: sug }: { s: string; i: number; suggested?: boolean }) => (
     <button className={`scenario-tile c-${colors[i % colors.length]} ${busy === s ? "loading" : ""}`} disabled={!!busy} onClick={() => start(s)}>
       {sug && <span className="tile-badge">This week</span>}
       <span className="tile-emoji">{busy === s ? <span className="spinner" /> : SCENARIO_EMOJI[s] ?? "💬"}</span>
       <b>{app.cur.scenarios[s].label}</b>
+      {s !== "free" && <Stars n={stars.get(s) ?? 0} />}
     </button>
   );
 

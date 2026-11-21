@@ -8,6 +8,8 @@ import { uid } from "../time";
 import type { CardData, MistakeData, ReviewData, SrsData } from "../types";
 import { Empty, Header, SpeakBtn } from "../ui";
 import { celebrate, cheer, Icon, toast } from "../look";
+import { sfx } from "../sfx";
+import { autoLog } from "../state";
 
 interface QItem {
   id: string;
@@ -105,6 +107,14 @@ export default function Cards({ app, params }: { app: AppCtx; params: URLSearchP
           {info.reviewsToday} reviews and {info.newToday} new words today. Come back tomorrow.
         </Empty>
       )}
+      <button className="drill-entry" onClick={() => (location.hash = "#/drill")}>
+        <span className="tile-emoji">🎯</span>
+        <span className="grow">
+          <b>Quick drill</b>
+          <small>Match, build sentences, listen & speak — 5 min</small>
+        </span>
+        <Icon name="play" size={18} />
+      </button>
       <p className="muted small center">
         {app.settings.newPerDay} new words a day · English→Italian cards {app.settings.speakAnswers ? "ask you to say the answer out loud 🎤" : "are flip cards"}
       </p>
@@ -127,12 +137,25 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   const [err, setErr] = useState("");
   const [count, setCount] = useState(0);
   const shownAt = useRef(Date.now());
+  const sessionStart = useRef(Date.now());
+  const logged = useRef(false);
+  const finish = async () => {
+    if (!logged.current && count > 0) {
+      logged.current = true;
+      const m = await autoLog("flashcards", sessionStart.current, `${count} cards`);
+      if (m) toast(`${m} min added to today ✓`);
+    }
+  };
 
   const item = queue[idx];
   const card = item ? cards.get(item.id) : undefined;
 
   useEffect(() => {
-    if (!item && count > 0) celebrate(true);
+    if (!item && count > 0) {
+      celebrate(true);
+      sfx.complete();
+      void finish();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [!item]);
 
@@ -195,6 +218,9 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
 
   async function grade(g: Grade) {
     if (!srs || !card) return;
+    if (g >= Rating.Good) sfx.correct();
+    else if (g === Rating.Again) sfx.wrong();
+    else sfx.tap();
     const now = new Date();
     const next = rate(srs, g, now);
     await put("srs", item.id, next);
@@ -237,7 +263,7 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   return (
     <div className="screen study">
       <div className="study-top">
-        <button className="icon-btn round" onClick={onDone} aria-label="End session">
+        <button className="icon-btn round" onClick={() => (void finish(), onDone())} aria-label="End session">
           <Icon name="close" size={20} />
         </button>
         <div className="study-progress">

@@ -148,6 +148,9 @@ export default function SettingsScreen({ app }: { app: AppCtx }) {
         <label className="check-inline">
           <input type="checkbox" checked={s.autoplay} onChange={(e) => set({ autoplay: e.target.checked })} /> Auto-play Italian audio
         </label>
+        <label className="check-inline">
+          <input type="checkbox" checked={s.sounds} onChange={(e) => set({ sounds: e.target.checked })} /> Sound effects
+        </label>
       </section>
       <section className="card">
         <b>Voice</b>

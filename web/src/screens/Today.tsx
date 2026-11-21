@@ -258,6 +258,9 @@ export default function Today({ app }: { app: AppCtx }) {
         </div>
         {details && (
           <div className="focus-body">
+            <button className="chip-btn" onClick={(e) => (e.stopPropagation(), go("/path"))}>
+              🗺️ See your 9-week path
+            </button>
             <p className="small muted">Grammar to notice</p>
             <ul>
               {week.grammar.map((x) => (

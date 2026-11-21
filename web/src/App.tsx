@@ -6,6 +6,9 @@ import { unlockAudio } from "./speech";
 import { TimerBar } from "./ui";
 import { Icon, Toasts } from "./look";
 import Welcome from "./screens/Welcome";
+import Drill from "./screens/Drill";
+import Path from "./screens/Path";
+import { unlockSfx } from "./sfx";
 import Today from "./screens/Today";
 import Cards from "./screens/Cards";
 import Talk from "./screens/Talk";
@@ -65,7 +68,10 @@ export default function App() {
       if (c && !c.authed) setNeedLogin(true);
       else void startSyncLoop();
     });
-    const unlock = () => unlockAudio();
+    const unlock = () => {
+      unlockAudio();
+      unlockSfx();
+    };
     window.addEventListener("pointerdown", unlock, { once: true });
     return () => {
       off();
@@ -106,6 +112,8 @@ export default function App() {
 
   const p = route.path;
   const screen =
+    p.startsWith("/drill") ? <Drill app={app} /> :
+    p.startsWith("/path") ? <Path app={app} /> :
     p.startsWith("/cards") ? <Cards app={app} params={route.params} /> :
     p.startsWith("/talk") ? <Talk app={app} /> :
     p.startsWith("/shadow") ? <Shadow app={app} /> :
@@ -116,7 +124,7 @@ export default function App() {
     p.startsWith("/more") ? <More /> :
     <Today app={app} />;
 
-  const activeTab = TABS.find((t) => p.startsWith(t.path))?.path ?? (["/mistakes", "/tutor", "/progress", "/settings"].some((x) => p.startsWith(x)) ? "/more" : "/today");
+  const activeTab = TABS.find((t) => p.startsWith(t.path))?.path ?? (p.startsWith("/drill") ? "/cards" : ["/mistakes", "/tutor", "/progress", "/settings", "/path"].some((x) => p.startsWith(x)) ? "/more" : "/today");
 
   return (
     <div className="app">

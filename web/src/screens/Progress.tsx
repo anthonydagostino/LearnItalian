@@ -4,6 +4,8 @@ import { minutesByDate, streak } from "../plan";
 import type { AppCtx } from "../state";
 import { addDays, fmtMinutes } from "../time";
 import { Header } from "../ui";
+import { computeSkills, Stars } from "../skills";
+import type { ConversationData } from "../types";
 import { MISTAKE_LABELS, type MistakeData, type MistakeType, type SrsData, type TimelogData } from "../types";
 
 /** Hours per curriculum week vs. the weekly target. Single series: one hue, target as a dashed reference line. */
@@ -80,6 +82,9 @@ export default function Progress({ app }: { app: AppCtx }) {
   const logs = useCollection<TimelogData>("timelogs") ?? [];
   const srs = useCollection<SrsData>("srs") ?? [];
   const mistakes = useCollection<MistakeData>("mistakes") ?? [];
+  const convs = useCollection<ConversationData>("conversations") ?? [];
+  const skills = computeSkills(convs);
+  const earned = skills.filter((k) => k.stars > 0).length;
   const [table, setTable] = useState(false);
   const byDate = minutesByDate(logs);
   const total = [...byDate.values()].reduce((a, b) => a + b, 0);
@@ -138,6 +143,29 @@ export default function Progress({ app }: { app: AppCtx }) {
           <span>mistakes, last 7 days{prev7 ? ` (prev ${prev7})` : ""}</span>
         </div>
       </div>
+
+      <section className="card skills-card">
+        <div className="row between">
+          <b>🗣️ What you can say</b>
+          <span className="pill c-green">
+            {earned}/{skills.length}
+          </span>
+        </div>
+        <p className="muted small">Earned in real conversations, not by tapping tiles. Each solid session (6+ replies) adds a star.</p>
+        {skills.map((k) => (
+          <a key={k.id} className="skill-row" href={k.scenario ? "#/talk" : "#/talk"}>
+            <span className="skill-emoji">{k.emoji}</span>
+            <span className="grow">
+              <b>{k.label}</b>
+              <small>{k.detail}</small>
+            </span>
+            <Stars n={k.stars} />
+          </a>
+        ))}
+        <a className="chip-btn" href="#/path">
+          🗺️ See your 9-week path
+        </a>
+      </section>
 
       <section className="card">
         <div className="row between">

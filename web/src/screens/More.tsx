@@ -1,5 +1,6 @@
 export default function More() {
   const items = [
+    { href: "#/path", label: "Your path", sub: "9 weeks & the goal", icon: "🗺️", color: "tomato" },
     { href: "#/mistakes", label: "Mistakes", sub: "Review & make cards", icon: "📝", color: "pink" },
     { href: "#/progress", label: "Progress", sub: "Streak, hours, charts", icon: "📈", color: "green" },
     { href: "#/tutor", label: "Tutor", sub: "Log iTalki/Preply", icon: "👩‍🏫", color: "amber" },

@@ -2169,3 +2169,398 @@ main {
 .hbar-label {
   text-transform: capitalize;
 }
+
+/* ================= Drills ================= */
+.drill {
+  padding-bottom: 140px;
+}
+.drill-progress > div {
+  background: linear-gradient(90deg, #22b573, #12b5a5);
+}
+.retry-tag {
+  margin-top: 12px;
+  font-weight: 800;
+  color: var(--warn);
+  font-size: 0.85rem;
+}
+.drill-body {
+  margin-top: 18px;
+}
+.drill-q {
+  font-size: 1.35rem;
+  margin-bottom: 14px;
+}
+.drill-prompt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.45rem;
+  margin-bottom: 18px;
+}
+.drill-prompt .speak-btn {
+  width: 46px;
+  height: 46px;
+}
+.en-prompt .speech-tail {
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  border-bottom-left-radius: 6px;
+  padding: 12px 16px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.listen-big {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 20px;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.option {
+  border: 2px solid var(--line);
+  border-bottom-width: 4px;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 14px 16px;
+  font-weight: 800;
+  font-size: 1.02rem;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.1s, border-color 0.15s, background 0.15s;
+}
+.option.it {
+  font-family: var(--it);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.option:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+.option.picked {
+  border-color: #4f8cff;
+  background: color-mix(in srgb, #4f8cff 10%, var(--surface));
+}
+.option.right {
+  border-color: var(--ok);
+  background: var(--ok-soft);
+}
+.option.wrong {
+  border-color: var(--bad);
+  background: var(--bad-soft);
+}
+.option.matched {
+  opacity: 0.35;
+  border-color: var(--ok);
+  background: var(--ok-soft);
+}
+.option.shake {
+  animation: shake 0.35s;
+  border-color: var(--bad);
+}
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.match-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.match-grid .option {
+  text-align: center;
+  min-height: 58px;
+  padding: 10px 8px;
+}
+.answer-line {
+  min-height: 112px;
+  border-top: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+  background: repeating-linear-gradient(to bottom, transparent 0 54px, var(--line) 54px 56px);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 8px;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.word-tile {
+  font-family: var(--it);
+  font-weight: 600;
+  font-size: 1.08rem;
+  border: 2px solid var(--line);
+  border-bottom-width: 4px;
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 8px 13px;
+  cursor: pointer;
+  color: var(--ink);
+}
+.word-tile.used {
+  background: var(--surface-2);
+  color: transparent;
+  border-color: var(--surface-2);
+}
+.check-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--tabs-h) + env(safe-area-inset-bottom) + 8px);
+  padding: 0 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  z-index: 10;
+}
+.feedback {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  padding: 18px 18px calc(18px + env(safe-area-inset-bottom));
+  border-radius: 26px 26px 0 0;
+  animation: sheet-up 0.28s cubic-bezier(0.3, 1.2, 0.5, 1);
+  box-shadow: var(--shadow-lg);
+}
+.feedback.good {
+  background: #d9f7e6;
+  color: #0e6b3e;
+}
+.feedback.bad {
+  background: #ffe3e3;
+  color: #a3242a;
+}
+@media (prefers-color-scheme: dark) {
+  .feedback.good {
+    background: #173a28;
+    color: #7be3ab;
+  }
+  .feedback.bad {
+    background: #45201f;
+    color: #ff9d9d;
+  }
+}
+.feedback-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+}
+.feedback-emoji {
+  font-size: 1.8rem;
+  animation: pop-big 0.4s;
+}
+.feedback-sol {
+  margin: 8px 0 0;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.feedback-btn {
+  margin-top: 14px;
+  color: #fff;
+}
+.feedback.good .feedback-btn {
+  background: #22b573;
+}
+.feedback.bad .feedback-btn {
+  background: #ff5a5f;
+}
+.drill-entry {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: none;
+  text-align: left;
+  border-radius: 22px;
+  padding: 14px 16px;
+  margin: 4px 0 14px;
+  cursor: pointer;
+  background: color-mix(in srgb, #22b573 14%, var(--surface));
+  color: var(--ink);
+  transition: transform 0.12s;
+}
+.drill-entry:active {
+  transform: scale(0.97);
+}
+.drill-entry small {
+  display: block;
+  color: var(--ink-2);
+  font-weight: 700;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ================= Stars / skills ================= */
+.stars {
+  display: inline-flex;
+  gap: 1px;
+  font-size: 1rem;
+  letter-spacing: 0;
+  color: color-mix(in srgb, var(--muted) 40%, transparent);
+}
+.stars .on {
+  color: #ffb020;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+.scenario-tile .stars {
+  font-size: 0.95rem;
+}
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+}
+.skill-row small {
+  display: block;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+.skill-emoji {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex: none;
+}
+.skills-card .chip-btn {
+  margin-top: 10px;
+}
+
+/* ================= Path ================= */
+.path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 20px;
+}
+.phase-banner {
+  width: 100%;
+  max-width: 420px;
+  margin: 18px auto 10px;
+  border-radius: 18px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, var(--c), var(--c2));
+  color: var(--c-ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.phase-banner span {
+  font-weight: 700;
+  opacity: 0.9;
+  font-size: 0.85rem;
+}
+.path-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 270px;
+  margin: 6px auto;
+}
+.path-node {
+  position: relative;
+  width: 74px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  flex: none;
+  font-size: 1.6rem;
+  font-weight: 900;
+  cursor: pointer;
+  background: var(--surface-2);
+  color: var(--muted);
+  box-shadow: 0 6px 0 var(--line);
+  transition: transform 0.12s;
+}
+.path-node:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--line);
+}
+.path-node.done,
+.path-node.current {
+  background: linear-gradient(135deg, var(--c), var(--c2));
+  color: var(--c-ink);
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--c) 60%, #000);
+}
+.path-node.current {
+  width: 86px;
+  height: 82px;
+  animation: node-pulse 2s infinite;
+}
+.path-node.trophy {
+  background: #fff0d6;
+  box-shadow: 0 6px 0 #f1d39b;
+  cursor: default;
+}
+.path-node.trophy.done {
+  background: linear-gradient(135deg, #ffc43d, #ff8a3d);
+}
+.you-are-here {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.68rem;
+  font-weight: 900;
+  white-space: nowrap;
+  padding: 4px 9px;
+  border-radius: 999px;
+  animation: bob 2.4s ease-in-out infinite;
+}
+.path-label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+.path-label small {
+  font-weight: 700;
+  color: var(--ink-2);
+}
+.path-row.finale {
+  margin-top: 18px;
+}
+@keyframes node-pulse {
+  0%, 100% { box-shadow: 0 6px 0 color-mix(in srgb, var(--c) 60%, #000), 0 0 0 0 color-mix(in srgb, var(--c) 45%, transparent); }
+  50% { box-shadow: 0 6px 0 color-mix(in srgb, var(--c) 60%, #000), 0 0 0 14px transparent; }
+}
+
+.path-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.path-row.is-current {
+  margin-top: 40px;
+}

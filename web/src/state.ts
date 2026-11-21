@@ -2,6 +2,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 import { patch, put, useDoc } from "./db";
 import { effectiveSettings, emptyPlan, weekInfo, type Curriculum } from "./plan";
 import { setTtsPrefs } from "./speech";
+import { setSoundsEnabled } from "./sfx";
 import { localDate, uid } from "./time";
 import type { BlockKind, DayplanData, MistakeData, Settings, TimelogData } from "./types";
 
@@ -22,6 +23,7 @@ export function useApp() {
   const settings = effectiveSettings(rawSettings ?? undefined, cur);
   const wk = weekInfo(settings, cur, today);
   setTtsPrefs({ voiceURI: settings.voiceURI, rate: settings.ttsRate || wk.level.ttsRate });
+  setSoundsEnabled(settings.sounds);
   return { cur, settings, today, ...wk, ttsRate: settings.ttsRate || wk.level.ttsRate };
 }
 export type AppCtx = NonNullable<ReturnType<typeof useApp>>;
@@ -116,3 +118,12 @@ export function useRoute() {
 export const go = (path: string) => {
   location.hash = path;
 };
+
+/** Log practice time automatically unless a block timer for this kind is running (the timer will capture it). */
+export async function autoLog(kind: BlockKind, startedAt: number, note: string): Promise<number> {
+  const a = getActiveBlock();
+  if (a && a.kind === kind) return 0;
+  const m = Math.round((Date.now() - startedAt) / 60000);
+  if (m >= 1) await logTime({ block: kind, minutes: m, note });
+  return m;
+}
