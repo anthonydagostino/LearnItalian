@@ -59,5 +59,7 @@ if (isMain) {
   const app = await buildApp();
   await app.listen({ port: config.port, host: config.host });
   if (!config.appPassword) app.log.warn("APP_PASSWORD is not set: the app is open to anyone who can reach it.");
+  else if (["change-me", "changeme", "password"].includes(config.appPassword) || config.appPassword.length < 10)
+    app.log.warn("APP_PASSWORD is weak or still the example value. Set a long random one in .env (see DEPLOY.md).");
   if (!aiEnabled()) app.log.warn("ANTHROPIC_API_KEY is not set: the conversation partner is disabled.");
 }

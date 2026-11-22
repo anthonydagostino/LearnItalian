@@ -91,6 +91,8 @@ npm run check       # all of the above
 
 ## Deploy on the homelab (Docker + Tailscale Serve)
 
+> **Step-by-step guide: [DEPLOY.md](DEPLOY.md)**. It covers installing Docker and Tailscale, secrets, HTTPS, iPhone setup, self-hosted Whisper, backups and restore, updates, and troubleshooting. The summary below is the short version.
+
 ```bash
 git clone <this repo> parla && cd parla
 cp .env.example .env && nano .env          # APP_PASSWORD, ANTHROPIC_API_KEY, TZ
