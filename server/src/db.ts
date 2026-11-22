@@ -25,9 +25,8 @@ CREATE TABLE IF NOT EXISTS chat_api (id TEXT PRIMARY KEY, messages TEXT NOT NULL
 `);
 
 /** Collections the client may write to. Server-only collections are read-only for clients. */
-export const CLIENT_WRITABLE = new Set([
-  "cards", "srs", "reviews", "timelogs", "dayplans", "mistakes", "tutor", "settings", "conversations",
-]);
+export const CLIENT_WRITABLE = new Set(["cards", "srs", "reviews", "timelogs", "dayplans", "mistakes", "tutor", "settings"]);
+// "conversations" and "meta" are written only by the server (chat history must not be overwritten by a stale client copy).
 
 export interface DocRow {
   collection: string;
@@ -57,6 +56,10 @@ const upsertStmt = db.prepare(`
 
 export function currentRev(): number {
   return (maxRevStmt.get() as { r: number }).r;
+}
+
+export function getRow(collection: string, id: string): DocRow | undefined {
+  return getStmt.get(collection, id) as DocRow | undefined;
 }
 
 export function getDoc<T = any>(collection: string, id: string): Doc<T> | null {

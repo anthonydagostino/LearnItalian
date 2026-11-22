@@ -1,6 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { getDoc, listDocs } from "./db.js";
-import { curriculum } from "./seed.js";
+import { curriculum, isDate } from "./seed.js";
 import { addDays, daysBetween, localDate } from "./time.js";
 
 export const STREAK_MIN_MINUTES = 30;
@@ -8,16 +8,20 @@ export const STREAK_MIN_MINUTES = 30;
 export function computeStats(today = localDate()) {
   const cur = curriculum();
   const settings = getDoc("settings", "main")?.data ?? {};
-  const startDate: string = settings.startDate || cur.startDate;
-  const targetDate: string = settings.targetDate || cur.targetDate;
-  const weeklyTarget: number = Number(settings.weeklyTargetHours || cur.weeklyTargetHours || 14);
+  // Settings are client-written: never trust their shape.
+  const startDate: string = isDate(settings.startDate) ? settings.startDate : cur.startDate;
+  const targetDate: string = isDate(settings.targetDate) ? settings.targetDate : cur.targetDate;
+  const wt = Number(settings.weeklyTargetHours);
+  const weeklyTarget: number = Number.isFinite(wt) && wt > 0 ? wt : Number(cur.weeklyTargetHours) || 14;
 
-  const logs = listDocs("timelogs").map((d) => d.data as { date: string; block: string; minutes: number });
+  const logs = listDocs("timelogs")
+    .map((d) => d.data as { date: string; block: string; minutes: number })
+    .filter((l) => l && isDate(l.date));
   const byDate = new Map<string, number>();
   let totalMin = 0;
   let speakingMin = 0;
   for (const l of logs) {
-    const m = Number(l.minutes) || 0;
+    const m = Math.max(0, Math.min(Number(l.minutes) || 0, 24 * 60));
     totalMin += m;
     byDate.set(l.date, (byDate.get(l.date) ?? 0) + m);
     if (l.block === "speaking" || l.block === "tutor") speakingMin += m;
@@ -42,17 +46,20 @@ export function computeStats(today = localDate()) {
   });
 
   const srs = listDocs("srs").map((x) => x.data as { state: number });
-  const cardsLearned = srs.filter((s) => s.state === 2).length;
+  const cardsLearned = srs.filter((s) => s?.state === 2).length;
   const cardsStarted = srs.length;
 
   const wk = cur.weeks[week - 1];
   const plan = getDoc("dayplans", today)?.data ?? { mode: "full", done: {} };
-  const blocks: any[] = plan.mode === "short" ? cur.plans.short : cur.plans[wk.phase];
+  const blocks: any[] = (plan.mode === "short" ? cur.plans.short : cur.plans[wk.phase]) ?? [];
   const done = blocks.filter((b) => plan.done?.[b.id]).length;
 
   const mistakes = listDocs("mistakes").map((m) => m.data as { type: string; date: string });
   const mistakesByType: Record<string, number> = {};
-  for (const m of mistakes) mistakesByType[m.type] = (mistakesByType[m.type] ?? 0) + 1;
+  for (const m of mistakes) {
+    const t = typeof m?.type === "string" ? m.type : "other";
+    mistakesByType[t] = (mistakesByType[t] ?? 0) + 1;
+  }
 
   return {
     date: today,
@@ -74,7 +81,7 @@ export function computeStats(today = localDate()) {
       minutesLogged: Math.round(byDate.get(today) ?? 0),
       blocksDone: done,
       blocksTotal: blocks.length,
-      complete: done === blocks.length,
+      complete: blocks.length > 0 && done === blocks.length,
       streakSafe: (byDate.get(today) ?? 0) >= STREAK_MIN_MINUTES,
     },
   };

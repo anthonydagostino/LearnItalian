@@ -90,7 +90,7 @@ export interface Focus {
   mistakes: string[];
 }
 
-function cleanFocus(f: unknown): Focus {
+export function cleanFocus(f: unknown): Focus {
   const list = (x: unknown) =>
     (Array.isArray(x) ? x : [])
       .filter((s): s is string => typeof s === "string")
@@ -103,14 +103,15 @@ function cleanFocus(f: unknown): Focus {
 
 let client: Anthropic | null = null;
 function anthropic() {
-  if (!client) client = new Anthropic({ apiKey: config.anthropicKey });
+  if (!client) client = new Anthropic({ apiKey: config.anthropicKey, maxRetries: config.claudeMaxRetries });
   return client;
 }
 
 function weekInfo(weekNum: number) {
   const cur = curriculum();
   const weeks: any[] = cur.weeks;
-  const week = weeks.find((w) => w.week === weekNum) ?? weeks[Math.min(Math.max(weekNum, 1), weeks.length) - 1];
+  const n = Number.isFinite(weekNum) ? Math.floor(weekNum) : 1;
+  const week = weeks.find((w) => w.week === n) ?? weeks[Math.min(Math.max(n, 1), weeks.length) - 1];
   const level = cur.levels[String(week.level)];
   return { week, level };
 }
@@ -234,7 +235,8 @@ async function callClaude<T extends z.ZodType>(opts: {
     if (e instanceof Anthropic.RateLimitError) throw new AiError("Rate limited by the Claude API. Wait a moment and try again.", 429);
     if (e instanceof Anthropic.APIConnectionError) throw new AiError("Can't reach the Claude API. Is the server online?");
     if (e instanceof Anthropic.APIError) throw new AiError(`Claude API error ${e.status}: ${e.message}`);
-    throw e;
+    // Anything else from the SDK here is a malformed or schema-violating response.
+    throw new AiError("Got an unexpected reply from Claude. Try again.");
   }
 }
 
@@ -280,7 +282,7 @@ function saveMistakes(convId: string, corrections: Turn["corrections"], source =
   return saved;
 }
 
-function speakingSeconds(conv: Conversation, end: number) {
+export function speakingSeconds(conv: Pick<Conversation, "startedAt" | "messages">, end: number) {
   const ts = [conv.startedAt, ...conv.messages.map((m) => m.ts), end].sort((a, b) => a - b);
   let total = 0;
   for (let i = 1; i < ts.length; i++) total += Math.min(ts[i] - ts[i - 1], 3 * 60_000);
@@ -293,13 +295,29 @@ function sendError(reply: FastifyReply, e: unknown) {
   return reply.code(500).send({ error: (e as Error).message ?? "Unknown error" });
 }
 
+const MAX_MESSAGE = 2000;
+
+/** One request at a time per conversation: overlapping read-modify-write would drop turns. */
+const inFlight = new Set<string>();
+function lock(id: string) {
+  if (inFlight.has(id)) return false;
+  inFlight.add(id);
+  return true;
+}
+function unlock(id: string) {
+  inFlight.delete(id);
+}
+
 export function registerChat(app: FastifyInstance) {
   app.post("/api/chat/start", async (req, reply) => {
     if (!aiEnabled()) return reply.code(503).send({ error: "AI is not configured. Set ANTHROPIC_API_KEY in .env." });
-    const { scenario = "free", week = 1, focus: rawFocus } = (req.body ?? {}) as { scenario?: string; week?: number; focus?: unknown };
+    const body = (req.body && typeof req.body === "object" ? req.body : {}) as { scenario?: unknown; week?: unknown; focus?: unknown };
+    const scenario = typeof body.scenario === "string" ? body.scenario : "free";
+    const week = Number(body.week ?? 1);
+    const rawFocus = body.focus;
     const focus = cleanFocus(rawFocus);
     const cur = curriculum();
-    const scenarioKey = cur.scenarios[scenario] ? scenario : "free";
+    const scenarioKey = Object.hasOwn(cur.scenarios, scenario) ? scenario : "free";
     const { week: w } = weekInfo(Number(week));
     const id = crypto.randomUUID();
     const now = Date.now();
@@ -334,10 +352,13 @@ export function registerChat(app: FastifyInstance) {
 
   app.post("/api/chat/:id/message", async (req, reply) => {
     const { id } = req.params as { id: string };
-    const { text } = (req.body ?? {}) as { text?: string };
+    const { text } = (req.body && typeof req.body === "object" ? req.body : {}) as { text?: unknown };
     const doc = getDoc<Conversation>("conversations", id);
     if (!doc) return reply.code(404).send({ error: "Conversation not found" });
-    if (!text?.trim()) return reply.code(400).send({ error: "Empty message" });
+    if (typeof text !== "string" || !text.trim()) return reply.code(400).send({ error: "Empty message" });
+    if (text.length > MAX_MESSAGE) return reply.code(400).send({ error: `Message too long (max ${MAX_MESSAGE} characters)` });
+    if (doc.data.endedAt) return reply.code(409).send({ error: "This conversation has ended. Start a new one." });
+    if (!lock(id)) return reply.code(409).send({ error: "Still working on your last message." });
     const conv = doc.data;
     const apiMessages = loadApi(id);
     const userMsg: DisplayMessage = { role: "user", text: text.trim(), ts: Date.now() };
@@ -361,12 +382,15 @@ export function registerChat(app: FastifyInstance) {
       return { user: userMsg, assistant: aiMsg, mistakes };
     } catch (e) {
       return sendError(reply, e);
+    } finally {
+      unlock(id);
     }
   });
 
   app.post("/api/chat/:id/help", async (req, reply) => {
     const { id } = req.params as { id: string };
-    const { draft = "" } = (req.body ?? {}) as { draft?: string };
+    const raw = (req.body && typeof req.body === "object" ? (req.body as { draft?: unknown }).draft : "") ?? "";
+    const draft = typeof raw === "string" ? raw.slice(0, MAX_MESSAGE) : "";
     const doc = getDoc<Conversation>("conversations", id);
     if (!doc) return reply.code(404).send({ error: "Conversation not found" });
     const conv = doc.data;
@@ -403,6 +427,9 @@ export function registerChat(app: FastifyInstance) {
     const { id } = req.params as { id: string };
     const doc = getDoc<Conversation>("conversations", id);
     if (!doc) return reply.code(404).send({ error: "Conversation not found" });
+    // Idempotent: a retried "end" returns the existing summary; if summarizing failed before, try again.
+    if (doc.data.endedAt && doc.data.summary) return { conversation: doc.data };
+    if (!lock(id)) return reply.code(409).send({ error: "Still working on your last message." });
     const conv = doc.data;
     const end = Date.now();
     conv.endedAt = end;
@@ -444,6 +471,8 @@ export function registerChat(app: FastifyInstance) {
       // Still save the end time even if the summary failed.
       putDoc({ collection: "conversations", id, data: conv, updated_at: Date.now() });
       return sendError(reply, e);
+    } finally {
+      unlock(id);
     }
   });
 }

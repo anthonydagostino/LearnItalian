@@ -1,16 +1,13 @@
 import assert from "node:assert/strict";
-import fs from "node:fs";
-import os from "node:os";
-import path from "node:path";
 import { test } from "node:test";
 
-process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), "parla-test-"));
-process.env.MOCK_AI = "1";
-process.env.APP_PASSWORD = "";
+import { freshEnv } from "./helpers.js";
 
-const { importSeed } = await import("./seed.js");
-const { buildApp } = await import("./index.js");
-const { localDate, addDays } = await import("./time.js");
+freshEnv({ MOCK_AI: "1" });
+
+const { importSeed } = await import("../seed.js");
+const { buildApp } = await import("../index.js");
+const { localDate, addDays } = await import("../time.js");
 
 const seed = importSeed();
 const app = await buildApp();
@@ -82,4 +79,14 @@ test("mock conversation records corrections as mistakes", async () => {
   const end = (await app.inject({ method: "POST", url: `/api/chat/${start.id}/end`, payload: {} })).json();
   assert.ok(end.conversation.summary);
   assert.ok(end.conversation.talkShare > 0 && end.conversation.talkShare <= 100);
+});
+
+test("speech-to-text reports 501 when not configured", async () => {
+  const r = await app.inject({ method: "POST", url: "/api/stt", payload: {} });
+  assert.equal(r.statusCode, 501);
+});
+
+test("SPA fallback serves only GET; unknown API routes are 404 JSON", async () => {
+  assert.equal((await app.inject({ method: "GET", url: "/api/nope" })).statusCode, 404);
+  assert.equal((await app.inject({ method: "POST", url: "/whatever" })).statusCode, 404);
 });

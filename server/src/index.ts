@@ -44,7 +44,7 @@ export async function buildApp() {
       },
     });
     app.setNotFoundHandler((req, reply) => {
-      if (req.url.startsWith("/api/")) return reply.code(404).send({ error: "Not found" });
+      if (req.url.startsWith("/api/") || req.method !== "GET") return reply.code(404).send({ error: "Not found" });
       return reply.sendFile("index.html");
     });
   }
