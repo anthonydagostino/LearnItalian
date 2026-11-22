@@ -97,7 +97,6 @@ export default function Progress({ app }: { app: AppCtx }) {
     return { week: w.week, hours: m / 60 };
   });
   const thisWeek = weeks[Math.max(app.n, 1) - 1]?.hours ?? 0;
-  const learned = srs.filter((s) => s.data.state === 2).length;
   const reviews = useCollection<ReviewData>("reviews") ?? [];
   const cards = useCollection<CardData>("cards") ?? [];
 
@@ -127,8 +126,6 @@ export default function Progress({ app }: { app: AppCtx }) {
     .map((t) => ({ label: MISTAKE_LABELS[t], value: mistakes.filter((m) => m.data.type === t).length }))
     .filter((r) => r.value > 0)
     .sort((a, b) => b.value - a.value);
-  const last7 = mistakes.filter((m) => m.data.date > addDays(app.today, -7)).length;
-  const prev7 = mistakes.filter((m) => m.data.date <= addDays(app.today, -7) && m.data.date > addDays(app.today, -14)).length;
 
   const byBlock = new Map<string, number>();
   for (const l of logs) byBlock.set(l.data.block, (byBlock.get(l.data.block) ?? 0) + l.data.minutes);

@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { ACTIVITY, Bubble, celebrate, cheer, Icon, toast } from "./look";
-import { elapsedMinutes, go, logTime, setActiveBlock, useActiveBlock, type ActiveBlock } from "./state";
+import { elapsedMinutes, getActiveBlock, go, logTime, setActiveBlock, useActiveBlock, type ActiveBlock } from "./state";
 import { speak, unlockAudio } from "./speech";
 import { localDate } from "./time";
 import type { BlockKind } from "./types";
@@ -72,6 +72,7 @@ export function LogTimeModal(props: {
 }) {
   const [min, setMin] = useState(props.minutes);
   const [note, setNote] = useState(props.noteDefault ?? "");
+  const [saving, setSaving] = useState(false);
   return (
     <Modal title={props.title} onClose={props.onClose}>
       <div className="sheet-hero">
@@ -87,7 +88,10 @@ export function LogTimeModal(props: {
       )}
       <button
         className="btn primary big full"
+        disabled={saving || min <= 0}
         onClick={async () => {
+          if (saving) return;
+          setSaving(true);
           await logTime({ block: props.block, blockId: props.blockId, minutes: min, note });
           celebrate();
           toast(`${cheer()} ${min} min logged`);
@@ -110,6 +114,14 @@ const SCREEN: Partial<Record<BlockKind, string>> = {
 export const screenFor = (k: BlockKind) => SCREEN[k];
 
 export function startBlock(b: Omit<ActiveBlock, "startedAt">) {
+  const cur = getActiveBlock();
+  if (cur && cur.blockId === b.blockId && cur.date === b.date) {
+    // Already running: just go back to it, never restart the timer.
+    const s = SCREEN[b.kind];
+    if (s) go(s);
+    return;
+  }
+  if (cur && !confirm(`"${cur.label}" is still running (${elapsedMinutes(cur)} min). Stop it without logging and start "${b.label}"?`)) return;
   setActiveBlock({ ...b, startedAt: Date.now() });
   const s = SCREEN[b.kind];
   if (s) go(s);
@@ -172,8 +184,7 @@ export function TimerBar() {
 }
 
 export function activeFor(kind: BlockKind): ActiveBlock | null {
-  const raw = localStorage.getItem("parla.activeBlock");
-  const a: ActiveBlock | null = raw ? JSON.parse(raw) : null;
+  const a = getActiveBlock();
   return a && a.kind === kind ? a : null;
 }
 

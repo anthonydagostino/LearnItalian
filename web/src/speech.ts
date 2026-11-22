@@ -110,12 +110,18 @@ function pickMime() {
 /** Record raw audio with MediaRecorder. The mic is released on stop so playback isn't routed to the earpiece on iOS. */
 export async function startRecording(): Promise<{ stop(): Promise<Blob>; cancel(): void }> {
   const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } });
-  const mime = pickMime();
-  const rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
-  const chunks: BlobPart[] = [];
-  rec.ondataavailable = (e) => e.data.size && chunks.push(e.data);
-  rec.start();
   const release = () => stream.getTracks().forEach((t) => t.stop());
+  const mime = pickMime();
+  const chunks: BlobPart[] = [];
+  let rec: MediaRecorder;
+  try {
+    rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
+    rec.ondataavailable = (e) => e.data.size && chunks.push(e.data);
+    rec.start();
+  } catch (e) {
+    release(); // don't leave the mic on if the recorder can't start
+    throw e;
+  }
   return {
     stop: () =>
       new Promise<Blob>((resolve) => {
@@ -148,6 +154,8 @@ export async function transcribeOnServer(audio: Blob): Promise<string> {
   return r.text;
 }
 
+const clean = (t: string) => t.replace(/\s+/g, " ").trim();
+
 function startBrowserRecognition(onInterim?: (t: string) => void): Listening {
   const rec = new SR();
   rec.lang = "it-IT";
@@ -167,7 +175,7 @@ function startBrowserRecognition(onInterim?: (t: string) => void): Listening {
       if (r.isFinal) finalText += r[0].transcript + " ";
       else interim += r[0].transcript + " ";
     }
-    onInterim?.((finalText + interim).trim());
+    onInterim?.(clean(finalText + interim));
   };
   rec.onerror = (e: any) => {
     if (e.error !== "no-speech" && e.error !== "aborted") error = e.error;
@@ -183,7 +191,7 @@ function startBrowserRecognition(onInterim?: (t: string) => void): Listening {
       new Promise((resolve, reject) => {
         const done = () => {
           if (error && !finalText && !interim) reject(new Error(`Speech recognition error: ${error}`));
-          else resolve({ text: (finalText + interim).trim() });
+          else resolve({ text: clean(finalText + interim) });
         };
         if (ended) return done();
         endResolve = done;
@@ -192,7 +200,15 @@ function startBrowserRecognition(onInterim?: (t: string) => void): Listening {
         } catch {
           done();
         }
-        setTimeout(done, 2500); // iOS sometimes never fires onend
+        // iOS sometimes never fires onend: stop waiting, and make sure recognition (and the mic) really stop.
+        setTimeout(() => {
+          try {
+            rec.abort();
+          } catch {
+            /* ignore */
+          }
+          done();
+        }, 2500);
       }),
     cancel: () => {
       try {
@@ -218,7 +234,7 @@ export async function startListening(mode: Settings["sttMode"], onInterim?: (t: 
       const text = await transcribeOnServer(audio);
       return { text, audio };
     },
-    cancel: r.cancel,
+    cancel: () => r.cancel(),
   };
 }
 
@@ -226,11 +242,15 @@ export function playBlob(blob: Blob): Promise<void> {
   return new Promise((resolve) => {
     const url = URL.createObjectURL(blob);
     const a = new Audio(url);
-    a.onended = () => {
+    let finished = false;
+    const finish = () => {
+      if (finished) return;
+      finished = true;
       URL.revokeObjectURL(url);
       resolve();
     };
-    a.onerror = () => resolve();
-    a.play().catch(() => resolve());
+    a.onended = finish;
+    a.onerror = finish;
+    a.play().catch(finish);
   });
 }

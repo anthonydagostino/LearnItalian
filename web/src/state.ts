@@ -80,7 +80,8 @@ const KEY = "parla.activeBlock";
 const listeners = new Set<() => void>();
 let active: ActiveBlock | null = (() => {
   try {
-    return JSON.parse(localStorage.getItem(KEY) ?? "null");
+    const v = JSON.parse(localStorage.getItem(KEY) ?? "null");
+    return v && typeof v.startedAt === "number" && typeof v.kind === "string" ? v : null;
   } catch {
     return null;
   }
@@ -121,10 +122,12 @@ export const go = (path: string) => {
   location.hash = path;
 };
 
-/** Log practice time automatically unless a block timer for this kind is running (the timer will capture it). */
+/**
+ * Log practice time automatically unless a block timer is running: the running timer already
+ * counts this wall-clock time, so logging it here too would double-count it.
+ */
 export async function autoLog(kind: BlockKind, startedAt: number, note: string): Promise<number> {
-  const a = getActiveBlock();
-  if (a && a.kind === kind) return 0;
+  if (getActiveBlock()) return 0;
   const m = Math.round((Date.now() - startedAt) / 60000);
   if (m >= 1) await logTime({ block: kind, minutes: m, note });
   return m;

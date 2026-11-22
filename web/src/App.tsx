@@ -64,7 +64,7 @@ export default function App() {
 
   useEffect(() => {
     const off = onUnauthorized(() => setNeedLogin(true));
-    serverConfig(true).then((c) => {
+    void serverConfig(true).then((c) => {
       if (c && !c.authed) setNeedLogin(true);
       else void startSyncLoop();
     });

@@ -7,8 +7,10 @@ import type { TutorData } from "../types";
 import { Header, Stepper } from "../ui";
 import { celebrate, toast } from "../look";
 
+const isDate = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s);
+
 /** Parse lines like "la scadenza = deadline" or "la scadenza - deadline". */
-function parseWords(text: string) {
+export function parseWords(text: string) {
   return text
     .split("\n")
     .map((l) => l.trim())
@@ -22,15 +24,19 @@ function parseWords(text: string) {
 
 export default function Tutor({ app }: { app: AppCtx }) {
   const rows = useCollection<TutorData>("tutor") ?? [];
-  const [date, setDate] = useState(app.today);
+  const [dateInput, setDate] = useState(app.today);
   const [minutes, setMinutes] = useState(50);
   const [platform, setPlatform] = useState(localStorage.getItem("parla.tutorPlatform") ?? "iTalki");
   const [notes, setNotes] = useState("");
   const [words, setWords] = useState("");
   const [saved, setSaved] = useState("");
+  const [saving, setSaving] = useState(false);
   const parsed = parseWords(words);
 
   async function save() {
+    if (saving) return;
+    setSaving(true);
+    const date = isDate(dateInput) ? dateInput : app.today;
     localStorage.setItem("parla.tutorPlatform", platform);
     const timelogId = await logTime({ block: "tutor", minutes, note: `${platform} tutor`, date });
     await put<TutorData>("tutor", uid(), { date, minutes, platform, notes, newWords: parsed, timelogId });
@@ -40,6 +46,7 @@ export default function Tutor({ app }: { app: AppCtx }) {
     toast("Tutor session logged 🎉");
     setNotes("");
     setWords("");
+    setSaving(false);
   }
 
   return (
@@ -48,7 +55,7 @@ export default function Tutor({ app }: { app: AppCtx }) {
       <div className="card">
         <label className="field">
           <span>Date</span>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+          <input type="date" value={dateInput} onChange={(e) => setDate(e.target.value)} />
         </label>
         <label className="field">
           <span>Length</span>
@@ -67,7 +74,7 @@ export default function Tutor({ app }: { app: AppCtx }) {
           <textarea rows={4} value={words} placeholder={"la scadenza = deadline\nfare una pausa = to take a break"} onChange={(e) => setWords(e.target.value)} />
         </label>
         {words && <div className="muted small">{parsed.length} word(s) recognized</div>}
-        <button className="btn primary big full" onClick={save} disabled={minutes <= 0}>
+        <button className="btn primary big full" onClick={save} disabled={minutes <= 0 || saving}>
           Save session
         </button>
         {saved && <p className="ok">{saved}</p>}

@@ -101,7 +101,7 @@ export function emptyPlan(date: string): DayplanData {
 /** Topics unlocked up to and including the given week (current week's topics first). */
 export function unlockedTopics(cur: Curriculum, n: number): string[] {
   const out: string[] = [];
-  const upto = Math.max(n, 1);
+  const upto = Math.min(Math.max(n, 1), cur.weeks.length);
   for (let i = upto - 1; i >= 0; i--) for (const t of cur.weeks[i].topics) if (!out.includes(t)) out.push(t);
   return out;
 }

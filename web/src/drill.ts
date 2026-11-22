@@ -70,10 +70,16 @@ export function buildDrill(opts: {
     const sameTopic = shuffle(notes.filter((x) => x.id !== c.id && x.data.topic === c.data.topic));
     const any = shuffle(notes.filter((x) => x.id !== c.id));
     const out: string[] = [];
-    const correct = field === "en" ? enOf(c) : strip(c.data.it);
+    const correct = normalize(field === "en" ? enOf(c) : strip(c.data.it));
+    const taken = new Set([correct]);
     for (const x of [...sameTopic, ...any]) {
       const v = field === "en" ? enOf(x) : strip(x.data.it);
-      if (v && v.toLowerCase() !== correct.toLowerCase() && !out.includes(v)) out.push(v);
+      const key = normalize(v);
+      // Distractors must differ from the answer and each other even ignoring accents/case ("e" vs "è").
+      if (v && key && !taken.has(key)) {
+        taken.add(key);
+        out.push(v);
+      }
       if (out.length >= n) break;
     }
     return out;
@@ -110,12 +116,12 @@ export function buildDrill(opts: {
       const c = take(sentenceOk);
       if (!c) continue;
       const words = tokenize(c.data.ex);
-      const lower = new Set(words.map((w) => w.toLowerCase()));
+      const lower = new Set(words.map((w) => normalize(w)));
       const extra: string[] = [];
       for (const x of shuffle(pool)) {
         for (const w of tokenize(x.data.ex || "")) {
           const lw = w.toLowerCase();
-          if (!lower.has(lw) && !extra.includes(lw) && w.length > 1) extra.push(lw);
+          if (!lower.has(normalize(w)) && !extra.some((e) => normalize(e) === normalize(w)) && w.length > 1) extra.push(lw);
           if (extra.length >= 3) break;
         }
         if (extra.length >= 3) break;

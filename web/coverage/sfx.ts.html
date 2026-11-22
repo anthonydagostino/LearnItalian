@@ -1,0 +1,273 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for sfx.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="theme.js"></script>
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        
+        <label class="theme-select quiet">
+            Theme
+            <select id="themeSelect" autocomplete="off">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="legacy">Legacy</option>
+            </select>
+        </label>
+
+        <h1><a href="index.html">All files</a> sfx.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">8.33% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>3/36</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/12</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/10</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">9.67% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>3/31</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/** Tiny synthesized sound effects (no audio files, works offline). */
+let ctx: AudioContext | null = null;
+let enabled = true;
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >setSoundsEnabled(o</span>n: boolean) {
+<span class="cstat-no" title="statement not covered" >  enabled = on;</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >ac(): AudioContext | null {</span>
+<span class="cstat-no" title="statement not covered" >  if (!enabled) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+<span class="cstat-no" title="statement not covered" >    if (!ctx) <span class="cstat-no" title="statement not covered" >ctx = new (window.AudioContext || (window as any).webkitAudioContext)();</span></span>
+<span class="cstat-no" title="statement not covered" >    if (ctx.state === "suspended") <span class="cstat-no" title="statement not covered" >void ctx.resume();</span></span>
+<span class="cstat-no" title="statement not covered" >    return ctx;</span>
+  } catch {
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  }
+}
+&nbsp;
+/** Call from a tap handler once so iOS allows audio. */
+export function <span class="fstat-no" title="function not covered" >unlockSfx() {</span>
+<span class="cstat-no" title="statement not covered" >  ac();</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >tone(f</span>req: number, start: number, dur: number, type: OscillatorType = <span class="branch-0 cbranch-no" title="branch not covered" >"sine", g</span>ain = <span class="branch-0 cbranch-no" title="branch not covered" >0.18) {</span>
+  const c = <span class="cstat-no" title="statement not covered" >ac();</span>
+<span class="cstat-no" title="statement not covered" >  if (!c) <span class="cstat-no" title="statement not covered" >return;</span></span>
+  const t0 = <span class="cstat-no" title="statement not covered" >c.currentTime + start;</span>
+  const o = <span class="cstat-no" title="statement not covered" >c.createOscillator();</span>
+  const g = <span class="cstat-no" title="statement not covered" >c.createGain();</span>
+<span class="cstat-no" title="statement not covered" >  o.type = type;</span>
+<span class="cstat-no" title="statement not covered" >  o.frequency.setValueAtTime(freq, t0);</span>
+<span class="cstat-no" title="statement not covered" >  g.gain.setValueAtTime(0.0001, t0);</span>
+<span class="cstat-no" title="statement not covered" >  g.gain.exponentialRampToValueAtTime(gain, t0 + 0.015);</span>
+<span class="cstat-no" title="statement not covered" >  g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);</span>
+<span class="cstat-no" title="statement not covered" >  o.connect(g).connect(c.destination);</span>
+<span class="cstat-no" title="statement not covered" >  o.start(t0);</span>
+<span class="cstat-no" title="statement not covered" >  o.stop(t0 + dur + 0.05);</span>
+}
+&nbsp;
+export const sfx = {
+<span class="fstat-no" title="function not covered" >  correct() {</span>
+<span class="cstat-no" title="statement not covered" >    tone(784, 0, 0.18, "sine");</span>
+<span class="cstat-no" title="statement not covered" >    tone(1175, 0.09, 0.28, "sine");</span>
+  },
+<span class="fstat-no" title="function not covered" >  wrong() {</span>
+<span class="cstat-no" title="statement not covered" >    tone(196, 0, 0.22, "triangle", 0.2);</span>
+<span class="cstat-no" title="statement not covered" >    tone(155, 0.12, 0.3, "triangle", 0.2);</span>
+  },
+<span class="fstat-no" title="function not covered" >  tap() {</span>
+<span class="cstat-no" title="statement not covered" >    tone(660, 0, 0.06, "sine", 0.08);</span>
+  },
+<span class="fstat-no" title="function not covered" >  match() {</span>
+<span class="cstat-no" title="statement not covered" >    tone(988, 0, 0.12, "sine", 0.12);</span>
+  },
+<span class="fstat-no" title="function not covered" >  complete() {</span>
+<span class="cstat-no" title="statement not covered" >    [523, 659, 784, 1047].<span class="fstat-no" title="function not covered" >forEach((f</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >tone(f, i * 0.11, 0.32, "sine", 0.16))</span>;</span>
+  },
+};
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://vitest.dev/" target="_blank" rel="noopener noreferrer">Vitest</a>
+                at 2026-11-22T18:43:41.329Z
+            </div>
+        <script src="prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="sorter.js"></script>
+        <script src="block-navigation.js"></script>
+    </body>
+</html>
+    

@@ -115,20 +115,29 @@ export function buildQueue(opts: {
   }
   // Most-forgotten first (lowest predicted recall), so stopping early still covers what matters most.
   const nowD = new Date(now);
-  const recall = new Map(due.map((c) => [c.id, scheduler.get_retrievability(toCard(srs.get(c.id)!), nowD, false)]));
+  const recallOf = (s: SrsData) => {
+    try {
+      return scheduler.get_retrievability(toCard(s), nowD, false);
+    } catch {
+      return 0; // malformed state (e.g. missing last_review): treat as most urgent instead of crashing
+    }
+  };
+  const recall = new Map(due.map((c) => [c.id, recallOf(srs.get(c.id)!)]));
   due.sort((a, b) => recall.get(a.id)! - recall.get(b.id)!);
 
   const topics = unlockedTopics(cur, week);
-  const maxLevel = cur.weeks[Math.max(week, 1) - 1]?.level ?? 1;
+  const maxLevel = cur.weeks[Math.min(Math.max(week, 1), cur.weeks.length) - 1]?.level ?? 1;
   const topicRank = (t: string) => {
     const i = topics.indexOf(t);
     return i === -1 ? 99 : i;
   };
+  const active = new Set(cards.filter((c) => !c.data.suspended).map((c) => c.id));
   const eligible = candidates.filter((c) => {
+    // In "both" mode, a seed note's English→Italian card waits until its Italian→English card was
+    // introduced on an earlier day (unless that card is missing or suspended). User cards skip this.
     if (!production && c.data.dir === "en2it" && c.data.source === "seed") {
       const sibling = c.id.replace(/:en2it$/, ":it2en");
-      // Only show production once recognition was introduced on an earlier day (or there is no sibling).
-      return introducedBeforeToday.has(sibling) || !cards.some((x) => x.id === sibling);
+      return introducedBeforeToday.has(sibling) || !active.has(sibling);
     }
     return true;
   });
@@ -169,6 +178,9 @@ export function normalize(s: string) {
     .trim();
 }
 
+/** Hesitation words that speech recognition picks up; saying them around the answer is fine. */
+const FILLERS = new Set(["eh", "ehm", "uhm", "um", "uh", "mm", "allora", "cioe", "dunque", "beh", "ok", "okay", "si"]);
+
 const ARTICLES = new Set(["il", "lo", "la", "l'", "i", "gli", "le", "un", "uno", "una", "un'"]);
 
 function lev(a: string[], b: string[]) {
@@ -191,11 +203,20 @@ export type Verdict = "correct" | "close" | "wrong";
 /** Compare what was heard against the expected Italian. Alternatives in the answer can be separated by "/" or ";". */
 export function checkAnswer(heard: string, expected: string): { verdict: Verdict; score: number; articleOnly: boolean } {
   const h = normalize(heard);
-  const options = expected.split(/[\/;]/).map(normalize).filter(Boolean);
+  const options = expected.split(/[/;]/).map(normalize).filter(Boolean);
   let best = { verdict: "wrong" as Verdict, score: 0, articleOnly: false };
   for (const e of options) {
     if (!e) continue;
-    if (h === e || h.includes(e)) return { verdict: "correct", score: 1, articleOnly: false };
+    if (!h) continue;
+    if (h === e) return { verdict: "correct", score: 1, articleOnly: false };
+    // The answer said as part of a longer utterance: compare whole words only ("la" must not match "lavoro").
+    if (h && ` ${h} `.includes(` ${e} `)) {
+      const extra = ` ${h} `.replace(` ${e} `, " ").trim().split(" ").filter(Boolean);
+      const fillersOnly = extra.every((w) => FILLERS.has(w));
+      const v = { verdict: (fillersOnly ? "correct" : "close") as Verdict, score: fillersOnly ? 1 : 0.8, articleOnly: false };
+      if (v.score > best.score) best = v;
+      continue;
+    }
     const strip = (s: string) => s.split(" ").filter((w) => !ARTICLES.has(w)).join(" ");
     const articleOnly = strip(h) === strip(e) && strip(e).length > 0;
     const score = articleOnly ? 0.85 : charSim(h, e);

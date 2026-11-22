@@ -88,7 +88,7 @@ export default function SettingsScreen({ app }: { app: AppCtx }) {
     return () => clearTimeout(t);
   }, []);
   const set = (p: Partial<Settings>) => void saveSettings(p);
-  const num = (k: keyof Settings) => (e: React.ChangeEvent<HTMLInputElement>) => set({ [k]: Number(e.target.value) || 0 } as any);
+  const num = (k: keyof Settings) => (e: React.ChangeEvent<HTMLInputElement>) => set({ [k]: Number(e.target.value) || 0 });
   const cfg = lastServerConfig();
 
   async function exportData() {
@@ -98,6 +98,7 @@ export default function SettingsScreen({ app }: { app: AppCtx }) {
     a.href = URL.createObjectURL(blob);
     a.download = `parla-export-${app.today}.json`;
     a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 10_000);
   }
 
   return (
@@ -236,9 +237,13 @@ export default function SettingsScreen({ app }: { app: AppCtx }) {
           <button
             className="btn small ghost"
             onClick={async () => {
-              const r = await api<{ cards: number; changed: number; warnings: string[] }>("/api/reseed", {});
-              setMsg(`Seed reloaded: ${r.cards} cards, ${r.changed} changed${r.warnings.length ? `, ${r.warnings.length} warnings` : ""}.`);
-              await sync();
+              try {
+                const r = await api<{ cards: number; changed: number; warnings: string[] }>("/api/reseed", {});
+                setMsg(`Seed reloaded: ${r.cards} cards, ${r.changed} changed${r.warnings.length ? `, ${r.warnings.length} warnings` : ""}.`);
+                await sync();
+              } catch (e) {
+                setMsg(`Couldn't reload: ${(e as Error).message}`);
+              }
             }}
           >
             Reload seed files

@@ -61,11 +61,23 @@ export default function Shadow({ app }: { app: AppCtx }) {
   const [err, setErr] = useState("");
   const rec = useRef<Awaited<ReturnType<typeof startRecording>> | null>(null);
   const [slow, setSlow] = useState(false);
+  const currentRef = useRef("");
+  const pendingSpeak = useRef(false);
   const startedAt = useRef(Date.now());
   const repsRef = useRef(0);
   repsRef.current = reps;
+  // Speak the sentence that is actually on screen after "Next" (also after the list reshuffles).
+  const currentText = sentences.length ? sentences[i % sentences.length].it : "";
+  useEffect(() => {
+    if (pendingSpeak.current && currentText) {
+      pendingSpeak.current = false;
+      void speak(currentText, { rate: slow ? Math.max(0.6, app.ttsRate - 0.2) : app.ttsRate });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentText]);
   useEffect(
     () => () => {
+      rec.current?.cancel(); // leaving mid-recording releases the mic
       if (repsRef.current > 0)
         void autoLog("shadowing", startedAt.current, `${repsRef.current} reps`).then((m) => m && toast(`${m} min of shadowing logged ✓`));
     },
@@ -75,6 +87,7 @@ export default function Shadow({ app }: { app: AppCtx }) {
   if (!cards) return <div className="screen">Loading…</div>;
   if (!sentences.length) return <Empty emoji="🎧" title="No sentences yet" />;
   const s = sentences[i % sentences.length];
+  currentRef.current = s.it;
   const rate = slow ? Math.max(0.6, app.ttsRate - 0.2) : app.ttsRate;
   const canTranscribe = !!lastServerConfig()?.sttServer;
 
@@ -82,8 +95,10 @@ export default function Shadow({ app }: { app: AppCtx }) {
     unlockAudio();
     setErr("");
     if (recording && rec.current) {
-      const b = await rec.current.stop();
-      rec.current = null;
+      const r = rec.current;
+      rec.current = null; // a second tap on Stop is now a no-op
+      const sentence = s.it;
+      const b = await r.stop();
       setRecording(false);
       setBlob(b);
       setReps((n) => n + 1);
@@ -92,7 +107,9 @@ export default function Shadow({ app }: { app: AppCtx }) {
       await playBlob(b);
       if (canTranscribe) {
         try {
-          setHeard(await transcribeOnServer(b));
+          const text = await transcribeOnServer(b);
+          // Drop the result if the user already moved to another sentence.
+          if (currentRef.current === sentence) setHeard(text);
         } catch (e) {
           setHeard(null);
         }
@@ -121,7 +138,7 @@ export default function Shadow({ app }: { app: AppCtx }) {
       setSeed(seed + 1);
       setI(0);
     } else setI(n);
-    setTimeout(() => void speak(sentences[n % sentences.length]?.it ?? "", { rate }), 50);
+    pendingSpeak.current = true;
   }
 
   return (

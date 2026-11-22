@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { api, lastServerConfig } from "../api";
 import { createNote } from "../cards";
-import { all, patch, put, useCollection, useDoc } from "../db";
+import { all, cacheServerDoc, patch, put, useCollection, useDoc } from "../db";
 import { speak, startListening, stopSpeaking, unlockAudio, type Listening } from "../speech";
 import { logTime, setActiveBlock, type AppCtx } from "../state";
 import { sync } from "../sync";
 import type { ChatMessage, ConversationData, Correction, MistakeData } from "../types";
-import { MISTAKE_LABELS } from "../types";
 import { activeFor, Header, Modal, SpeakBtn } from "../ui";
 import { celebrate, cheer, Icon, SCENARIO_EMOJI, toast } from "../look";
 import { computeSkills, Stars } from "../skills";
@@ -45,8 +44,10 @@ function Picker({ app, onStart }: { app: AppCtx; onStart: (id: string) => void }
     try {
       const focus = await buildFocus();
       const r = await api<{ id: string; conversation: ConversationData }>("/api/chat/start", { scenario, week: Math.max(app.n, 1), focus });
-      await sync();
+      // Show it immediately (no waiting on a sync that may already be in progress → no duplicate taps).
+      await cacheServerDoc("conversations", r.id, r.conversation);
       onStart(r.id);
+      void sync();
       if (app.settings.autoplay) void speak(r.conversation.messages[0].text, { rate: app.ttsRate });
     } catch (e) {
       setErr((e as Error).message);
@@ -91,6 +92,10 @@ function Chat({ app, id, conv, onClose }: { app: AppCtx; id: string; conv: Conve
   const [text, setText] = useState("");
   const [sending, setSending] = useState(false);
   const [listening, setListening] = useState<Listening | null>(null);
+  const listeningRef = useRef<Listening | null>(null);
+  listeningRef.current = listening;
+  // Release the microphone if the user leaves the conversation mid-recording.
+  useEffect(() => () => listeningRef.current?.cancel(), []);
   const [transcribing, setTranscribing] = useState(false);
   const [interim, setInterim] = useState("");
   const [err, setErr] = useState("");

@@ -22,9 +22,9 @@ export default function Drill({ app }: { app: AppCtx }) {
     () =>
       ready
         ? buildDrill({
-            cards: cards!,
-            srs: new Map(srsRows!.map((r) => [r.id, r.data])),
-            recentAgain: new Set(reviews!.filter((r) => r.data.rating === 1 && r.data.ts > Date.now() - 7 * 86_400_000).map((r) => r.data.cardId)),
+            cards,
+            srs: new Map(srsRows.map((r) => [r.id, r.data])),
+            recentAgain: new Set(reviews.filter((r) => r.data.rating === 1 && r.data.ts > Date.now() - 7 * 86_400_000).map((r) => r.data.cardId)),
             topics: unlockedTopics(app.cur, app.n),
             maxLevel: app.week.level,
             canSpeak: resolveEngine(app.settings.sttMode) !== "none",
@@ -53,6 +53,8 @@ function DrillRun({ app, initial, onAgain }: { app: AppCtx; initial: Exercise[];
     sfx.complete();
     if (right / Math.max(1, right + wrong) >= 0.6) celebrate(true);
     void autoLog("flashcards", startedAt.current, "Weak-spot drill").then(setLoggedMin);
+    // Runs once when the drill finishes; right/wrong are final at that point.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [done]);
 
   const submit: Submit = (correct, solution, english) => {
@@ -340,6 +342,9 @@ function Match({ ex, submit }: { ex: Extract<Exercise, { type: "match" }>; submi
 
 function Speak({ ex, submit, skip, app }: { ex: Extract<Exercise, { type: "speak" }>; submit: Submit; skip: () => void; app: AppCtx }) {
   const [listening, setListening] = useState<Listening | null>(null);
+  const listeningRef = useRef<Listening | null>(null);
+  listeningRef.current = listening;
+  useEffect(() => () => listeningRef.current?.cancel(), []); // skip / continue / quit releases the mic
   const [busy, setBusy] = useState(false);
   const [heard, setHeard] = useState<string | null>(null);
   const [err, setErr] = useState("");
@@ -350,6 +355,7 @@ function Speak({ ex, submit, skip, app }: { ex: Extract<Exercise, { type: "speak
   async function mic() {
     unlockAudio();
     unlockSfx();
+    if (busy) return;
     if (listening) {
       setBusy(true);
       try {
@@ -384,7 +390,7 @@ function Speak({ ex, submit, skip, app }: { ex: Extract<Exercise, { type: "speak
       {heard !== null && <p className="center small">I heard: “{heard || "…"}”</p>}
       {err && <div className="error">{err}</div>}
       <div className="speak-zone">
-        <button className={`mic big-mic ${listening ? "on" : ""}`} onClick={mic} disabled={busy}>
+        <button className={`mic big-mic ${listening ? "on" : ""}`} onClick={mic} disabled={busy} aria-label={listening ? "Stop recording" : "Record your answer"}>
           {busy ? <span className="spinner" /> : <Icon name={listening ? "stop" : "mic"} size={34} />}
         </button>
         <span className="muted small">{listening ? "Tap when you're done" : "Tap and speak"}</span>

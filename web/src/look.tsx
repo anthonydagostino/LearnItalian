@@ -115,7 +115,7 @@ const paths: Record<string, ReactNode> = {
   back: <path d="M15 5l-7 7 7 7" />,
 };
 
-export function Icon({ name, size = 24, className = "" }: { name: keyof typeof paths | string; size?: number; className?: string }) {
+export function Icon({ name, size = 24, className = "" }: { name: string; size?: number; className?: string }) {
   return (
     <svg
       className={`icon ${className}`}

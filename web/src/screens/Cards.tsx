@@ -133,6 +133,13 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   const [revealed, setRevealed] = useState(false);
   const [srs, setSrs] = useState<SrsData | null>(null);
   const [listening, setListening] = useState<Listening | null>(null);
+  const listeningRef = useRef<Listening | null>(null);
+  listeningRef.current = listening;
+  const stopMic = () => {
+    listeningRef.current?.cancel();
+    listeningRef.current = null;
+    setListening(null);
+  };
   const [heard, setHeard] = useState<{ text: string; verdict: Verdict } | null>(null);
   const [interim, setInterim] = useState("");
   const [busy, setBusy] = useState(false);
@@ -153,6 +160,20 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
 
   const item = queue[idx];
   const card = item ? cards.get(item.id) : undefined;
+  const queueRef = useRef(queue);
+  const idxRef = useRef(idx);
+  queueRef.current = queue;
+  idxRef.current = idx;
+  const finishRef = useRef(finish);
+  finishRef.current = finish;
+  // Leaving the screen any way (tab bar, back) still logs the time and releases the mic.
+  useEffect(
+    () => () => {
+      listeningRef.current?.cancel();
+      void finishRef.current();
+    },
+    [],
+  );
 
   useEffect(() => {
     if (!item && count > 0) {
@@ -166,12 +187,18 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   useEffect(() => {
     if (!item) return;
     grading.current = false;
+    stopMic();
+    setSrs(null);
     setRevealed(false);
     setHeard(null);
     setInterim("");
     setErr("");
     shownAt.current = Date.now();
-    void get<SrsData>("srs", item.id).then((s) => setSrs(s ?? newSrs(app.today)));
+    const forId = item.id;
+    void get<SrsData>("srs", forId).then((s) => {
+      // Ignore a slow lookup that finishes after we've moved on to another card.
+      if (queueRef.current[idxRef.current]?.id === forId) setSrs(s ?? newSrs(app.today));
+    });
     const c = cards.get(item.id);
     if (c && c.dir === "it2en" && app.settings.autoplay) void speak(c.it, { rate: app.ttsRate });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -198,6 +225,7 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   }
 
   const reveal = () => {
+    if (listeningRef.current && !busy) stopMic(); // "just show me" while the mic is on
     setRevealed(true);
     if (app.settings.autoplay) void speak(card.dir === "en2it" ? card.it : card.ex || card.it, { rate: app.ttsRate });
   };
@@ -231,6 +259,7 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
   async function grade(g: Grade) {
     if (!srs || !card || grading.current) return;
     grading.current = true;
+    try {
     if (g >= Rating.Good) sfx.correct();
     else if (g === Rating.Again) sfx.wrong();
     else sfx.tap();
@@ -265,6 +294,10 @@ function Study({ app, initial, cards, onDone }: { app: AppCtx; initial: QItem[];
     if (next.due - now.getTime() < 20 * 60_000) q.push({ id: item.id, isNew: false });
     setQueue(q);
     setIdx(idx + 1);
+    } catch (e) {
+      grading.current = false; // let the user try again instead of getting stuck
+      setErr(`Couldn't save: ${(e as Error).message}`);
+    }
   }
 
   gradeRef.current = (g: Grade) => void grade(g);

@@ -11,6 +11,7 @@ function LessonModal({ app, block, onClose }: { app: AppCtx; block: PlanBlock; o
   const [course, setCourse] = useState(app.settings.lessonCourse);
   const [lesson, setLesson] = useState(String(app.settings.lessonNext));
   const [min, setMin] = useState(block.minutes);
+  const [saving, setSaving] = useState(false);
   return (
     <Modal title="Lesson done?" onClose={onClose}>
       <div className="sheet-hero">
@@ -34,7 +35,10 @@ function LessonModal({ app, block, onClose }: { app: AppCtx; block: PlanBlock; o
       <Stepper value={min} onChange={setMin} />
       <button
         className="btn primary big full"
+        disabled={saving}
         onClick={async () => {
+          if (saving) return;
+          setSaving(true);
           await logTime({ block: "lesson", blockId: block.id, minutes: min, note: `${course} — lesson ${lesson}` });
           const n = parseInt(lesson, 10);
           await saveSettings({ lessonCourse: course, ...(Number.isFinite(n) ? { lessonNext: n + 1 } : {}) });
@@ -118,7 +122,7 @@ export default function Today({ app }: { app: AppCtx }) {
       </header>
 
       <section className={`hero ${allDone ? "hero-done" : ""}`}>
-        <Ring value={todayMin / plannedMin} size={116}>
+        <Ring value={plannedMin > 0 ? todayMin / plannedMin : 0} size={116}>
           <b>{Math.round(todayMin)}</b>
           <span>of {plannedMin} min</span>
         </Ring>
@@ -247,7 +251,14 @@ export default function Today({ app }: { app: AppCtx }) {
         )}
       </div>
 
-      <section className="focus-card" onClick={() => setDetails(!details)}>
+      <section
+        className="focus-card"
+        role="button"
+        tabIndex={0}
+        aria-expanded={details}
+        onClick={() => setDetails(!details)}
+        onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), setDetails(!details))}
+      >
         <div className="focus-head">
           <span className="focus-emoji">🎯</span>
           <div className="grow">

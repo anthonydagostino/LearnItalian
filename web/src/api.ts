@@ -49,8 +49,11 @@ export async function serverConfig(force = false): Promise<ServerConfig | null> 
     cachedConfig = await api<ServerConfig>("/api/config");
     localStorage.setItem("parla.config", JSON.stringify(cachedConfig));
   } catch {
-    const saved = localStorage.getItem("parla.config");
-    cachedConfig = saved ? JSON.parse(saved) : null;
+    try {
+      cachedConfig = JSON.parse(localStorage.getItem("parla.config") ?? "null");
+    } catch {
+      cachedConfig = null;
+    }
   }
   return cachedConfig;
 }
