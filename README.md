@@ -55,6 +55,22 @@ npm run typecheck
 
 Open http://localhost:5173. The microphone needs HTTPS or localhost, so to test on your phone, use the deployed Tailscale URL.
 
+## Checks and tests
+
+```bash
+npm run lint        # ESLint with type-aware rules (TypeScript + React hooks)
+npm run typecheck   # tsc for server, web, and the e2e suite
+npm test            # server (node:test) + web (Vitest) unit and integration tests
+npm run e2e         # Playwright end-to-end tests against a real server with mock AI
+npm run check       # all of the above
+```
+
+- **Server tests** (`server/src/__tests__`) run against a temporary SQLite database. They cover auth (including encoded-path bypass attempts and rate limiting), sync conflict rules and pagination, the seed importer's edge cases, stats, speech-to-text against a fake Whisper server, and the Claude call path against a fake Anthropic API (request shape, history replay, refusals, error mapping, concurrency).
+- **Web tests** (`web/src/*.test.ts`) cover the scheduler and queue, answer checking, drills, the plan, dates, skills, focus words, the local database, offline sync against a scripted server, the API client, timers and logging, and the speech wrappers using fake browser APIs.
+- **End-to-end tests** (`e2e/`) drive the built app on an iPhone-sized viewport: login, the Today flow, flashcards, drills, a conversation, two-device sync, offline edits, and settings.
+- The e2e suite downloads its own Chromium (`npx playwright install chromium`). To use a preinstalled one, set `PW_CHROMIUM_PATH`.
+- CI (`.github/workflows/ci.yml`) runs everything on each push.
+
 ## Environment variables
 
 | Variable | Default | Notes |
